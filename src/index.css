@@ -1,0 +1,22 @@
+@import "./choose-tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Info — pas encore dans les tokens Choose, conservé en attendant */
+  --info: #2563EB;
+  --info-foreground: #FFFFFF;
+  --info-accent: #EEF2FF;
+  --info-accent-border: #93C5FD;
+  --info-accent-foreground: #1D4ED8;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
