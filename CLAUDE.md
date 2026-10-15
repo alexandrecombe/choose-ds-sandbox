@@ -22,6 +22,7 @@ S'il existe, l'importer et l'utiliser. Ne jamais fabriquer :
 - un `<select>` natif ou un dropdown custom → utiliser `choose-ui/select`
 - un `<hr>` ou un `border-t` fait main → utiliser `choose-ui/separator`
 - un div pulsant fait main → utiliser `choose-ui/skeleton`
+- un `<input type="checkbox">` natif → utiliser `choose-ui/checkbox`
 
 Si un besoin n'est couvert par aucun composant ni aucun variant existant, le signaler
 explicitement dans la réponse au lieu de créer une variante locale.
@@ -48,6 +49,7 @@ quand ne pas l'utiliser, quel variant pour quel cas.
 - `components/choose-ui/select/select.usage.md`
 - `components/choose-ui/separator/separator.usage.md`
 - `components/choose-ui/skeleton/skeleton.usage.md`
+- `components/choose-ui/checkbox/checkbox.usage.md`
 - `components/choose-ui/filters/filters.usage.md`
 
 Cas de choix fréquent à ne pas rater : feedback utilisateur.
