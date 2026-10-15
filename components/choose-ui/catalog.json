@@ -69,6 +69,16 @@
       "name": "select",
       "usage": "Menu déroulant de sélection unique. Remplace le select natif pour un rendu cohérent. Pour 2-3 options, un groupe de radios suffit ; pour une recherche avec saisie, un Combobox.",
       "status": "stable"
+    },
+    {
+      "name": "separator",
+      "usage": "Trait fin qui sépare deux zones de contenu, horizontalement ou verticalement. Pour encadrer un bloc, utiliser Card ou Frame.",
+      "status": "stable"
+    },
+    {
+      "name": "skeleton",
+      "usage": "Placeholder animé qui réserve la place d'un contenu en cours de chargement. Pour un chargement global, un spinner suffit.",
+      "status": "stable"
     }
   ]
 }
