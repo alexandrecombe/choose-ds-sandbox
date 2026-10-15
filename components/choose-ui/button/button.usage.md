@@ -22,6 +22,38 @@ Déclenche une action. Élément interactif principal d'une interface backoffice
   en fond au survol. C'est le seul variant qui colore son texte sans aplat.
 - `destructive` — suppression ou action irréversible. Toujours accompagnée d'une confirmation.
 
+## Tailles
+
+- `sm` — contextes denses : une table, une barre d'outils.
+- `default` — le cas courant.
+- `lg` — une action isolée mise en avant.
+
+L'icône suit la taille du label : 14px en `sm`, 16px en `default`, 20px en `lg`.
+
+## Préfixe et suffixe
+
+```tsx
+<Button prefix={<Save />}>Enregistrer</Button>
+<Button suffix={<ArrowRight />}>Continuer</Button>
+```
+
+`prefix` remplace l'ancienne prop `icon`. Le **préfixe qualifie l'action** ; le **suffixe
+signale où elle mène** — une flèche d'avancement, un lien externe. Jamais deux icônes du même
+côté.
+
+## Chargement
+
+```tsx
+<Button loading>Enregistrement…</Button>
+```
+
+`loading` remplace le préfixe par un indicateur d'activité et neutralise le clic, **sans**
+passer le bouton en `disabled` : il reste dans le parcours clavier et annonce son état via
+`aria-busy`. Un bouton désactivé en HTML disparaît du parcours clavier et perd ce contexte.
+
+Ne pas cumuler `loading` et `disabled` : on perdrait exactement ce que `loading` préserve.
+Ne pas remplacer le label par un spinner non plus — la largeur du bouton sauterait.
+
 ## Règles Choose
 
 - Typo : `font-sans` (Maison Neue), graisse **semibold** sur tous les variants. Jamais `font-display`.
