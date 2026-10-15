@@ -1,23 +1,32 @@
 /**
- * Base : origine à confirmer — ne correspond à aucun composant upstream du même nom.
- * Voir SOURCES.md.
+ * Base : reui — alert
+ * https://reui.io/docs/components/base/alert
+ * Structure et API reprises de reui (composition Alert / AlertTitle /
+ * AlertDescription / AlertAction). Couleurs remappées sur les tokens Choose
+ * `--*-accent` : les cssVars de reui ne sont PAS installées. Voir SOURCES.md.
  */
-import { type CSSProperties, type ReactNode } from "react";
-import { Info, CircleCheck, TriangleAlert, CircleX } from "lucide-react";
+import { type CSSProperties, type ComponentProps } from "react";
+import {
+  Alert as ReuiAlert,
+  AlertTitle,
+  AlertDescription,
+  AlertAction,
+} from "@/components/reui/alert";
 import { cn } from "@/lib/utils";
 
-type AlertBannerVariant = "info" | "success" | "warning" | "destructive";
-
-interface AlertBannerProps {
-  variant?: AlertBannerVariant;
-  title: string;
-  description?: string;
-  action?: ReactNode;
-  className?: string;
-}
+type AlertBannerVariant =
+  | "default"
+  | "info"
+  | "success"
+  | "warning"
+  | "destructive";
 
 /* Surface : seuls le fond et la bordure portent la couleur du variant. */
 const variantStyles: Record<AlertBannerVariant, CSSProperties> = {
+  default: {
+    backgroundColor: "var(--card)",
+    borderColor: "var(--border)",
+  },
   info: {
     backgroundColor: "var(--info-accent)",
     borderColor: "var(--info-accent-border)",
@@ -36,47 +45,37 @@ const variantStyles: Record<AlertBannerVariant, CSSProperties> = {
   },
 };
 
-/* L'icône est le seul élément de texte qui garde la couleur du variant. */
-const variantIconStyles: Record<AlertBannerVariant, CSSProperties> = {
-  info: { color: "var(--info-accent-foreground)" },
-  success: { color: "var(--success-accent-foreground)" },
-  warning: { color: "var(--warning-accent-foreground)" },
-  destructive: { color: "var(--destructive-accent-foreground)" },
+/* L'icône est le seul élément qui garde la couleur du variant. */
+const variantIconClasses: Record<AlertBannerVariant, string> = {
+  default: "[&>svg]:text-[color:var(--muted-foreground)]",
+  info: "[&>svg]:text-[color:var(--info-accent-foreground)]",
+  success: "[&>svg]:text-[color:var(--success-accent-foreground)]",
+  warning: "[&>svg]:text-[color:var(--warning-accent-foreground)]",
+  destructive: "[&>svg]:text-[color:var(--destructive-accent-foreground)]",
 };
 
-const variantIcons: Record<AlertBannerVariant, typeof Info> = {
-  info: Info,
-  success: CircleCheck,
-  warning: TriangleAlert,
-  destructive: CircleX,
-};
+interface AlertProps extends Omit<ComponentProps<typeof ReuiAlert>, "variant"> {
+  variant?: AlertBannerVariant;
+}
 
-export function AlertBanner({
-  variant = "info",
-  title,
-  description,
-  action,
-  className,
-}: AlertBannerProps) {
-  const Icon = variantIcons[variant];
-
+/**
+ * Icône Lucide attendue par variant, passée en premier enfant :
+ * info → Info · success → CircleCheck · warning → TriangleAlert
+ * destructive → CircleX · default → libre.
+ */
+function Alert({ variant = "info", className, style, ...props }: AlertProps) {
   return (
-    <div
-      role="alert"
-      className={cn("flex gap-3 rounded-lg border p-4 font-sans", className)}
-      style={variantStyles[variant]}
-    >
-      <Icon
-        className="mt-0.5 size-5 shrink-0"
-        style={variantIconStyles[variant]}
-      />
-      <div className="flex-1">
-        <p className="text-sm font-medium text-foreground">{title}</p>
-        {description && (
-          <p className="mt-1 text-sm text-muted-foreground">{description}</p>
-        )}
-        {action && <div className="mt-3">{action}</div>}
-      </div>
-    </div>
+    <ReuiAlert
+      className={cn(
+        "font-sans [&>svg:not([class*=size-])]:size-5",
+        variantIconClasses[variant],
+        className,
+      )}
+      style={{ ...variantStyles[variant], ...style }}
+      {...props}
+    />
   );
 }
+
+export { Alert, AlertTitle, AlertDescription, AlertAction };
+export type { AlertBannerVariant };

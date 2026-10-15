@@ -12,7 +12,7 @@
     },
     {
       "name": "alert-banner",
-      "usage": "Message système persistant, posé dans le flux de la page et toujours visible au retour sur l'écran. Pour un retour éphémère, utiliser un toast ; pour une erreur de validation, le message inline du champ.",
+      "usage": "Message système persistant, posé dans le flux de la page et toujours visible au retour sur l'écran. S'assemble par composition (Alert / AlertTitle / AlertDescription / AlertAction). Pour un retour éphémère, utiliser un toast ; pour une erreur de validation, le message inline du champ.",
       "status": "stable"
     }
   ]

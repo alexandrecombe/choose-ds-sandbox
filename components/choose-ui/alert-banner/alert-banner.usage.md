@@ -2,6 +2,33 @@
 
 Message système persistant, affiché en place dans le flux de la page. Non éphémère.
 
+Construit sur l'`alert` de reui (structure et composition), recoloré sur les tokens Choose.
+
+## Composition
+
+Le composant s'assemble par enfants, pas par props. L'icône vient en premier.
+
+```tsx
+import {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+  AlertAction,
+} from "@/components/choose-ui/alert-banner";
+import { CircleCheck } from "lucide-react";
+
+<Alert variant="success">
+  <CircleCheck />
+  <AlertTitle>Facturation réglée</AlertTitle>
+  <AlertDescription>Le paiement a été confirmé.</AlertDescription>
+  <AlertAction>
+    <Button variant="secondary">Voir le reçu</Button>
+  </AlertAction>
+</Alert>
+```
+
+`AlertAction` se place à droite du message en desktop et repasse sous le texte en mobile.
+
 ## Quand l'utiliser
 
 - Communiquer un état persistant lié à la page ou à une section (accès restreint, données obsolètes, mode dégradé).
@@ -23,12 +50,15 @@ Message système persistant, affiché en place dans le flux de la page. Non éph
 
 ## Anatomie
 
-- Titre obligatoire (une ligne, `font-sans`).
-- Texte de support optionnel sous le titre, sur un token de texte atténué.
-- Icône ou marqueur visuel en tête, aligné sur le titre.
+- `AlertTitle` obligatoire (une ligne, `font-sans`). Il porte un `line-clamp-1` : tout texte
+  plus long qu'un titre va dans `AlertDescription`.
+- `AlertDescription` optionnel sous le titre, sur un token de texte atténué.
+- Icône Lucide en tête, premier enfant de `Alert`, dimensionnée à 20px automatiquement.
+- `AlertAction` optionnel, au plus une zone d'action par banner.
 
 ## Variants
 
+- `default` — surface neutre sur fond de carte, sans charge sémantique. L'icône est libre.
 - `info` — information contextuelle neutre.
 - `success` — confirmation d'un état durable que l'utilisateur doit pouvoir retrouver en revenant sur l'écran (facturation réglée, opération payée). À distinguer du toast, qui confirme une micro-action et disparaît.
 - `warning` — condition à surveiller sans blocage immédiat.
@@ -46,3 +76,7 @@ Message système persistant, affiché en place dans le flux de la page. Non éph
 Avant de générer un feedback utilisateur, choisir le bon composant selon la frontière ci-dessus :
 toast (éphémère), erreur inline (champ), Alert banner (persistant contextuel).
 Ne jamais fabriquer un bloc de message custom. Importer `choose-ui/alert-banner` quand le cas correspond.
+
+L'icône n'est plus déduite du variant : elle se passe en premier enfant, et c'est à toi de
+prendre la bonne — `info` → `Info`, `success` → `CircleCheck`, `warning` → `TriangleAlert`,
+`destructive` → `CircleX`. Ne jamais mélanger l'icône d'un variant avec la couleur d'un autre.

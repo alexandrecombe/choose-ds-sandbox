@@ -1,8 +1,14 @@
-import { AlertBanner } from "@/components/choose-ui/alert-banner";
+import {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+} from "@/components/choose-ui/alert-banner";
+import { Info, CircleCheck, TriangleAlert, CircleX } from "lucide-react";
 
 const variants = [
   {
     variant: "info" as const,
+    icon: Info,
     title: "Accès restreint",
     description:
       "Vous consultez cette opération en lecture seule. Contactez un administrateur pour obtenir les droits d'édition.",
@@ -10,6 +16,7 @@ const variants = [
   },
   {
     variant: "success" as const,
+    icon: CircleCheck,
     title: "Facturation réglée",
     description:
       "Le paiement a été reçu et validé. Aucune action supplémentaire requise.",
@@ -18,6 +25,7 @@ const variants = [
   },
   {
     variant: "warning" as const,
+    icon: TriangleAlert,
     title: "Certificat bientôt expiré",
     description:
       "Le certificat de conformité expire dans 12 jours. Pensez à le renouveler.",
@@ -25,6 +33,7 @@ const variants = [
   },
   {
     variant: "destructive" as const,
+    icon: CircleX,
     title: "Synchronisation échouée",
     description:
       "Les données n'ont pas pu être mises à jour depuis 2 heures. Vérifiez la connexion au service distant.",
@@ -40,28 +49,16 @@ const props: {
 }[] = [
   {
     name: "variant",
-    type: '"info" | "success" | "warning" | "destructive"',
+    type: '"default" | "info" | "success" | "warning" | "destructive"',
     default: '"info"',
     description: "Style visuel selon la sémantique du message",
   },
   {
-    name: "title",
-    type: "string",
-    default: "—",
-    description: "Titre du banner, obligatoire (une ligne)",
-  },
-  {
-    name: "description",
-    type: "string",
-    default: "—",
-    description:
-      "Texte de support optionnel sous le titre, rendu avec une opacité atténuée",
-  },
-  {
-    name: "action",
+    name: "children",
     type: "ReactNode",
     default: "—",
-    description: "Action optionnelle affichée sous le texte (un seul élément)",
+    description:
+      "Icône Lucide, puis AlertTitle, AlertDescription et AlertAction",
   },
   {
     name: "className",
@@ -82,6 +79,25 @@ export default function AlertBannerPage() {
         Non éphémère.
       </p>
 
+      {/* ── Composition ──────────────────────────────────────────── */}
+      <section className="mt-12">
+        <h2 className="text-lg font-semibold text-foreground">Composition</h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Le composant s'assemble par enfants : l'icône Lucide du variant en
+          premier, puis le titre, le texte de support et l'action.
+        </p>
+        <pre className="mt-4 overflow-x-auto rounded-lg bg-muted p-4 font-mono text-xs text-foreground">
+{`<Alert variant="success">
+  <CircleCheck />
+  <AlertTitle>Facturation réglée</AlertTitle>
+  <AlertDescription>Le paiement a été confirmé.</AlertDescription>
+  <AlertAction>
+    <Button variant="secondary">Voir le reçu</Button>
+  </AlertAction>
+</Alert>`}
+        </pre>
+      </section>
+
       {/* ── Variants ─────────────────────────────────────────────── */}
       <section className="mt-12">
         <h2 className="text-lg font-semibold text-foreground">Variants</h2>
@@ -96,12 +112,15 @@ export default function AlertBannerPage() {
                 {v.descriptionShort}
               </p>
               <div className="mt-4 space-y-3">
-                <AlertBanner
-                  variant={v.variant}
-                  title={v.title}
-                  description={v.description}
-                />
-                <AlertBanner variant={v.variant} title={v.title} />
+                <Alert variant={v.variant}>
+                  <v.icon />
+                  <AlertTitle>{v.title}</AlertTitle>
+                  <AlertDescription>{v.description}</AlertDescription>
+                </Alert>
+                <Alert variant={v.variant}>
+                  <v.icon />
+                  <AlertTitle>{v.title}</AlertTitle>
+                </Alert>
               </div>
             </div>
           ))}

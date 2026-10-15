@@ -16,7 +16,7 @@ fichier s'il est déplacé, ce tableau sert à balayer toute la lib d'un coup.
 |---|---|---|---|---|
 | `badge/index.tsx` | reui | [`badge`](https://reui.io/docs/badge) (Base UI) | oui | 2026-09-15 |
 | `button/index.tsx` | shadcn/ui | [`button`](https://ui.shadcn.com/docs/components/base/button) | oui | 2026-07-30 |
-| `alert-banner/index.tsx` | à confirmer | à confirmer | oui | 2026-09-15 |
+| `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
 
 `badge` importe `@base-ui/react` (`mergeProps`, `useRender`), signature de reui — le badge
 shadcn repose sur `@radix-ui/react-slot`.
@@ -28,9 +28,30 @@ remanié : `default`, `outline` et `link` ont disparu au profit de `primary` ; r
 Une reprise upstream serait une réécriture, pas un remplacement. À ne pas confondre avec
 `components/ui/button.tsx`, qui est la copie shadcn restée conforme.
 
-`alert-banner` est du React sans cva ni radix ni base-ui, écrit à la main, et ne correspond à
-aucun composant upstream du même nom (shadcn et reui exposent `alert`). **Origine toujours à
-confirmer** — ne pas supposer de source upstream sur cette ligne.
+`alert-banner` est une surcouche mince sur `components/reui/alert.tsx` : il en reprend la
+structure et l'API compositionnelle (`Alert` / `AlertTitle` / `AlertDescription` /
+`AlertAction`) et ne remplace que les couleurs, via les tokens `--*-accent` passés en style
+inline. reui colore en opacité (`bg-success/4`) ; Choose a des teintes dédiées.
+
+Les `cssVars` du registry reui **n'ont pas été installées** : elles redéfinissaient `--success`,
+`--success-foreground`, `--warning`, `--warning-foreground` et `--destructive-foreground`, et
+ajoutaient `--info` et `--invert` en couleurs Tailwind génériques. Si tu réinstalles ce
+composant avec la CLI, pense à révoquer les modifications de `src/index.css`.
+
+Le variant `invert` de reui n'est pas exposé : il n'existe aucun token Choose correspondant.
+
+## Copie reui brute — `components/reui/`
+
+Socle technique de la surcouche Choose, à ne pas consommer directement dans un prototype.
+
+| Fichier | Origine | Composant d'origine | Restylé | Ajouté |
+|---|---|---|---|---|
+| `alert.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | non — adapté Tailwind v3 | 2026-10-15 |
+
+Une seule adaptation : la largeur de colonne de l'icône, écrite `calc(var(--spacing)*3)`, est un
+token **Tailwind v4**. Le projet tourne en Tailwind 3.4, où `var(--spacing)` n'existe pas — la
+colonne était calculée à ~353px et le titre se retrouvait centré. Remplacée par `1.25rem`.
+À vérifier en premier si d'autres composants reui sont repris : ils visent Tailwind v4.
 
 ## Copies shadcn brutes — `components/ui/`
 

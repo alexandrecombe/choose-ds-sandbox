@@ -1,7 +1,11 @@
 import { Badge } from "@/components/choose-ui/badge";
-import { AlertBanner } from "@/components/choose-ui/alert-banner";
+import {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+} from "@/components/choose-ui/alert-banner";
 import { Button } from "@/components/choose-ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, CircleCheck, TriangleAlert } from "lucide-react";
 
 interface OperationDetailProps {
   operation: {
@@ -34,20 +38,26 @@ export default function OperationDetail({ operation }: OperationDetailProps) {
 
       {/* Contenu */}
       <main className="flex-1 px-6 py-6">
-        <AlertBanner
-          variant="success"
-          title="Facturation réglée"
-          description="Le paiement de cette opération a été confirmé. Aucune action requise."
-        />
+        <Alert variant="success">
+          <CircleCheck />
+          <AlertTitle>Facturation réglée</AlertTitle>
+          <AlertDescription>
+            Le paiement de cette opération a été confirmé. Aucune action
+            requise.
+          </AlertDescription>
+        </Alert>
       </main>
 
       {/* Avertissement expiration */}
       <div className="px-6 pb-4">
-        <AlertBanner
-          variant="warning"
-          title="Expiration imminente"
-          description="Cette opération expire dans 3 jours. Pensez à la valider avant l'échéance."
-        />
+        <Alert variant="warning">
+          <TriangleAlert />
+          <AlertTitle>Expiration imminente</AlertTitle>
+          <AlertDescription>
+            Cette opération expire dans 3 jours. Pensez à la valider avant
+            l'échéance.
+          </AlertDescription>
+        </Alert>
       </div>
 
       {/* Zone d'actions */}
