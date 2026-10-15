@@ -5,6 +5,7 @@ const withAlpha = (v: string) =>
   `color-mix(in srgb, var(${v}) calc(<alpha-value> * 100%), transparent)`;
 
 export default {
+  darkMode: ["class"],
   content: [
     "./index.html",
     "./src/**/*.{ts,tsx}",
@@ -65,6 +66,31 @@ export default {
           accent: "var(--info-accent)",
           "accent-border": "var(--info-accent-border)",
           "accent-foreground": "var(--info-accent-foreground)",
+        },
+        progress: {
+          DEFAULT: "var(--progress)",
+          foreground: "var(--progress-foreground)",
+          accent: "var(--progress-accent)",
+          "accent-border": "var(--progress-accent-border)",
+          "accent-foreground": "var(--progress-accent-foreground)",
+        },
+        member: {
+          DEFAULT: "var(--member)",
+          foreground: "var(--member-foreground)",
+          accent: "var(--member-accent)",
+          "accent-border": "var(--member-accent-border)",
+          "accent-foreground": "var(--member-accent-foreground)",
+        },
+        // shadcn Sidebar — HSL variables, kept as-is (not themed with Choose tokens)
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
         },
       },
       borderRadius: {

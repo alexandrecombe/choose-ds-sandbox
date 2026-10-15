@@ -12,27 +12,32 @@ interface AlertBannerProps {
   className?: string;
 }
 
+/* Surface : seuls le fond et la bordure portent la couleur du variant. */
 const variantStyles: Record<AlertBannerVariant, CSSProperties> = {
   info: {
     backgroundColor: "var(--info-accent)",
     borderColor: "var(--info-accent-border)",
-    color: "var(--info-accent-foreground)",
   },
   success: {
     backgroundColor: "var(--success-accent)",
     borderColor: "var(--success-accent-border)",
-    color: "var(--success-accent-foreground)",
   },
   warning: {
     backgroundColor: "var(--warning-accent)",
     borderColor: "var(--warning-accent-border)",
-    color: "var(--warning-accent-foreground)",
   },
   destructive: {
     backgroundColor: "var(--destructive-accent)",
     borderColor: "var(--destructive-accent-border)",
-    color: "var(--destructive-accent-foreground)",
   },
+};
+
+/* L'icône est le seul élément de texte qui garde la couleur du variant. */
+const variantIconStyles: Record<AlertBannerVariant, CSSProperties> = {
+  info: { color: "var(--info-accent-foreground)" },
+  success: { color: "var(--success-accent-foreground)" },
+  warning: { color: "var(--warning-accent-foreground)" },
+  destructive: { color: "var(--destructive-accent-foreground)" },
 };
 
 const variantIcons: Record<AlertBannerVariant, typeof Info> = {
@@ -57,11 +62,14 @@ export function AlertBanner({
       className={cn("flex gap-3 rounded-lg border p-4 font-sans", className)}
       style={variantStyles[variant]}
     >
-      <Icon className="mt-0.5 size-5 shrink-0" />
+      <Icon
+        className="mt-0.5 size-5 shrink-0"
+        style={variantIconStyles[variant]}
+      />
       <div className="flex-1">
-        <p className="text-sm font-medium">{title}</p>
+        <p className="text-sm font-medium text-foreground">{title}</p>
         {description && (
-          <p className="mt-1 text-sm opacity-80">{description}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{description}</p>
         )}
         {action && <div className="mt-3">{action}</div>}
       </div>

@@ -167,6 +167,26 @@ export const COLOR_GROUPS: ColorGroup[] = [
     ],
   },
   {
+    label: "Progress",
+    tokenNames: [
+      "progress",
+      "progress-foreground",
+      "progress-accent",
+      "progress-accent-foreground",
+      "progress-accent-border",
+    ],
+  },
+  {
+    label: "Member",
+    tokenNames: [
+      "member",
+      "member-foreground",
+      "member-accent",
+      "member-accent-foreground",
+      "member-accent-border",
+    ],
+  },
+  {
     label: "Sidebar",
     tokenNames: [
       "sidebar",

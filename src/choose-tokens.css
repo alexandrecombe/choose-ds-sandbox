@@ -41,6 +41,20 @@
   --destructive-accent-border: #E79E9E;
   --destructive-accent-foreground: #C20C0C;
 
+  /* Progress */
+  --progress: #1E3888;
+  --progress-foreground: #FFFFFF;
+  --progress-accent: #E8EBF3;
+  --progress-accent-border: #A5AFCF;
+  --progress-accent-foreground: #152860;
+
+  /* Member */
+  --member: #D1AE9B;
+  --member-foreground: #8A4E44;
+  --member-accent: #FBF9F6;
+  --member-accent-border: #F8F1EC;
+  --member-accent-foreground: #8A4E44;
+
   /* Rayons (radius Choose) */
   --radius-sm: 6px;
   --radius-md: 8px;
@@ -51,4 +65,22 @@
   --font-sans: "Maison Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-display: "SangBleu Republic", Georgia, serif;
   --font-mono: "Geist Mono", monospace;
+}
+
+/* Tokens sémantiques Choose — mode Dark */
+
+.dark {
+  /* Progress */
+  --progress: #4B60A0;
+  --progress-foreground: #FFFFFF;
+  --progress-accent: #060C1D;
+  --progress-accent-border: #152860;
+  --progress-accent-foreground: #7888B8;
+
+  /* Member */
+  --member: #E1CABB;
+  --member-foreground: #301B1A;
+  --member-accent: #301B1A;
+  --member-accent-border: #5B3733;
+  --member-accent-foreground: #EDDDD3;
 }

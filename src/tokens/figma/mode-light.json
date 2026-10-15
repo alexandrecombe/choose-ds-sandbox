@@ -1282,6 +1282,146 @@
           "targetVariableSetName": "2. Theme"
         }
       }
+    },
+    "progress": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.11764705926179886,
+          0.21960784494876862,
+          0.5333333611488342
+        ],
+        "alpha": 1,
+        "hex": "#1E3888"
+      },
+      "$description": "Progress state — solid fill"
+    },
+    "progress-foreground": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "alpha": 1,
+        "hex": "#FFFFFF"
+      },
+      "$description": "Text/icon on progress solid fill"
+    },
+    "progress-accent": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9098039269447327,
+          0.9215686321258545,
+          0.9529411792755127
+        ],
+        "alpha": 1,
+        "hex": "#E8EBF3"
+      },
+      "$description": "Progress banner background"
+    },
+    "progress-accent-foreground": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.08235294371843338,
+          0.1568627506494522,
+          0.3764705955982208
+        ],
+        "alpha": 1,
+        "hex": "#152860"
+      },
+      "$description": "Text/icon on progress accent background"
+    },
+    "progress-accent-border": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6470588445663452,
+          0.686274528503418,
+          0.8117647171020508
+        ],
+        "alpha": 1,
+        "hex": "#A5AFCF"
+      },
+      "$description": "Progress banner border"
+    },
+    "member": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8196078538894653,
+          0.6823529601097107,
+          0.6078431606292725
+        ],
+        "alpha": 1,
+        "hex": "#D1AE9B"
+      },
+      "$description": "Member state — solid fill"
+    },
+    "member-foreground": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5411764979362488,
+          0.30588236451148987,
+          0.2666666805744171
+        ],
+        "alpha": 1,
+        "hex": "#8A4E44"
+      },
+      "$description": "Text/icon on member solid fill"
+    },
+    "member-accent": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9843137264251709,
+          0.9764705896377563,
+          0.9647058844566345
+        ],
+        "alpha": 1,
+        "hex": "#FBF9F6"
+      },
+      "$description": "Member banner background"
+    },
+    "member-accent-foreground": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5411764979362488,
+          0.30588236451148987,
+          0.2666666805744171
+        ],
+        "alpha": 1,
+        "hex": "#8A4E44"
+      },
+      "$description": "Text/icon on member accent background"
+    },
+    "member-accent-border": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9725490212440491,
+          0.9450980424880981,
+          0.9254902005195618
+        ],
+        "alpha": 1,
+        "hex": "#F8F1EC"
+      },
+      "$description": "Member banner border"
     }
   },
   "alpha": {

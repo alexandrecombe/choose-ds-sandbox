@@ -5,12 +5,14 @@
 @tailwind utilities;
 
 :root {
-  /* Info — pas encore dans les tokens Choose, conservé en attendant */
-  --info: #2563EB;
-  --info-foreground: #FFFFFF;
-  --info-accent: #EEF2FF;
-  --info-accent-border: #93C5FD;
-  --info-accent-foreground: #1D4ED8;
+  /* Info — information neutre, sans notion de réussite ni d'échec.
+     Le bleu est porté par le token `progress`, pas par `info`.
+     Aliasé sur les neutres Choose, aucune valeur propre. */
+  --info: var(--muted-foreground);
+  --info-foreground: var(--primary-foreground);
+  --info-accent: var(--muted);
+  --info-accent-border: var(--border);
+  --info-accent-foreground: var(--muted-foreground);
 }
 
 body {
@@ -19,4 +21,29 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+@layer base {
+  :root {
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
 }

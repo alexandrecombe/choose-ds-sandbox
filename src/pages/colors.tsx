@@ -60,13 +60,14 @@ function TokenRow({ name }: { name: string }) {
 
 export default function ColorsPage() {
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16">
+    <div className="max-w-4xl px-10 py-16">
       <h1 className="font-display text-3xl font-semibold tracking-tight text-foreground">
         Colors
       </h1>
       <p className="mt-2 text-base text-muted-foreground">
-        Semantic color tokens from the Choose Design System. Every color maps to
-        a role, not a raw palette value. Light and Dark modes shown side by side.
+        Tokens de couleurs sémantiques du Design System Choose. Chaque couleur
+        correspond à un rôle, jamais à une valeur brute de palette. Modes Light
+        et Dark affichés côte à côte.
       </p>
 
       {COLOR_GROUPS.map((group) => (
@@ -86,6 +87,7 @@ export default function ColorsPage() {
             <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
               Dark
             </span>
+
           </div>
 
           {group.tokenNames.map((name) => (

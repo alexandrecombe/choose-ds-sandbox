@@ -33,19 +33,19 @@ function fontWeightLabel(w: number): string {
 
 export default function TypographyPage() {
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16">
+    <div className="max-w-4xl px-10 py-16">
       <h1 className="font-display text-3xl font-semibold tracking-tight text-foreground">
         Typography
       </h1>
       <p className="mt-2 text-base text-muted-foreground">
-        Font families and type scale from the Choose Design System.
-        Headings use SangBleu Republic, body text uses Maison Neue.
+        Familles typographiques et échelle de tailles du Design System Choose.
+        Les titres utilisent SangBleu Republic, le texte courant Maison Neue.
       </p>
 
       {/* ── Font families ────────────────────────────────────────── */}
       <section className="mt-12">
         <h2 className="text-lg font-semibold text-foreground">
-          Font Families
+          Familles typographiques
         </h2>
         <div className="mt-6 space-y-8">
           {families.map((f) => (
@@ -77,11 +77,11 @@ export default function TypographyPage() {
       {/* ── Heading roles ────────────────────────────────────────── */}
       <section className="mt-16">
         <h2 className="text-lg font-semibold text-foreground">
-          Heading Roles
+          Rôles de titres
         </h2>
         <p className="mt-1 text-sm text-muted-foreground">
-          Composite tokens from the Custom/Desktop collection. Each role
-          combines font-family, size, weight, line-height and letter-spacing.
+          Tokens composites de la collection Custom/Desktop. Chaque rôle
+          combine font-family, taille, weight, line-height et letter-spacing.
         </p>
 
         <div className="mt-8 space-y-10">
@@ -122,23 +122,23 @@ export default function TypographyPage() {
       {/* ── Text scale ───────────────────────────────────────────── */}
       <section className="mt-16">
         <h2 className="text-lg font-semibold text-foreground">
-          Text Scale
+          Échelle de texte
         </h2>
         <p className="mt-1 text-sm text-muted-foreground">
-          Size ramp from the Theme collection. Body text uses Maison Neue
-          (font-sans) by default, weight 400.
+          Rampe de tailles issue de la collection Theme. Le texte courant
+          utilise Maison Neue (font-sans) par défaut, weight 400.
         </p>
 
         {/* Column headers */}
         <div className="mt-6 grid grid-cols-[80px_100px_1fr] items-center gap-4 border-b border-border pb-2">
           <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-            Size
+            Taille
           </span>
           <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-            Value
+            Valeur
           </span>
           <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-            Preview
+            Aperçu
           </span>
         </div>
 

@@ -1,47 +1,120 @@
 import { useState } from "react";
+import {
+  SidebarProvider,
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupLabel,
+  SidebarGroupContent,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+  SidebarHeader,
+  SidebarInset,
+} from "@/components/ui/sidebar";
 import ColorsPage from "./pages/colors";
 import TypographyPage from "./pages/typography";
 import IconsPage from "./pages/icons";
+import ButtonPage from "./pages/button";
+import BadgePage from "./pages/badge";
+import AlertBannerPage from "./pages/alert-banner";
 
-type Page = "colors" | "typography" | "icons";
+// ---------------------------------------------------------------------------
+// Navigation structure — add new pages here
+// ---------------------------------------------------------------------------
 
-const NAV_ITEMS: { key: Page; label: string }[] = [
-  { key: "colors", label: "Colors" },
-  { key: "typography", label: "Typography" },
-  { key: "icons", label: "Icons" },
+type Page =
+  | "colors"
+  | "typography"
+  | "icons"
+  | "button"
+  | "badge"
+  | "alert-banner";
+
+interface NavItem {
+  key: Page;
+  label: string;
+}
+
+interface NavSection {
+  title: string;
+  items: NavItem[];
+}
+
+const NAV_SECTIONS: NavSection[] = [
+  {
+    title: "Fondations",
+    items: [
+      { key: "colors", label: "Colors" },
+      { key: "typography", label: "Typography" },
+      { key: "icons", label: "Icons" },
+    ],
+  },
+  {
+    title: "Composants",
+    items: [
+      { key: "button", label: "Button" },
+      { key: "badge", label: "Badge" },
+      { key: "alert-banner", label: "Alert banner" },
+    ],
+  },
 ];
+
+// ---------------------------------------------------------------------------
+// Page map
+// ---------------------------------------------------------------------------
+
+const PAGES: Record<Page, React.FC> = {
+  colors: ColorsPage,
+  typography: TypographyPage,
+  icons: IconsPage,
+  button: ButtonPage,
+  badge: BadgePage,
+  "alert-banner": AlertBannerPage,
+};
+
+// ---------------------------------------------------------------------------
+// App
+// ---------------------------------------------------------------------------
 
 export default function App() {
   const [page, setPage] = useState<Page>("colors");
+  const ActivePage = PAGES[page];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <nav className="border-b border-border">
-        <div className="mx-auto flex max-w-4xl items-center gap-8 px-6 py-4">
+    <SidebarProvider>
+      <Sidebar collapsible="none" className="sticky top-0 h-svh">
+        <SidebarHeader className="px-4 py-4">
           <span className="font-display text-sm font-semibold tracking-tight">
             Choose DS
           </span>
-          <div className="flex gap-1">
-            {NAV_ITEMS.map((item) => (
-              <button
-                key={item.key}
-                onClick={() => setPage(item.key)}
-                className={`rounded-md px-3 py-1.5 text-sm transition-colors ${
-                  page === item.key
-                    ? "bg-accent font-medium text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </nav>
+        </SidebarHeader>
+        <SidebarContent>
+          {NAV_SECTIONS.map((section) => (
+            <SidebarGroup key={section.title}>
+              <SidebarGroupLabel>{section.title}</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {section.items.map((item) => (
+                    <SidebarMenuItem key={item.key}>
+                      <SidebarMenuButton
+                        isActive={page === item.key}
+                        onClick={() => setPage(item.key)}
+                      >
+                        {item.label}
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          ))}
+        </SidebarContent>
+      </Sidebar>
 
-      {page === "colors" && <ColorsPage />}
-      {page === "typography" && <TypographyPage />}
-      {page === "icons" && <IconsPage />}
-    </div>
+      <SidebarInset>
+        <ActivePage />
+      </SidebarInset>
+    </SidebarProvider>
   );
 }
