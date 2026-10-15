@@ -61,6 +61,11 @@
       "status": "stable"
     },
     {
+      "name": "filters",
+      "usage": "Barre de filtres composable, en chips à plat (basic) ou en arbre conditionnel (advanced). Pour un tri, utiliser un menu de tri ; pour 1-2 filtres fixes, un Select.",
+      "status": "stable"
+    },
+    {
       "name": "input",
       "usage": "Champ de saisie sur une ligne, dont l'état d'erreur se pilote par aria-invalid. Pour une erreur à l'échelle de l'écran, utiliser une Alert banner ; la validation d'un champ reste inline.",
       "status": "stable"

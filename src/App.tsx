@@ -34,6 +34,7 @@ import PaginationPage from "./pages/pagination";
 import ButtonGroupPage from "./pages/button-group";
 import AlertDialogPage from "./pages/alert-dialog";
 import AttachmentPage from "./pages/attachment";
+import FiltersPage from "./pages/filters";
 import SelectPage from "./pages/select";
 import SeparatorPage from "./pages/separator";
 import SkeletonPage from "./pages/skeleton";
@@ -59,6 +60,7 @@ const PAGES: Record<Page, React.FC> = {
   "button-group": ButtonGroupPage,
   "alert-dialog": AlertDialogPage,
   attachment: AttachmentPage,
+  filters: FiltersPage,
   select: SelectPage,
   separator: SeparatorPage,
   skeleton: SkeletonPage,

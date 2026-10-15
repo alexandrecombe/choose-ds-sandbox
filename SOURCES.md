@@ -64,6 +64,7 @@ ont été retirés.
 | `select/index.tsx` | shadcn/ui | [`select`](https://ui.shadcn.com/docs/components/base/select) (Base UI) | oui — typo seule | 2026-10-15 |
 | `separator/index.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/base/separator) (Base UI) | oui — typo seule | 2026-10-15 |
 | `skeleton/index.tsx` | shadcn/ui | [`skeleton`](https://ui.shadcn.com/docs/components/base/skeleton) (Base UI) | non | 2026-10-15 |
+| `filters/index.tsx` | reui | [`filters`](https://reui.io/components/filters) | oui — typo seule | 2026-10-15 |
 | `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
 
 `badge` importe `@base-ui/react` (`mergeProps`, `useRender`), signature de reui — le badge
@@ -95,6 +96,8 @@ Socle technique de la surcouche Choose, à ne pas consommer directement dans un 
 | Fichier | Origine | Composant d'origine | Restylé | Ajouté |
 |---|---|---|---|---|
 | `frame.tsx` | reui | [`frame`](https://reui.io/docs/components/base/frame) | non | 2026-10-15 |
+| `filters/*.tsx` | reui | [`filters`](https://reui.io/components/filters) | non | 2026-10-15 |
+| `cascader/*.tsx` | reui | [`filters`](https://reui.io/components/filters) (dépendance) | non | 2026-10-15 |
 | `alert.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | non — un écart assumé | 2026-10-15 |
 
 Un seul écart : la colonne de l'icône vaut `1.25rem` au lieu du `calc(var(--spacing)*3)` upstream
@@ -127,6 +130,10 @@ surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 | `input.tsx` | shadcn/ui | [`input`](https://ui.shadcn.com/docs/components/base/input) (Base UI) | non | 2026-10-15 |
 | `select.tsx` | shadcn/ui | [`select`](https://ui.shadcn.com/docs/components/base/select) (Base UI) | non | 2026-10-15 |
 | `separator.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/base/separator) (Base UI) | non | 2026-10-15 |
+| `popover.tsx` | shadcn/ui | [`popover`](https://ui.shadcn.com/docs/components/popover) | non | 2026-10-15 |
+| `dropdown-menu.tsx` | shadcn/ui | [`dropdown-menu`](https://ui.shadcn.com/docs/components/dropdown-menu) | non | 2026-10-15 |
+| `scroll-area.tsx` | shadcn/ui | [`scroll-area`](https://ui.shadcn.com/docs/components/scroll-area) | non | 2026-10-15 |
+| `spinner.tsx` | shadcn/ui | [`spinner`](https://ui.shadcn.com/docs/components/spinner) | non | 2026-10-15 |
 | `sheet.tsx` | shadcn/ui | [`sheet`](https://ui.shadcn.com/docs/components/sheet) | non | 2026-07-31 |
 | `sidebar.tsx` | shadcn/ui | [`sidebar`](https://ui.shadcn.com/docs/components/sidebar) | non | 2026-07-31 |
 | `skeleton.tsx` | shadcn/ui | [`skeleton`](https://ui.shadcn.com/docs/components/base/skeleton) (Base UI) | non | 2026-10-15 |

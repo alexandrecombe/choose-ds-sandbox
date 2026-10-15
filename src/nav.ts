@@ -18,6 +18,7 @@ export type Page =
   | "item"
   | "pagination"
   | "input"
+  | "filters"
   | "select"
   | "separator"
   | "skeleton";
@@ -54,6 +55,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "button", label: "Button" },
       { key: "button-group", label: "Button group" },
       { key: "card", label: "Card" },
+      { key: "filters", label: "Filters" },
       { key: "frame", label: "Frame" },
       { key: "input", label: "Input" },
       { key: "item", label: "Item" },

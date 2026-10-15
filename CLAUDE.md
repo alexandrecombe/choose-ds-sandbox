@@ -48,6 +48,7 @@ quand ne pas l'utiliser, quel variant pour quel cas.
 - `components/choose-ui/select/select.usage.md`
 - `components/choose-ui/separator/separator.usage.md`
 - `components/choose-ui/skeleton/skeleton.usage.md`
+- `components/choose-ui/filters/filters.usage.md`
 
 Cas de choix fréquent à ne pas rater : feedback utilisateur.
 - éphémère, confirme une micro-action → toast
