@@ -1,9 +1,9 @@
 /**
  * Source : reui — alert
  * https://reui.io/docs/components/base/alert
- * Adapté Tailwind v3 : la largeur de colonne de l'icône était écrite
- * `calc(var(--spacing)*3)`, un token Tailwind v4 absent ici — remplacée par
- * `1.25rem` (= size-5, la taille d'icône Choose). Sinon non restylé.
+ * Un écart assumé : la colonne de l'icône vaut `1.25rem` au lieu du
+ * `calc(var(--spacing)*3)` upstream (12px), parce que la surcouche Choose
+ * force des icônes de 20px là où reui en attend de 16px. Sinon non restylé.
  * La surcouche Choose est dans
  * components/choose-ui/alert-banner. Voir SOURCES.md.
  */
@@ -14,9 +14,9 @@ import { cn } from "@/lib/utils"
 const alertVariants = cva(
   [
     "relative w-full text-sm border has-[>svg]:grid-cols-[1.25rem_1fr] grid-cols-[0_1fr] grid gap-y-0.5 items-center [&>svg:not([class*=size-])]:size-4",
-    "has-[>[data-slot=alert-title]+[data-slot=alert-description]]:[&_[data-slot=alert-action]]:sm:row-end-3",
+    "sm:**:data-[slot=alert-action]:has-[>[data-slot=alert-title]+[data-slot=alert-description]]:row-end-3",
     "has-[>[data-slot=alert-title]+[data-slot=alert-description]]:items-start",
-    "has-[>[data-slot=alert-title]+[data-slot=alert-description]]:[&_svg]:translate-y-0.5",
+    "[&_svg]:has-[>[data-slot=alert-title]+[data-slot=alert-description]]:translate-y-0.5",
     "rounded-lg",
     "px-3",
     "py-2.5",

@@ -30,7 +30,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       ref={ref}
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium font-sans transition-colors",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50",
+        "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/50",
         "disabled:pointer-events-none disabled:opacity-50",
         variantStyles[variant],
         className,

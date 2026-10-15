@@ -47,11 +47,11 @@ const variantStyles: Record<AlertBannerVariant, CSSProperties> = {
 
 /* L'icône est le seul élément qui garde la couleur du variant. */
 const variantIconClasses: Record<AlertBannerVariant, string> = {
-  default: "[&>svg]:text-[color:var(--muted-foreground)]",
-  info: "[&>svg]:text-[color:var(--info-accent-foreground)]",
-  success: "[&>svg]:text-[color:var(--success-accent-foreground)]",
-  warning: "[&>svg]:text-[color:var(--warning-accent-foreground)]",
-  destructive: "[&>svg]:text-[color:var(--destructive-accent-foreground)]",
+  default: "[&>svg]:text-(--muted-foreground)",
+  info: "[&>svg]:text-(--info-accent-foreground)",
+  success: "[&>svg]:text-(--success-accent-foreground)",
+  warning: "[&>svg]:text-(--warning-accent-foreground)",
+  destructive: "[&>svg]:text-(--destructive-accent-foreground)",
 };
 
 interface AlertProps extends Omit<ComponentProps<typeof ReuiAlert>, "variant"> {

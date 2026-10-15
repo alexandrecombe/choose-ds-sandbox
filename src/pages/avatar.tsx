@@ -124,7 +124,7 @@ export default function AvatarPage() {
             <Avatar key={s.label} size={s.size}>
               <AvatarImage src={demoImage} alt="" />
               <AvatarFallback>AC</AvatarFallback>
-              <AvatarBadge className="bg-[color:var(--success)]" />
+              <AvatarBadge className="bg-(--success)" />
             </Avatar>
           ))}
         </div>

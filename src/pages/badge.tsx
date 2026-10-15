@@ -74,7 +74,7 @@ const props: {
 }[] = [
   {
     name: "variant",
-    type: '"default" | "secondary" | "outline" | "info" | "progress" | "success" | "warning" | "destructive" | "primary-light" | "primary-outline"',
+    type: '"default" | "secondary" | "outline-solid" | "info" | "progress" | "success" | "warning" | "destructive" | "primary-light" | "primary-outline"',
     default: '"default"',
     description: "Style visuel selon la sémantique du statut",
   },

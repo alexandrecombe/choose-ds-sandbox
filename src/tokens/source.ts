@@ -205,7 +205,7 @@ export const COLOR_GROUPS: ColorGroup[] = [
   },
   {
     label: "Form",
-    tokenNames: ["input", "ring", "ring-offset", "popover", "popover-foreground"],
+    tokenNames: ["input", "ring-3", "ring-offset", "popover", "popover-foreground"],
   },
 ];
 
