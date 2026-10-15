@@ -19,6 +19,7 @@ export type Page =
   | "pagination"
   | "input"
   | "checkbox"
+  | "combobox"
   | "filters"
   | "select"
   | "separator"
@@ -57,6 +58,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "button-group", label: "Button group" },
       { key: "card", label: "Card" },
       { key: "checkbox", label: "Checkbox" },
+      { key: "combobox", label: "Combobox" },
       { key: "filters", label: "Filters" },
       { key: "frame", label: "Frame" },
       { key: "input", label: "Input" },

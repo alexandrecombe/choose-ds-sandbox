@@ -63,6 +63,7 @@ ont été retirés.
 | `input/index.tsx` | shadcn/ui | [`input`](https://ui.shadcn.com/docs/components/base/input) (Base UI) | oui — typo seule | 2026-10-15 |
 | `select/index.tsx` | shadcn/ui | [`select`](https://ui.shadcn.com/docs/components/base/select) (Base UI) | oui — typo seule | 2026-10-15 |
 | `checkbox/index.tsx` | shadcn/ui | [`checkbox`](https://ui.shadcn.com/docs/components/base/checkbox) (Base UI) | non | 2026-10-15 |
+| `combobox/index.tsx` | shadcn/ui | [`combobox`](https://ui.shadcn.com/docs/components/base/combobox) (Base UI) | oui — typo seule | 2026-10-15 |
 | `separator/index.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/base/separator) (Base UI) | oui — typo seule | 2026-10-15 |
 | `skeleton/index.tsx` | shadcn/ui | [`skeleton`](https://ui.shadcn.com/docs/components/base/skeleton) (Base UI) | non | 2026-10-15 |
 | `filters/index.tsx` | reui | [`filters`](https://reui.io/components/filters) | oui — typo seule | 2026-10-15 |
@@ -131,6 +132,9 @@ surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 | `input.tsx` | shadcn/ui | [`input`](https://ui.shadcn.com/docs/components/base/input) (Base UI) | non | 2026-10-15 |
 | `select.tsx` | shadcn/ui | [`select`](https://ui.shadcn.com/docs/components/base/select) (Base UI) | non | 2026-10-15 |
 | `checkbox.tsx` | shadcn/ui | [`checkbox`](https://ui.shadcn.com/docs/components/base/checkbox) (Base UI) | non | 2026-10-15 |
+| `combobox.tsx` | shadcn/ui | [`combobox`](https://ui.shadcn.com/docs/components/base/combobox) (Base UI) | non | 2026-10-15 |
+| `input-group.tsx` | shadcn/ui | [`input-group`](https://ui.shadcn.com/docs/components/base/input-group) (Base UI) | non | 2026-10-15 |
+| `textarea.tsx` | shadcn/ui | [`textarea`](https://ui.shadcn.com/docs/components/base/textarea) (Base UI) | non | 2026-10-15 |
 | `separator.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/base/separator) (Base UI) | non | 2026-10-15 |
 | `popover.tsx` | shadcn/ui | [`popover`](https://ui.shadcn.com/docs/components/popover) | non | 2026-10-15 |
 | `dropdown-menu.tsx` | shadcn/ui | [`dropdown-menu`](https://ui.shadcn.com/docs/components/dropdown-menu) | non | 2026-10-15 |

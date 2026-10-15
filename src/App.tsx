@@ -35,6 +35,7 @@ import ButtonGroupPage from "./pages/button-group";
 import AlertDialogPage from "./pages/alert-dialog";
 import AttachmentPage from "./pages/attachment";
 import CheckboxPage from "./pages/checkbox";
+import ComboboxPage from "./pages/combobox";
 import FiltersPage from "./pages/filters";
 import SelectPage from "./pages/select";
 import SeparatorPage from "./pages/separator";
@@ -62,6 +63,7 @@ const PAGES: Record<Page, React.FC> = {
   "alert-dialog": AlertDialogPage,
   attachment: AttachmentPage,
   checkbox: CheckboxPage,
+  combobox: ComboboxPage,
   filters: FiltersPage,
   select: SelectPage,
   separator: SeparatorPage,
