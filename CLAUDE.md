@@ -51,6 +51,16 @@ Couleurs, espacements et typo passent par les tokens sémantiques du DS. Jamais 
 Tailwind brute (`bg-blue-500`) ni de hex en dur. Typo : `font-sans` (Maison Neue) par défaut.
 Icônes : Lucide exclusivement, jamais d'emoji comme marqueur visuel.
 
+## Deux modes
+
+Le site a un mode clair et un mode sombre, pilotés par la classe `.dark` sur `<html>`. Les
+tokens sémantiques ont une valeur dans chaque mode : s'appuyer dessus suffit, et c'est la
+raison d'être de la règle ci-dessus. Une couleur Tailwind brute ou un hex en dur ne suivra pas
+le mode sombre — c'est le symptôme le plus visible d'un token contourné.
+
+Ne pas écrire de variante `dark:` à la main sur un composant : si un token manque pour un rôle,
+le signaler dans `GAPS.md` plutôt que de coder la valeur sombre en dur.
+
 Ces règles ne sont pas optionnelles, mais rien ne les vérifie automatiquement : ce repo n'a
 ni CI, ni lint, ni hook. Le respect des tokens repose entièrement sur toi à la génération.
 

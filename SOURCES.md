@@ -27,6 +27,24 @@ Deux pièges rencontrés pendant la migration, utiles si la config CSS est retou
   choose-tokens.css en fournisse la valeur. `font-display` n'ayant pas d'équivalent par défaut,
   il est déclaré via `@utility`.
 
+## Tokens et modes
+
+`src/choose-tokens.css` est **généré depuis l'export Figma** (`src/tokens/figma/mode-*.json`),
+les deux modes à partir de la même source : 60 couleurs chacun. Y ajouter une valeur à la main
+la fera diverger de Figma au prochain export.
+
+Deux pièges rencontrés en le générant :
+
+- trois tokens sombres portent une **transparence** (`border` et `sidebar-border` à 10 %,
+  `input` à 15 %). Les réduire à leur hexadécimal donne des bordures blanches opaques : ils
+  sont rendus en `rgb(... / alpha)`.
+- la sidebar shadcn tournait sur ses propres variables HSL génériques, hors palette Choose.
+  L'export contient une palette `sidebar` complète : le thème pointe désormais dessus, et les
+  blocs HSL ont été supprimés.
+
+`popover` et `ring`, un temps aliasés faute de mieux, existent bien dans l'export : les alias
+ont été retirés.
+
 ## Lib Choose — `components/choose-ui/`
 
 | Fichier | Origine | Composant d'origine | Restylé | Ajouté |

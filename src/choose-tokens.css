@@ -1,18 +1,22 @@
 /* Tokens sémantiques Choose — mode Light
-   Généré depuis l'export Figma (collections Theme → Mode/Light → Choose Brand).
-   Valeurs réelles, pas de substitution. */
-
+   Couleurs générées depuis l'export Figma (src/tokens/figma/mode-light.json).
+   Rayons et typographies ne varient pas par mode : ils ne vivent qu'ici. */
 :root {
   /* Surfaces & texte */
   --background: #FFFFFF;
   --foreground: #0B1115;
   --card: #FFFFFF;
   --card-foreground: #0B1115;
+  --popover: #FFFFFF;
+  --popover-foreground: #0B1115;
   --muted: #F5F5F5;
   --muted-foreground: #737373;
-  --border: #E5E5E5;
   --accent: #F5F5F5;
   --accent-foreground: #0B1115;
+  --border: #E5E5E5;
+  --input: #E5E5E5;
+  --ring: #A3A3A3;
+  --ring-offset: #FFFFFF;
 
   /* Primary / Secondary (Button) */
   --primary: #0B1115;
@@ -20,20 +24,18 @@
   --secondary: #F5F5F5;
   --secondary-foreground: #0B1115;
 
-  /* Tertiary — présent dans l'export Figma et affiché par la page Colors,
-     mais absent de ce fichier jusqu'ici : les utilitaires Tailwind ne
-     pouvaient donc pas s'en servir. */
+  /* Tertiary */
   --tertiary: #13482B;
   --tertiary-foreground: #FFFFFF;
   --tertiary-accent: #EBF0EE;
   --tertiary-accent-foreground: #13482B;
 
-  /* Success (fond clair + bordure + texte/icône) */
+  /* Success */
   --success: #139B51;
   --success-foreground: #FFFFFF;
-  --success-accent: #E7F5EE;          /* fond du banner */
-  --success-accent-border: #A1D7B9;   /* bordure du banner */
-  --success-accent-foreground: #139B51; /* texte/icône sur fond clair */
+  --success-accent: #E7F5EE;
+  --success-accent-border: #A1D7B9;
+  --success-accent-foreground: #139B51;
 
   /* Warning */
   --warning: #D88100;
@@ -63,6 +65,23 @@
   --member-accent-border: #F8F1EC;
   --member-accent-foreground: #8A4E44;
 
+  /* Sidebar */
+  --sidebar: #FAFAFA;
+  --sidebar-foreground: #0B1115;
+  --sidebar-primary: #0B1115;
+  --sidebar-primary-foreground: #FAFAFA;
+  --sidebar-accent: #F5F5F5;
+  --sidebar-accent-foreground: #0B1115;
+  --sidebar-border: #E5E5E5;
+  --sidebar-ring: #A3A3A3;
+
+  /* Graphiques */
+  --chart-1: #EA580C;
+  --chart-2: #0D9488;
+  --chart-3: #164E63;
+  --chart-4: #FBBF24;
+  --chart-5: #F59E0B;
+
   /* Rayons (radius Choose) */
   --radius-sm: 6px;
   --radius-md: 8px;
@@ -75,14 +94,59 @@
   --font-mono: "Geist Mono", monospace;
 }
 
-/* Tokens sémantiques Choose — mode Dark */
-
+/* Tokens sémantiques Choose — mode Dark
+   Générés depuis src/tokens/figma/mode-dark.json. Les valeurs à transparence
+   (border, input, sidebar-border) sont rendues en rgb(... / alpha) : les
+   réduire à leur hexadécimal donnerait des bordures blanches opaques. */
 .dark {
+  /* Surfaces & texte */
+  --background: #0B1115;
+  --foreground: #FAFAFA;
+  --card: #1A1F23;
+  --card-foreground: #FAFAFA;
+  --popover: #262626;
+  --popover-foreground: #FAFAFA;
+  --muted: #262626;
+  --muted-foreground: #A3A3A3;
+  --accent: #404040;
+  --accent-foreground: #FAFAFA;
+  --border: rgb(255 255 255 / 0.10);
+  --input: rgb(255 255 255 / 0.15);
+  --ring: #737373;
+  --ring-offset: #0B1115;
+
+  /* Primary / Secondary (Button) */
+  --primary: #E5E5E5;
+  --primary-foreground: #0B1115;
+  --secondary: #262626;
+  --secondary-foreground: #FAFAFA;
+
   /* Tertiary */
   --tertiary: #668875;
   --tertiary-foreground: #0B1115;
   --tertiary-accent: #0E341F;
   --tertiary-accent-foreground: #DBE7E0;
+
+  /* Success */
+  --success: #42AF74;
+  --success-foreground: #FFFFFF;
+  --success-accent: #042011;
+  --success-accent-border: #0D6D39;
+  --success-accent-foreground: #71C397;
+
+  /* Warning */
+  --warning: #E09A33;
+  --warning-foreground: #0B1115;
+  --warning-accent: #3D2500;
+  --warning-accent-border: #A36200;
+  --warning-accent-foreground: #E8B366;
+
+  /* Destructive / erreur */
+  --destructive: #CE3D3D;
+  --destructive-foreground: #FFFFFF;
+  --destructive-accent: #4D0505;
+  --destructive-accent-border: #860808;
+  --destructive-accent-foreground: #DA6D6D;
 
   /* Progress */
   --progress: #4B60A0;
@@ -97,4 +161,21 @@
   --member-accent: #301B1A;
   --member-accent-border: #5B3733;
   --member-accent-foreground: #EDDDD3;
+
+  /* Sidebar */
+  --sidebar: #1A1F23;
+  --sidebar-foreground: #FAFAFA;
+  --sidebar-primary: #1D4ED8;
+  --sidebar-primary-foreground: #FAFAFA;
+  --sidebar-accent: #262626;
+  --sidebar-accent-foreground: #FAFAFA;
+  --sidebar-border: rgb(255 255 255 / 0.10);
+  --sidebar-ring: #525252;
+
+  /* Graphiques */
+  --chart-1: #1D4ED8;
+  --chart-2: #10B981;
+  --chart-3: #F59E0B;
+  --chart-4: #A855F7;
+  --chart-5: #F43F5E;
 }

@@ -10,11 +10,14 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarHeader,
+  SidebarFooter,
   SidebarInset,
 } from "@/components/ui/sidebar";
 import { NAV_SECTIONS, type Page } from "./nav";
 import { NavContext } from "./doc/nav-context";
 import { ChooseLogo } from "./choose-logo";
+import { ThemeProvider } from "./theme";
+import { ThemeToggle } from "./theme-toggle";
 import ColorsPage from "./pages/colors";
 import TypographyPage from "./pages/typography";
 import IconsPage from "./pages/icons";
@@ -58,39 +61,44 @@ export default function App() {
   const ActivePage = PAGES[page];
 
   return (
-    <NavContext.Provider value={{ page, setPage }}>
-      <SidebarProvider>
-        <Sidebar collapsible="none" className="sticky top-0 h-svh">
-          <SidebarHeader className="px-4 py-4">
-            <ChooseLogo className="h-5 w-auto self-start text-foreground" />
-          </SidebarHeader>
-          <SidebarContent>
-            {NAV_SECTIONS.map((section) => (
-              <SidebarGroup key={section.title}>
-                <SidebarGroupLabel>{section.title}</SidebarGroupLabel>
-                <SidebarGroupContent>
-                  <SidebarMenu>
-                    {section.items.map((item) => (
-                      <SidebarMenuItem key={item.key}>
-                        <SidebarMenuButton
-                          isActive={page === item.key}
-                          onClick={() => setPage(item.key)}
-                        >
-                          {item.label}
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
-                  </SidebarMenu>
-                </SidebarGroupContent>
-              </SidebarGroup>
-            ))}
-          </SidebarContent>
-        </Sidebar>
+    <ThemeProvider>
+      <NavContext.Provider value={{ page, setPage }}>
+        <SidebarProvider>
+          <Sidebar collapsible="none" className="sticky top-0 h-svh">
+            <SidebarHeader className="px-4 py-4">
+              <ChooseLogo className="h-5 w-auto self-start text-foreground" />
+            </SidebarHeader>
+            <SidebarContent>
+              {NAV_SECTIONS.map((section) => (
+                <SidebarGroup key={section.title}>
+                  <SidebarGroupLabel>{section.title}</SidebarGroupLabel>
+                  <SidebarGroupContent>
+                    <SidebarMenu>
+                      {section.items.map((item) => (
+                        <SidebarMenuItem key={item.key}>
+                          <SidebarMenuButton
+                            isActive={page === item.key}
+                            onClick={() => setPage(item.key)}
+                          >
+                            {item.label}
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      ))}
+                    </SidebarMenu>
+                  </SidebarGroupContent>
+                </SidebarGroup>
+              ))}
+            </SidebarContent>
+            <SidebarFooter className="px-4 py-4">
+              <ThemeToggle />
+            </SidebarFooter>
+          </Sidebar>
 
-        <SidebarInset>
-          <ActivePage />
-        </SidebarInset>
-      </SidebarProvider>
-    </NavContext.Provider>
+          <SidebarInset>
+            <ActivePage />
+          </SidebarInset>
+        </SidebarProvider>
+      </NavContext.Provider>
+    </ThemeProvider>
   );
 }
