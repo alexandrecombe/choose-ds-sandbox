@@ -44,6 +44,11 @@
       "name": "attachment",
       "usage": "Fichier joint et état de son transfert. Ne téléverse rien : l'état doit être piloté par le code de transfert. Pour une zone de dépôt, ce n'est pas ce composant.",
       "status": "stable"
+    },
+    {
+      "name": "frame",
+      "usage": "Cadre regroupant des panneaux apparentés — réglages, état de services, liste d'enregistrements. Pour un objet métier identifiable, utiliser Card ; pour des sections qui se déplient, un accordéon.",
+      "status": "stable"
     }
   ]
 }

@@ -39,6 +39,7 @@ Deux pièges rencontrés pendant la migration, utiles si la config CSS est retou
 | `button-group/index.tsx` | shadcn/ui | [`button-group`](https://ui.shadcn.com/docs/components/base/button-group) (Base UI) | oui — typo seule | 2026-10-15 |
 | `alert-dialog/index.tsx` | shadcn/ui | [`alert-dialog`](https://ui.shadcn.com/docs/components/base/alert-dialog) (Base UI) | oui — typo seule | 2026-10-15 |
 | `attachment/index.tsx` | shadcn/ui | [`attachment`](https://ui.shadcn.com/docs/components/base/attachment) (Base UI) | oui — typo seule | 2026-10-15 |
+| `frame/index.tsx` | reui | [`frame`](https://reui.io/docs/components/base/frame) | oui — typo seule | 2026-10-15 |
 | `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
 
 `badge` importe `@base-ui/react` (`mergeProps`, `useRender`), signature de reui — le badge
@@ -69,11 +70,17 @@ Socle technique de la surcouche Choose, à ne pas consommer directement dans un 
 
 | Fichier | Origine | Composant d'origine | Restylé | Ajouté |
 |---|---|---|---|---|
+| `frame.tsx` | reui | [`frame`](https://reui.io/docs/components/base/frame) | non | 2026-10-15 |
 | `alert.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | non — un écart assumé | 2026-10-15 |
 
 Un seul écart : la colonne de l'icône vaut `1.25rem` au lieu du `calc(var(--spacing)*3)` upstream
 (12px). La surcouche Choose force des icônes de 20px là où reui en attend de 16px ; au format
 upstream, l'icône déborderait de sa colonne. À revoir si la taille d'icône Choose change.
+
+`frame` est en revanche bien distribué par le registry reui et n'embarque aucune `cssVars` :
+le fichier a été écrit depuis `reui.io/r/new-york/frame.json` sans passer par la CLI, pour
+éviter le paquet npm parasite `cn` qu'elle avait installé avec `alert`. Son rayon retombe sur
+`--radius-xl`, donc il suit le rayon Choose sans réglage.
 
 ## Copies shadcn brutes — `components/ui/`
 

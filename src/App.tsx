@@ -24,6 +24,7 @@ import AlertBannerPage from "./pages/alert-banner";
 import AvatarPage from "./pages/avatar";
 import BreadcrumbDocPage from "./pages/breadcrumb";
 import CardPage from "./pages/card";
+import FramePage from "./pages/frame";
 import ButtonGroupPage from "./pages/button-group";
 import AlertDialogPage from "./pages/alert-dialog";
 import AttachmentPage from "./pages/attachment";
@@ -42,6 +43,7 @@ const PAGES: Record<Page, React.FC> = {
   avatar: AvatarPage,
   breadcrumb: BreadcrumbDocPage,
   card: CardPage,
+  frame: FramePage,
   "button-group": ButtonGroupPage,
   "alert-dialog": AlertDialogPage,
   attachment: AttachmentPage,
