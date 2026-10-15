@@ -16,6 +16,7 @@ fichier s'il est déplacé, ce tableau sert à balayer toute la lib d'un coup.
 |---|---|---|---|---|
 | `badge/index.tsx` | reui | [`badge`](https://reui.io/docs/badge) (Base UI) | oui | 2026-09-15 |
 | `button/index.tsx` | shadcn/ui | [`button`](https://ui.shadcn.com/docs/components/base/button) | oui | 2026-07-30 |
+| `avatar/index.tsx` | shadcn/ui | [`avatar`](https://ui.shadcn.com/docs/components/base/avatar) (Base UI) | oui — typo seule | 2026-10-15 |
 | `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
 
 `badge` importe `@base-ui/react` (`mergeProps`, `useRender`), signature de reui — le badge
@@ -55,11 +56,13 @@ colonne était calculée à ~353px et le titre se retrouvait centré. Remplacée
 
 ## Copies shadcn brutes — `components/ui/`
 
-Hors lib Choose : tirées pour faire tourner la sandbox elle-même (la sidebar de navigation),
-pas pour être consommées dans un prototype. Style `new-york`, non restylées.
+Hors lib Choose, à ne pas consommer directement dans un prototype. Deux rôles : la plupart
+font tourner la sandbox elle-même (la sidebar de navigation) ; `avatar.tsx` sert de socle à la
+surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 
 | Fichier | Origine | Composant d'origine | Restylé | Ajouté |
 |---|---|---|---|---|
+| `avatar.tsx` | shadcn/ui | [`avatar`](https://ui.shadcn.com/docs/components/base/avatar) (Base UI) | non — adapté Tailwind v3 | 2026-10-15 |
 | `button.tsx` | shadcn/ui | [`button`](https://ui.shadcn.com/docs/components/button) | non | 2026-07-31 |
 | `input.tsx` | shadcn/ui | [`input`](https://ui.shadcn.com/docs/components/input) | non | 2026-07-31 |
 | `separator.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/separator) | non | 2026-07-31 |
@@ -71,6 +74,15 @@ pas pour être consommées dans un prototype. Style `new-york`, non restylées.
 
 `components/ui/button.tsx` (shadcn, radix + cva) et `choose-ui/button/index.tsx` sont deux
 composants distincts qui coexistent. Seul le second est la lib Choose.
+
+`avatar.tsx` n'est pas distribué par le registry : `npx shadcn add avatar` sert la version
+**radix**, pas la variante Base UI. Les endpoints `/r/styles/new-york/avatar.json` et
+`/r/styles/new-york-v4/avatar.json` renvoient tous deux du radix, et aucun endpoint `base`
+n'existe. Le code a donc été repris depuis la page de doc.
+
+Deux adaptations Tailwind v3 : `*:data-[slot=avatar]:ring-2` et `group-has-data-[size=…]` sont
+des variantes **v4**, réécrites en `[&>[data-slot=avatar]]:…` et `group-has-[[data-size=…]]:…`.
+Vérifié à l'écran : tailles 24/32/40px, compteur de groupe aligné sur la taille, anneau de 2px.
 
 ## Ajouter une source
 

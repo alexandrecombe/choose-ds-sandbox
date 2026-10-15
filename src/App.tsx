@@ -18,6 +18,7 @@ import IconsPage from "./pages/icons";
 import ButtonPage from "./pages/button";
 import BadgePage from "./pages/badge";
 import AlertBannerPage from "./pages/alert-banner";
+import AvatarPage from "./pages/avatar";
 
 // ---------------------------------------------------------------------------
 // Navigation structure — add new pages here
@@ -29,7 +30,8 @@ type Page =
   | "icons"
   | "button"
   | "badge"
-  | "alert-banner";
+  | "alert-banner"
+  | "avatar";
 
 interface NavItem {
   key: Page;
@@ -56,6 +58,7 @@ const NAV_SECTIONS: NavSection[] = [
       { key: "button", label: "Button" },
       { key: "badge", label: "Badge" },
       { key: "alert-banner", label: "Alert banner" },
+      { key: "avatar", label: "Avatar" },
     ],
   },
 ];
@@ -71,6 +74,7 @@ const PAGES: Record<Page, React.FC> = {
   button: ButtonPage,
   badge: BadgePage,
   "alert-banner": AlertBannerPage,
+  avatar: AvatarPage,
 };
 
 // ---------------------------------------------------------------------------

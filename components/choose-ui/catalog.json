@@ -14,6 +14,11 @@
       "name": "alert-banner",
       "usage": "Message système persistant, posé dans le flux de la page et toujours visible au retour sur l'écran. S'assemble par composition (Alert / AlertTitle / AlertDescription / AlertAction). Pour un retour éphémère, utiliser un toast ; pour une erreur de validation, le message inline du champ.",
       "status": "stable"
+    },
+    {
+      "name": "avatar",
+      "usage": "Représente une personne ou un compte, avec un fallback d'initiales obligatoire. Pour un logo de marque, utiliser une image ; pour un statut lisible, un Badge à côté du nom.",
+      "status": "stable"
     }
   ]
 }

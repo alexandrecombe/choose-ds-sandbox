@@ -16,6 +16,7 @@ S'il existe, l'importer et l'utiliser. Ne jamais fabriquer :
 - un `<button>` stylé à la main → utiliser `choose-ui/button`
 - une étiquette de statut custom (`<span>` coloré) → utiliser `choose-ui/badge`
 - un bloc de message custom → utiliser `choose-ui/alert-banner`
+- un rond d'initiales fait main → utiliser `choose-ui/avatar`
 
 Si un besoin n'est couvert par aucun composant ni aucun variant existant, le signaler
 explicitement dans la réponse au lieu de créer une variante locale.
@@ -29,6 +30,7 @@ quand ne pas l'utiliser, quel variant pour quel cas.
 - `components/choose-ui/button/button.usage.md`
 - `components/choose-ui/badge/badge.usage.md`
 - `components/choose-ui/alert-banner/alert-banner.usage.md`
+- `components/choose-ui/avatar/avatar.usage.md`
 
 Cas de choix fréquent à ne pas rater : feedback utilisateur.
 - éphémère, confirme une micro-action → toast
