@@ -31,12 +31,28 @@ le corps, et les exemples publiés de reui les montrent bien autour du panneau.
 
 Le panneau porte déjà son propre rembourrage : ne pas lui ajouter de `p-*`.
 
-## Options du cadre
+## Périmètre Choose
 
-- `stacked` — supprime les marges entre panneaux et leur fait partager leurs bordures.
-- `variant="ghost"` — retire le contour extérieur, les panneaux portent seuls la bordure.
-- `dense` — supprime le rembourrage du cadre : les panneaux viennent au contact du bord.
-- `spacing` — `sm` | `default` | `lg`.
+Trois dispositions sont retenues, et elles seules :
+
+- **panneaux séparés** — disposition par défaut, chaque panneau garde sa bordure arrondie ;
+- **panneaux empilés** — `stacked`, les panneaux fusionnent en une colonne à bordure partagée ;
+- **panneau repliable** — la barre de titre déplie son panneau, via `Collapsible`.
+
+Réglages disponibles :
+
+- `spacing` — `xs` | `sm` | `default` | `lg`.
+- rayon — via `--frame-radius`, sur les rayons Choose : `--radius-sm` (6px), `--radius-md`
+  (8px), `--radius-lg` (10px), ou `--radius-xl` (14px) par défaut.
+
+**Ce qui n'est pas exposé.** Les variantes `ghost` et `inverse` et l'option `dense` de reui
+sont retirées du type de la surcouche : le cadre garde toujours son contour et son rembourrage.
+Un panneau sans barre de titre n'est pas retenu non plus — le cadre doit annoncer ce qu'il
+regroupe. Ces options existent dans `components/reui/frame.tsx` ; les rouvrir est une décision
+de DA, pas un contournement à faire au cas par cas.
+
+reui propose aussi un rayon `2xl` : il n'a pas d'équivalent dans la palette Choose, qui
+s'arrête à `xl`. Il faudrait un nouveau token pour l'utiliser.
 
 ## Frontière avec Card
 
@@ -48,7 +64,8 @@ conteneur dit. Si le contenu n'est pas une liste ni une surface de réglages, pr
 
 ## Quand ne pas l'utiliser
 
-- Pour des sections qui se plient et se déplient → un accordéon ; le cadre ne gère aucun état.
+- Pour **plusieurs** sections qui se déplient indépendamment → un accordéon. Le repliable du
+  Frame vaut pour une section isolée, et chaque section ajoutée demande son propre `Collapsible`.
 - Pour une grille de chiffres clés → des Card `size="sm"`.
 - Pour un message adressé à l'utilisateur → une Alert banner.
 

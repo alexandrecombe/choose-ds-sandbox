@@ -97,6 +97,7 @@ surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 | `button-group.tsx` | shadcn/ui | [`button-group`](https://ui.shadcn.com/docs/components/base/button-group) (Base UI) | non | 2026-10-15 |
 | `alert-dialog.tsx` | shadcn/ui | [`alert-dialog`](https://ui.shadcn.com/docs/components/base/alert-dialog) (Base UI) | non | 2026-10-15 |
 | `attachment.tsx` | shadcn/ui | [`attachment`](https://ui.shadcn.com/docs/components/base/attachment) (Base UI) | non | 2026-10-15 |
+| `collapsible.tsx` | écrit à la main | — (sur `@base-ui/react/collapsible`) | — | 2026-10-15 |
 | `input.tsx` | shadcn/ui | [`input`](https://ui.shadcn.com/docs/components/input) | non | 2026-07-31 |
 | `separator.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/separator) | non | 2026-07-31 |
 | `sheet.tsx` | shadcn/ui | [`sheet`](https://ui.shadcn.com/docs/components/sheet) | non | 2026-07-31 |
@@ -134,6 +135,17 @@ Deux manques rencontrés en reprenant ces composants :
 - les rôles `popover` et `ring` n'existent pas dans la palette Choose, alors qu'`alert-dialog`
   et `attachment` s'appuient dessus. Aliasés provisoirement sur `--card` et `--accent` dans
   `src/index.css` ; à arbitrer côté DA, c'est noté dans `GAPS.md`.
+
+`collapsible.tsx` est le seul fichier de ce dossier qui ne vient pas d'upstream : shadcn ne
+publie pas de variante Base UI pour ce composant (son registry sert un ré-export radix de 11
+lignes). Comme toute la famille installée est en Base UI, il a été écrit à la main par-dessus
+`@base-ui/react/collapsible`, en reprenant la nomenclature shadcn. Il existe pour les panneaux
+repliables du Frame. Rien ne le mettra à jour, et il n'a pas de surcouche Choose : s'il devient
+un composant à part entière de la lib, il lui en faudra une.
+
+À savoir si on s'en sert ailleurs : le déclencheur n'expose que `aria-expanded`, pas de
+`data-panel-open` — c'est sur cet attribut qu'il faut accrocher un état visuel. Et Base UI
+démonte le contenu replié, il n'est pas seulement masqué.
 
 ## Ajouter une source
 
