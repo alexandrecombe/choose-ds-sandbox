@@ -1,3 +1,8 @@
+/**
+ * Source : shadcn/ui — sheet
+ * https://ui.shadcn.com/docs/components/sheet
+ * Copie conforme, non restylée. Voir SOURCES.md.
+ */
 "use client"
 
 import * as React from "react"

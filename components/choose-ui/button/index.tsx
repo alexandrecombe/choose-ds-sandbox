@@ -1,3 +1,8 @@
+/**
+ * Base : shadcn/ui — button
+ * https://ui.shadcn.com/docs/components/base/button
+ * Restylé Choose, a fortement divergé (plus de cva ni de radix). Voir SOURCES.md.
+ */
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 

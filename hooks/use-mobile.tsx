@@ -1,3 +1,8 @@
+/**
+ * Source : shadcn/ui — livré avec sidebar, pas de page de doc propre
+ * https://ui.shadcn.com/docs/components/sidebar
+ * Copie conforme, non restylée. Voir SOURCES.md.
+ */
 import * as React from "react"
 
 const MOBILE_BREAKPOINT = 768

@@ -1,3 +1,8 @@
+/**
+ * Source : shadcn/ui — separator
+ * https://ui.shadcn.com/docs/components/separator
+ * Copie conforme, non restylée. Voir SOURCES.md.
+ */
 import * as React from "react"
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
 

@@ -1,3 +1,8 @@
+/**
+ * Source : shadcn/ui — skeleton
+ * https://ui.shadcn.com/docs/components/skeleton
+ * Copie conforme, non restylée. Voir SOURCES.md.
+ */
 import { cn } from "@/lib/utils"
 
 function Skeleton({

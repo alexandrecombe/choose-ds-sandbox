@@ -1,3 +1,7 @@
+/**
+ * Base : origine à confirmer — ne correspond à aucun composant upstream du même nom.
+ * Voir SOURCES.md.
+ */
 import { type CSSProperties, type ReactNode } from "react";
 import { Info, CircleCheck, TriangleAlert, CircleX } from "lucide-react";
 import { cn } from "@/lib/utils";

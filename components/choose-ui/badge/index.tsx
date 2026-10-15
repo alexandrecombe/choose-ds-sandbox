@@ -1,3 +1,8 @@
+/**
+ * Base : reui — badge (Base UI)
+ * https://reui.io/docs/badge
+ * Restylé Choose. Voir SOURCES.md.
+ */
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import { cva, type VariantProps } from "class-variance-authority";

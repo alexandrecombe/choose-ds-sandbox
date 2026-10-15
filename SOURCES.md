@@ -7,12 +7,15 @@ tard, si une version upstream vaut d'être reprise.
 Colonne « restylé » : `oui` = divergé des tokens Choose, une reprise upstream demande une
 refonte manuelle. `non` = copie conforme, une reprise upstream est un simple remplacement.
 
+Chaque fichier copié porte le même lien dans un commentaire d'en-tête : la trace reste avec le
+fichier s'il est déplacé, ce tableau sert à balayer toute la lib d'un coup.
+
 ## Lib Choose — `components/choose-ui/`
 
 | Fichier | Origine | Composant d'origine | Restylé | Ajouté |
 |---|---|---|---|---|
-| `badge/index.tsx` | reui | `badge` (base-ui) | oui | 2026-09-15 |
-| `button/index.tsx` | shadcn/ui | `button` | oui | 2026-07-30 |
+| `badge/index.tsx` | reui | [`badge`](https://reui.io/docs/badge) (Base UI) | oui | 2026-09-15 |
+| `button/index.tsx` | shadcn/ui | [`button`](https://ui.shadcn.com/docs/components/base/button) | oui | 2026-07-30 |
 | `alert-banner/index.tsx` | à confirmer | à confirmer | oui | 2026-09-15 |
 
 `badge` importe `@base-ui/react` (`mergeProps`, `useRender`), signature de reui — le badge
@@ -36,14 +39,14 @@ pas pour être consommées dans un prototype. Style `new-york`, non restylées.
 
 | Fichier | Origine | Composant d'origine | Restylé | Ajouté |
 |---|---|---|---|---|
-| `button.tsx` | shadcn/ui | `button` | non | 2026-07-31 |
-| `input.tsx` | shadcn/ui | `input` | non | 2026-07-31 |
-| `separator.tsx` | shadcn/ui | `separator` | non | 2026-07-31 |
-| `sheet.tsx` | shadcn/ui | `sheet` | non | 2026-07-31 |
-| `sidebar.tsx` | shadcn/ui | `sidebar` | non | 2026-07-31 |
-| `skeleton.tsx` | shadcn/ui | `skeleton` | non | 2026-07-31 |
-| `tooltip.tsx` | shadcn/ui | `tooltip` | non | 2026-07-31 |
-| `../hooks/use-mobile.tsx` | shadcn/ui | `use-mobile` (livré avec `sidebar`) | non | 2026-07-31 |
+| `button.tsx` | shadcn/ui | [`button`](https://ui.shadcn.com/docs/components/button) | non | 2026-07-31 |
+| `input.tsx` | shadcn/ui | [`input`](https://ui.shadcn.com/docs/components/input) | non | 2026-07-31 |
+| `separator.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/separator) | non | 2026-07-31 |
+| `sheet.tsx` | shadcn/ui | [`sheet`](https://ui.shadcn.com/docs/components/sheet) | non | 2026-07-31 |
+| `sidebar.tsx` | shadcn/ui | [`sidebar`](https://ui.shadcn.com/docs/components/sidebar) | non | 2026-07-31 |
+| `skeleton.tsx` | shadcn/ui | [`skeleton`](https://ui.shadcn.com/docs/components/skeleton) | non | 2026-07-31 |
+| `tooltip.tsx` | shadcn/ui | [`tooltip`](https://ui.shadcn.com/docs/components/tooltip) | non | 2026-07-31 |
+| `../hooks/use-mobile.tsx` | shadcn/ui | `use-mobile` — pas de page propre, [livré avec `sidebar`](https://ui.shadcn.com/docs/components/sidebar) | non | 2026-07-31 |
 
 `components/ui/button.tsx` (shadcn, radix + cva) et `choose-ui/button/index.tsx` sont deux
 composants distincts qui coexistent. Seul le second est la lib Choose.
