@@ -28,6 +28,23 @@ Construit sur l'`attachment` de shadcn/ui (variante Base UI).
 
 `AttachmentGroup` aligne plusieurs fichiers. `size` vaut `default`, `sm` ou `xs`.
 
+## Largeur : écart assumé avec upstream
+
+Upstream modélise une pièce jointe comme un **chip de barre de composition** : `w-fit`,
+dimensionné sur son contenu, dans un `AttachmentGroup` qui défile horizontalement. C'est le cas
+d'usage chat.
+
+L'usage Choose est une **file de fichiers en colonne**, où des largeurs inégales donnent une
+liste déchiquetée. La surcouche passe donc l'orientation horizontale en **pleine largeur**.
+
+Dans un `AttachmentGroup`, le `w-fit` est rendu aux enfants : la barre de composition reste
+disponible telle qu'upstream la conçoit.
+
+- une file de fichiers, un champ d'envoi → `<Attachment>` seul, pleine largeur ;
+- des chips côte à côte qui défilent → les mettre dans un `<AttachmentGroup>`.
+
+L'orientation verticale garde sa largeur fixe : l'écart ne vise que l'horizontale.
+
 ## États
 
 `idle` · `uploading` · `processing` · `error` · `done`.

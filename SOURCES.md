@@ -56,7 +56,7 @@ ont été retirés.
 | `card/index.tsx` | shadcn/ui | [`card`](https://ui.shadcn.com/docs/components/base/card) (Base UI) | oui — typo seule | 2026-10-15 |
 | `button-group/index.tsx` | shadcn/ui | [`button-group`](https://ui.shadcn.com/docs/components/base/button-group) (Base UI) | oui — typo seule | 2026-10-15 |
 | `alert-dialog/index.tsx` | shadcn/ui | [`alert-dialog`](https://ui.shadcn.com/docs/components/base/alert-dialog) (Base UI) | oui — typo seule | 2026-10-15 |
-| `attachment/index.tsx` | shadcn/ui | [`attachment`](https://ui.shadcn.com/docs/components/base/attachment) (Base UI) | oui — typo seule | 2026-10-15 |
+| `attachment/index.tsx` | shadcn/ui | [`attachment`](https://ui.shadcn.com/docs/components/base/attachment) (Base UI) | oui — typo + largeur | 2026-10-15 |
 | `frame/index.tsx` | reui | [`frame`](https://reui.io/docs/components/base/frame) | oui — typo seule | 2026-10-15 |
 | `item/index.tsx` | shadcn/ui | [`item`](https://ui.shadcn.com/docs/components/base/item) (Base UI) | oui — typo seule | 2026-10-15 |
 | `pagination/index.tsx` | shadcn/ui | [`pagination`](https://ui.shadcn.com/docs/components/base/pagination) (Base UI) | oui — typo seule | 2026-10-15 |
