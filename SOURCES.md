@@ -12,16 +12,22 @@ refonte manuelle. `non` = copie conforme, une reprise upstream est un simple rem
 | Fichier | Origine | Composant d'origine | Restylé | Ajouté |
 |---|---|---|---|---|
 | `badge/index.tsx` | reui | `badge` (base-ui) | oui | 2026-09-15 |
-| `button/index.tsx` | à confirmer | à confirmer | oui | 2026-07-30 |
+| `button/index.tsx` | shadcn/ui | `button` | oui | 2026-07-30 |
 | `alert-banner/index.tsx` | à confirmer | à confirmer | oui | 2026-09-15 |
 
 `badge` importe `@base-ui/react` (`mergeProps`, `useRender`), signature de reui — le badge
 shadcn repose sur `@radix-ui/react-slot`.
 
-`button` et `alert-banner` sont du React sans cva ni radix ni base-ui, avec des types et une
-table de variants écrits à la main. Ils ne ressemblent à aucune copie directe : probablement
-écrits de zéro. L'historique git ne tranche pas (ajoutés dans le commit initial). **À confirmer
-et corriger à la main** — ne pas supposer une origine upstream sur ces deux lignes.
+`button` vient de shadcn/ui (confirmé à la main), mais il a entièrement divergé : plus de cva
+ni de `@radix-ui/react-slot`, types et table de variants réécrits, et un jeu de variants
+remanié : `default`, `outline` et `link` ont disparu au profit de `primary` ; restent
+`secondary`, `ghost` et `destructive`.
+Une reprise upstream serait une réécriture, pas un remplacement. À ne pas confondre avec
+`components/ui/button.tsx`, qui est la copie shadcn restée conforme.
+
+`alert-banner` est du React sans cva ni radix ni base-ui, écrit à la main, et ne correspond à
+aucun composant upstream du même nom (shadcn et reui exposent `alert`). **Origine toujours à
+confirmer** — ne pas supposer de source upstream sur cette ligne.
 
 ## Copies shadcn brutes — `components/ui/`
 
