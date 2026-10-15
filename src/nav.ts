@@ -35,17 +35,18 @@ export const NAV_SECTIONS: NavSection[] = [
     ],
   },
   {
+    // Composants : garder par ordre alphabétique de libellé.
     title: "Composants",
     items: [
-      { key: "button", label: "Button" },
-      { key: "badge", label: "Badge" },
       { key: "alert-banner", label: "Alert banner" },
-      { key: "avatar", label: "Avatar" },
-      { key: "breadcrumb", label: "Breadcrumb" },
-      { key: "card", label: "Card" },
-      { key: "button-group", label: "Button group" },
       { key: "alert-dialog", label: "Alert dialog" },
       { key: "attachment", label: "Attachment" },
+      { key: "avatar", label: "Avatar" },
+      { key: "badge", label: "Badge" },
+      { key: "breadcrumb", label: "Breadcrumb" },
+      { key: "button", label: "Button" },
+      { key: "button-group", label: "Button group" },
+      { key: "card", label: "Card" },
     ],
   },
 ];
