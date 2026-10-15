@@ -16,10 +16,11 @@ de lien n'existe dans la lib.
 `alert-banner.usage.md` et `CLAUDE.md` renvoient tous les deux vers un toast pour le feedback
 éphémère (Copié, Enregistré). Le composant n'existe pas.
 
-**Message d'erreur inline + champ de formulaire**
+**Message d'erreur inline**
 `alert-banner.usage.md` renvoie vers « le message d'erreur inline du champ » pour la validation.
-Il n'existe ni composant de champ Choose ni composant d'erreur inline ; seul
-`components/ui/input.tsx` (shadcn brut, non restylé) est présent.
+Le champ existe désormais (`choose-ui/input`, dont l'erreur se pilote par `aria-invalid`), mais
+le message lui-même reste à écrire à la main à chaque fois : pas de composant qui relie le
+texte au champ par `aria-describedby`. Un `Field` (label + champ + message) couvrirait les deux.
 
 **Switch**
 `button.usage.md` renvoie vers un Switch pour un choix binaire persistant (on/off).

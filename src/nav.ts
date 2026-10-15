@@ -16,7 +16,8 @@ export type Page =
   | "attachment"
   | "frame"
   | "item"
-  | "pagination";
+  | "pagination"
+  | "input";
 
 export interface NavItem {
   key: Page;
@@ -51,6 +52,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "button-group", label: "Button group" },
       { key: "card", label: "Card" },
       { key: "frame", label: "Frame" },
+      { key: "input", label: "Input" },
       { key: "item", label: "Item" },
       { key: "pagination", label: "Pagination" },
     ],

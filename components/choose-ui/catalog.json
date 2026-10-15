@@ -59,6 +59,11 @@
       "name": "pagination",
       "usage": "Découpe une liste longue en pages numérotées, chaque page ayant son URL. Sans URL par page, utiliser un ButtonGroup ; pour une table qui trie et filtre, le pager fait partie de la table.",
       "status": "stable"
+    },
+    {
+      "name": "input",
+      "usage": "Champ de saisie sur une ligne, dont l'état d'erreur se pilote par aria-invalid. Pour une erreur à l'échelle de l'écran, utiliser une Alert banner ; la validation d'un champ reste inline.",
+      "status": "stable"
     }
   ]
 }

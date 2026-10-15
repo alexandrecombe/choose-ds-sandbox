@@ -28,6 +28,7 @@ import AvatarPage from "./pages/avatar";
 import BreadcrumbDocPage from "./pages/breadcrumb";
 import CardPage from "./pages/card";
 import FramePage from "./pages/frame";
+import InputPage from "./pages/input";
 import ItemPage from "./pages/item";
 import PaginationPage from "./pages/pagination";
 import ButtonGroupPage from "./pages/button-group";
@@ -49,6 +50,7 @@ const PAGES: Record<Page, React.FC> = {
   breadcrumb: BreadcrumbDocPage,
   card: CardPage,
   frame: FramePage,
+  input: InputPage,
   item: ItemPage,
   pagination: PaginationPage,
   "button-group": ButtonGroupPage,

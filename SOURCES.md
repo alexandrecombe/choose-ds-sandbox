@@ -60,6 +60,7 @@ ont été retirés.
 | `frame/index.tsx` | reui | [`frame`](https://reui.io/docs/components/base/frame) | oui — typo seule | 2026-10-15 |
 | `item/index.tsx` | shadcn/ui | [`item`](https://ui.shadcn.com/docs/components/base/item) (Base UI) | oui — typo seule | 2026-10-15 |
 | `pagination/index.tsx` | shadcn/ui | [`pagination`](https://ui.shadcn.com/docs/components/base/pagination) (Base UI) | oui — typo seule | 2026-10-15 |
+| `input/index.tsx` | shadcn/ui | [`input`](https://ui.shadcn.com/docs/components/base/input) (Base UI) | oui — typo seule | 2026-10-15 |
 | `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
 
 `badge` importe `@base-ui/react` (`mergeProps`, `useRender`), signature de reui — le badge
@@ -120,7 +121,7 @@ surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 | `collapsible.tsx` | écrit à la main | — (sur `@base-ui/react/collapsible`) | — | 2026-10-15 |
 | `item.tsx` | shadcn/ui | [`item`](https://ui.shadcn.com/docs/components/base/item) (Base UI) | non | 2026-10-15 |
 | `pagination.tsx` | shadcn/ui | [`pagination`](https://ui.shadcn.com/docs/components/base/pagination) (Base UI) | non | 2026-10-15 |
-| `input.tsx` | shadcn/ui | [`input`](https://ui.shadcn.com/docs/components/input) | non | 2026-07-31 |
+| `input.tsx` | shadcn/ui | [`input`](https://ui.shadcn.com/docs/components/base/input) (Base UI) | non | 2026-10-15 |
 | `separator.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/separator) | non | 2026-07-31 |
 | `sheet.tsx` | shadcn/ui | [`sheet`](https://ui.shadcn.com/docs/components/sheet) | non | 2026-07-31 |
 | `sidebar.tsx` | shadcn/ui | [`sidebar`](https://ui.shadcn.com/docs/components/sidebar) | non | 2026-07-31 |
