@@ -64,6 +64,11 @@
       "name": "input",
       "usage": "Champ de saisie sur une ligne, dont l'état d'erreur se pilote par aria-invalid. Pour une erreur à l'échelle de l'écran, utiliser une Alert banner ; la validation d'un champ reste inline.",
       "status": "stable"
+    },
+    {
+      "name": "select",
+      "usage": "Menu déroulant de sélection unique. Remplace le select natif pour un rendu cohérent. Pour 2-3 options, un groupe de radios suffit ; pour une recherche avec saisie, un Combobox.",
+      "status": "stable"
     }
   ]
 }

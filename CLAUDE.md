@@ -19,6 +19,7 @@ S'il existe, l'importer et l'utiliser. Ne jamais fabriquer :
 - un rond d'initiales fait main → utiliser `choose-ui/avatar`
 - un conteneur d'objet bricolé → utiliser `choose-ui/card`
 - une suppression sans confirmation → passer par `choose-ui/alert-dialog`
+- un `<select>` natif ou un dropdown custom → utiliser `choose-ui/select`
 
 Si un besoin n'est couvert par aucun composant ni aucun variant existant, le signaler
 explicitement dans la réponse au lieu de créer une variante locale.
@@ -42,6 +43,7 @@ quand ne pas l'utiliser, quel variant pour quel cas.
 - `components/choose-ui/input/input.usage.md`
 - `components/choose-ui/item/item.usage.md`
 - `components/choose-ui/pagination/pagination.usage.md`
+- `components/choose-ui/select/select.usage.md`
 
 Cas de choix fréquent à ne pas rater : feedback utilisateur.
 - éphémère, confirme une micro-action → toast

@@ -17,7 +17,8 @@ export type Page =
   | "frame"
   | "item"
   | "pagination"
-  | "input";
+  | "input"
+  | "select";
 
 export interface NavItem {
   key: Page;
@@ -55,6 +56,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "input", label: "Input" },
       { key: "item", label: "Item" },
       { key: "pagination", label: "Pagination" },
+      { key: "select", label: "Select" },
     ],
   },
 ];

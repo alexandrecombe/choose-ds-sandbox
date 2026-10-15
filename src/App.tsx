@@ -34,6 +34,7 @@ import PaginationPage from "./pages/pagination";
 import ButtonGroupPage from "./pages/button-group";
 import AlertDialogPage from "./pages/alert-dialog";
 import AttachmentPage from "./pages/attachment";
+import SelectPage from "./pages/select";
 
 // ---------------------------------------------------------------------------
 // Page map
@@ -56,6 +57,7 @@ const PAGES: Record<Page, React.FC> = {
   "button-group": ButtonGroupPage,
   "alert-dialog": AlertDialogPage,
   attachment: AttachmentPage,
+  select: SelectPage,
 };
 
 // ---------------------------------------------------------------------------
