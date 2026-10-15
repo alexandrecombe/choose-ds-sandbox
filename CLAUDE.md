@@ -41,5 +41,17 @@ Couleurs, espacements et typo passent par les tokens sémantiques du DS. Jamais 
 Tailwind brute (`bg-blue-500`) ni de hex en dur. Typo : `font-sans` (Maison Neue) par défaut.
 Icônes : Lucide exclusivement, jamais d'emoji comme marqueur visuel.
 
-Ces règles ne sont pas optionnelles : la CI bloque les merges contenant des valeurs
-hardcodées ou des classes Tailwind brutes à la place des tokens.
+Ces règles ne sont pas optionnelles, mais rien ne les vérifie automatiquement : ce repo n'a
+ni CI, ni lint, ni hook. Le respect des tokens repose entièrement sur toi à la génération.
+
+## Signaler un manque
+
+Quand un besoin n'est couvert par aucun composant ni aucun variant, le signaler dans la réponse
+**et** ajouter une entrée dans `GAPS.md` (nom du besoin + d'où il vient). Ne pas créer de
+variante locale pour contourner.
+
+## Fichiers de référence
+
+- `components/choose-ui/catalog.json` — inventaire des composants (nom, usage en une phrase, statut).
+- `GAPS.md` — besoins identifiés et non couverts.
+- `SOURCES.md` — origine upstream de chaque composant copié.

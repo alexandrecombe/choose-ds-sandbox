@@ -1,0 +1,19 @@
+{
+  "components": [
+    {
+      "name": "button",
+      "usage": "Déclenche une action (soumettre, ouvrir un dialog, lancer un traitement). Pour une navigation pure sans effet de bord, utiliser un lien ; pour un choix binaire persistant, un Switch.",
+      "status": "stable"
+    },
+    {
+      "name": "badge",
+      "usage": "Étiquette courte et non interactive qui porte un statut ou une catégorie. Pour une action, utiliser Button ; pour un message système, Alert banner.",
+      "status": "stable"
+    },
+    {
+      "name": "alert-banner",
+      "usage": "Message système persistant, posé dans le flux de la page et toujours visible au retour sur l'écran. Pour un retour éphémère, utiliser un toast ; pour une erreur de validation, le message inline du champ.",
+      "status": "stable"
+    }
+  ]
+}
