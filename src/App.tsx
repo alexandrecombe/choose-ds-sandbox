@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/sidebar";
 import { NAV_SECTIONS, type Page } from "./nav";
 import { NavContext } from "./doc/nav-context";
+import { ChooseLogo } from "./choose-logo";
 import ColorsPage from "./pages/colors";
 import TypographyPage from "./pages/typography";
 import IconsPage from "./pages/icons";
@@ -59,9 +60,7 @@ export default function App() {
       <SidebarProvider>
         <Sidebar collapsible="none" className="sticky top-0 h-svh">
           <SidebarHeader className="px-4 py-4">
-            <span className="font-display text-sm font-semibold tracking-tight">
-              Choose DS
-            </span>
+            <ChooseLogo className="h-5 w-auto self-start text-foreground" />
           </SidebarHeader>
           <SidebarContent>
             {NAV_SECTIONS.map((section) => (
