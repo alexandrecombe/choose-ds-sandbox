@@ -8,7 +8,12 @@ export type Page =
   | "button"
   | "badge"
   | "alert-banner"
-  | "avatar";
+  | "avatar"
+  | "breadcrumb"
+  | "card"
+  | "button-group"
+  | "alert-dialog"
+  | "attachment";
 
 export interface NavItem {
   key: Page;
@@ -36,6 +41,11 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "badge", label: "Badge" },
       { key: "alert-banner", label: "Alert banner" },
       { key: "avatar", label: "Avatar" },
+      { key: "breadcrumb", label: "Breadcrumb" },
+      { key: "card", label: "Card" },
+      { key: "button-group", label: "Button group" },
+      { key: "alert-dialog", label: "Alert dialog" },
+      { key: "attachment", label: "Attachment" },
     ],
   },
 ];

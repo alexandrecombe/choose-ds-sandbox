@@ -25,6 +25,8 @@ Il n'existe ni composant de champ Choose ni composant d'erreur inline ; seul
 `button.usage.md` renvoie vers un Switch pour un choix binaire persistant (on/off).
 Le composant n'existe pas.
 
-**Dialog de confirmation**
-`button.usage.md` et `alert-banner.usage.md` imposent tous les deux une confirmation avant une
-action destructive. Aucun composant de dialog n'existe dans la lib.
+
+**Tokens `popover` et `ring`**
+Les composants repris upstream (alert-dialog, attachment, badge) s'appuient sur un rôle
+« surface de popover » et un rôle « anneau de focus » qui n'existent pas dans la palette Choose.
+Aliasés provisoirement dans `src/index.css` sur `--card` et `--accent` ; à arbitrer côté DA.

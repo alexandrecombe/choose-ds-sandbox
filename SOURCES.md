@@ -34,6 +34,11 @@ Deux pièges rencontrés pendant la migration, utiles si la config CSS est retou
 | `badge/index.tsx` | reui | [`badge`](https://reui.io/docs/badge) (Base UI) | oui | 2026-09-15 |
 | `button/index.tsx` | shadcn/ui | [`button`](https://ui.shadcn.com/docs/components/base/button) | oui | 2026-07-30 |
 | `avatar/index.tsx` | shadcn/ui | [`avatar`](https://ui.shadcn.com/docs/components/base/avatar) (Base UI) | oui — typo seule | 2026-10-15 |
+| `breadcrumb/index.tsx` | shadcn/ui | [`breadcrumb`](https://ui.shadcn.com/docs/components/base/breadcrumb) (Base UI) | oui — typo seule | 2026-10-15 |
+| `card/index.tsx` | shadcn/ui | [`card`](https://ui.shadcn.com/docs/components/base/card) (Base UI) | oui — typo seule | 2026-10-15 |
+| `button-group/index.tsx` | shadcn/ui | [`button-group`](https://ui.shadcn.com/docs/components/base/button-group) (Base UI) | oui — typo seule | 2026-10-15 |
+| `alert-dialog/index.tsx` | shadcn/ui | [`alert-dialog`](https://ui.shadcn.com/docs/components/base/alert-dialog) (Base UI) | oui — typo seule | 2026-10-15 |
+| `attachment/index.tsx` | shadcn/ui | [`attachment`](https://ui.shadcn.com/docs/components/base/attachment) (Base UI) | oui — typo seule | 2026-10-15 |
 | `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
 
 `badge` importe `@base-ui/react` (`mergeProps`, `useRender`), signature de reui — le badge
@@ -79,7 +84,12 @@ surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 | Fichier | Origine | Composant d'origine | Restylé | Ajouté |
 |---|---|---|---|---|
 | `avatar.tsx` | shadcn/ui | [`avatar`](https://ui.shadcn.com/docs/components/base/avatar) (Base UI) | non | 2026-10-15 |
-| `button.tsx` | shadcn/ui | [`button`](https://ui.shadcn.com/docs/components/button) | non | 2026-07-31 |
+| `button.tsx` | shadcn/ui | [`button`](https://ui.shadcn.com/docs/components/base/button) (Base UI) | non | 2026-10-15 |
+| `breadcrumb.tsx` | shadcn/ui | [`breadcrumb`](https://ui.shadcn.com/docs/components/base/breadcrumb) (Base UI) | non | 2026-10-15 |
+| `card.tsx` | shadcn/ui | [`card`](https://ui.shadcn.com/docs/components/base/card) (Base UI) | non | 2026-10-15 |
+| `button-group.tsx` | shadcn/ui | [`button-group`](https://ui.shadcn.com/docs/components/base/button-group) (Base UI) | non | 2026-10-15 |
+| `alert-dialog.tsx` | shadcn/ui | [`alert-dialog`](https://ui.shadcn.com/docs/components/base/alert-dialog) (Base UI) | non | 2026-10-15 |
+| `attachment.tsx` | shadcn/ui | [`attachment`](https://ui.shadcn.com/docs/components/base/attachment) (Base UI) | non | 2026-10-15 |
 | `input.tsx` | shadcn/ui | [`input`](https://ui.shadcn.com/docs/components/input) | non | 2026-07-31 |
 | `separator.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/separator) | non | 2026-07-31 |
 | `sheet.tsx` | shadcn/ui | [`sheet`](https://ui.shadcn.com/docs/components/sheet) | non | 2026-07-31 |
@@ -99,6 +109,24 @@ n'existe. Le code a donc été repris depuis la page de doc.
 Le fichier avait d'abord été réécrit pour Tailwind 3.4 (`*:` et `group-has-data-*` sont des
 variantes v4) ; le passage du projet en v4 a annulé ces réécritures via le codemod officiel.
 Il est aujourd'hui conforme à l'upstream.
+
+Les cinq composants ajoutés le 2026-10-15 (breadcrumb, card, button-group, alert-dialog,
+attachment) viennent tous de la **variante Base UI**, qui n'est pas distribuée par le registry :
+`npx shadcn add <nom>` sert la version radix. Comme pour `avatar`, le code est repris depuis la
+page de doc, donc aucune CLI ne les mettra à jour.
+
+`components/ui/button.tsx` est passé de la variante radix à la variante Base UI à cette
+occasion : `attachment` et `alert-dialog` s'appuient sur ses tailles `xs` / `icon-xs` / `icon-sm`,
+absentes de la version radix. La sidebar, qui le consomme aussi, n'a pas bougé.
+
+Deux manques rencontrés en reprenant ces composants :
+
+- l'utilitaire `shimmer`, utilisé par `attachment` pour les états *uploading* et *processing*,
+  n'est pas distribué avec le composant (shadcn le déclare dans son CSS global). Réimplémenté
+  dans `src/index.css` sur les tokens Choose.
+- les rôles `popover` et `ring` n'existent pas dans la palette Choose, alors qu'`alert-dialog`
+  et `attachment` s'appuient dessus. Aliasés provisoirement sur `--card` et `--accent` dans
+  `src/index.css` ; à arbitrer côté DA, c'est noté dans `GAPS.md`.
 
 ## Ajouter une source
 
