@@ -29,6 +29,7 @@ import BreadcrumbDocPage from "./pages/breadcrumb";
 import CardPage from "./pages/card";
 import FramePage from "./pages/frame";
 import ItemPage from "./pages/item";
+import PaginationPage from "./pages/pagination";
 import ButtonGroupPage from "./pages/button-group";
 import AlertDialogPage from "./pages/alert-dialog";
 import AttachmentPage from "./pages/attachment";
@@ -49,6 +50,7 @@ const PAGES: Record<Page, React.FC> = {
   card: CardPage,
   frame: FramePage,
   item: ItemPage,
+  pagination: PaginationPage,
   "button-group": ButtonGroupPage,
   "alert-dialog": AlertDialogPage,
   attachment: AttachmentPage,

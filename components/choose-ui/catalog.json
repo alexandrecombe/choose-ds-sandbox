@@ -54,6 +54,11 @@
       "name": "item",
       "usage": "Ligne d'une liste d'enregistrements : visuel, intitulé, support et actions. Pour un objet autonome qu'on ouvre, utiliser Card ; pour des données comparables colonne par colonne, une table.",
       "status": "stable"
+    },
+    {
+      "name": "pagination",
+      "usage": "Découpe une liste longue en pages numérotées, chaque page ayant son URL. Sans URL par page, utiliser un ButtonGroup ; pour une table qui trie et filtre, le pager fait partie de la table.",
+      "status": "stable"
     }
   ]
 }
