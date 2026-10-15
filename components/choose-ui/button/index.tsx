@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 type ButtonVariant = "primary" | "secondary" | "ghost" | "destructive";
 type ButtonSize = "sm" | "default" | "lg";
 
-interface ButtonProps
+interface ButtonBase
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "prefix"> {
   variant?: ButtonVariant;
   size?: ButtonSize;
@@ -24,6 +24,12 @@ interface ButtonProps
   /** Remplace le préfixe par un indicateur d'activité et neutralise le clic. */
   loading?: boolean;
 }
+
+/* Sans label visible, le nom accessible doit venir d'ailleurs : `aria-label`
+   est donc exigé par le typage dès que `iconOnly` est posé. */
+type ButtonProps =
+  | (ButtonBase & { iconOnly?: false })
+  | (ButtonBase & { iconOnly: true; "aria-label": string });
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
@@ -43,6 +49,13 @@ const sizeStyles: Record<ButtonSize, string> = {
   lg: "h-11 gap-2 rounded-lg px-6 text-base [&_svg]:size-5",
 };
 
+/* Icône seule : carré, sans rembourrage horizontal. */
+const iconOnlyStyles: Record<ButtonSize, string> = {
+  sm: "size-8 rounded-md p-0 [&_svg]:size-3.5",
+  default: "size-9 rounded-md p-0 [&_svg]:size-4",
+  lg: "size-11 rounded-lg p-0 [&_svg]:size-5",
+};
+
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -51,6 +64,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       prefix,
       suffix,
       loading = false,
+      iconOnly = false,
       className,
       children,
       disabled,
@@ -73,7 +87,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/50",
         "disabled:pointer-events-none disabled:opacity-50",
         "aria-disabled:cursor-default aria-disabled:opacity-70",
-        sizeStyles[size],
+        iconOnly ? iconOnlyStyles[size] : sizeStyles[size],
         variantStyles[variant],
         className,
       )}
@@ -82,10 +96,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       {loading ? (
         <LoaderCircle className="shrink-0 animate-spin" aria-hidden="true" />
       ) : (
-        prefix && <span className="shrink-0">{prefix}</span>
+        !iconOnly && prefix && <span className="shrink-0">{prefix}</span>
       )}
-      {children}
-      {suffix && <span className="shrink-0">{suffix}</span>}
+      {iconOnly && loading ? null : children}
+      {!iconOnly && suffix && <span className="shrink-0">{suffix}</span>}
     </button>
   ),
 );

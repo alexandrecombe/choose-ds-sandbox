@@ -5,6 +5,9 @@ import {
   ArrowLeft,
   ArrowRight,
   ExternalLink,
+  Pencil,
+  Copy,
+  MoreHorizontal,
 } from "lucide-react";
 import { Button } from "@/components/choose-ui/button";
 import { DocPage, DocSection, DocSpecimen, DocPractices } from "@/src/doc";
@@ -95,6 +98,42 @@ export default function ButtonPage() {
       </DocSection>
 
       <DocSection
+        title="Icône seule"
+        description="`iconOnly` rend le bouton carré. Sans label visible, le nom accessible doit venir d'ailleurs : `aria-label` est exigé par le typage — un bouton icône seule sans nom ne compile pas."
+        code={`<Button iconOnly aria-label="Modifier la référence">
+  <Pencil />
+</Button>`}
+      >
+        {(["sm", "default", "lg"] as const).map((t) => (
+          <DocSpecimen key={t} label={t}>
+            <Button iconOnly size={t} aria-label={`Modifier (${t})`}>
+              <Pencil />
+            </Button>
+          </DocSpecimen>
+        ))}
+        <DocSpecimen label="secondary">
+          <Button iconOnly variant="secondary" aria-label="Copier le lien">
+            <Copy />
+          </Button>
+        </DocSpecimen>
+        <DocSpecimen label="ghost">
+          <Button iconOnly variant="ghost" aria-label="Plus d'actions">
+            <MoreHorizontal />
+          </Button>
+        </DocSpecimen>
+        <DocSpecimen label="destructive">
+          <Button iconOnly variant="destructive" aria-label="Supprimer la ligne">
+            <Trash2 />
+          </Button>
+        </DocSpecimen>
+        <DocSpecimen label="chargement">
+          <Button iconOnly loading aria-label="Enregistrement en cours">
+            <Save />
+          </Button>
+        </DocSpecimen>
+      </DocSection>
+
+      <DocSection
         title="Chargement"
         description="`loading` remplace le préfixe par un indicateur d'activité et neutralise le clic. Le bouton reste focusable et annonce son état (aria-busy) — contrairement à `disabled`, qui le sortirait du parcours clavier."
         code={`<Button loading>Enregistrement…</Button>`}
@@ -133,6 +172,9 @@ export default function ButtonPage() {
           "Préférer `loading` à un remplacement du label par un spinner : le bouton garde sa place dans le parcours clavier et annonce son état aux lecteurs d'écran.",
           "`loading` ne désactive pas le bouton au sens HTML — il neutralise le clic et pose `aria-busy`. Ne pas lui ajouter `disabled` : on perdrait justement ce que `loading` préserve.",
           "Le suffixe signale où mène l'action (flèche d'avancement, lien externe) ; le préfixe qualifie l'action. Un bouton ne porte jamais deux icônes du même côté.",
+          "Un bouton icône seule exige un `aria-label` — le typage le refuse sans. Le label nomme l'action ET sa cible (« Copier l'URL de l'opération »), pas l'icône (« Copier »).",
+          "Ne pas poser d'`aria-label` sur un bouton qui a déjà un label visible : il l'écrase et crée un décalage avec ce que lit l'écran.",
+          "L'icône seule se réserve aux actions répétées en ligne, où le contexte rend l'action évidente. Pour une action isolée, un label écrit vaut mieux qu'une icône à deviner.",
           "Pour une navigation pure, sans effet de bord, utiliser un lien — pas un Button. Le Button se réserve aux actions qui changent quelque chose.",
           "`destructive` ne s'expose jamais seul : toute action irréversible passe par un dialog de confirmation.",
           "`ghost` est le seul variant qui colore son texte sans aplat : il porte la couleur tertiary Choose, avec tertiary-accent en fond au survol.",

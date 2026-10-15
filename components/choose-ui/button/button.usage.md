@@ -41,6 +41,27 @@ L'icône suit la taille du label : 14px en `sm`, 16px en `default`, 20px en `lg`
 signale où elle mène** — une flèche d'avancement, un lien externe. Jamais deux icônes du même
 côté.
 
+## Icône seule
+
+```tsx
+<Button iconOnly aria-label="Copier l'URL de l'opération">
+  <Copy />
+</Button>
+```
+
+`iconOnly` rend le bouton carré : 32px en `sm`, 36px en `default`, 44px en `lg`.
+
+**`aria-label` est obligatoire, et exigé par le typage** : un bouton `iconOnly` sans nom
+accessible ne compile pas. Sans label visible, c'est la seule source du nom pour un lecteur
+d'écran.
+
+Le label nomme **l'action et sa cible** — « Copier l'URL de l'opération », pas « Copier ».
+À l'inverse, ne jamais poser d'`aria-label` sur un bouton qui a déjà un label visible : il
+l'écrase et crée un décalage entre ce qui est lu et ce qui est affiché.
+
+Réserver ce format aux actions répétées en ligne, typiquement dans une table, où le contexte
+rend l'action évidente. Pour une action isolée, un label écrit vaut mieux qu'une icône à deviner.
+
 ## Chargement
 
 ```tsx
