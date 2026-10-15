@@ -39,6 +39,7 @@ quand ne pas l'utiliser, quel variant pour quel cas.
 - `components/choose-ui/alert-dialog/alert-dialog.usage.md`
 - `components/choose-ui/attachment/attachment.usage.md`
 - `components/choose-ui/frame/frame.usage.md`
+- `components/choose-ui/item/item.usage.md`
 
 Cas de choix fréquent à ne pas rater : feedback utilisateur.
 - éphémère, confirme une micro-action → toast

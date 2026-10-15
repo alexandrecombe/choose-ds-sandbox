@@ -49,6 +49,11 @@
       "name": "frame",
       "usage": "Cadre regroupant des panneaux apparentés — réglages, état de services, liste d'enregistrements. Pour un objet métier identifiable, utiliser Card ; pour des sections qui se déplient, un accordéon.",
       "status": "stable"
+    },
+    {
+      "name": "item",
+      "usage": "Ligne d'une liste d'enregistrements : visuel, intitulé, support et actions. Pour un objet autonome qu'on ouvre, utiliser Card ; pour des données comparables colonne par colonne, une table.",
+      "status": "stable"
     }
   ]
 }

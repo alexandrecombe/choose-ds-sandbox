@@ -14,7 +14,8 @@ export type Page =
   | "button-group"
   | "alert-dialog"
   | "attachment"
-  | "frame";
+  | "frame"
+  | "item";
 
 export interface NavItem {
   key: Page;
@@ -49,6 +50,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "button-group", label: "Button group" },
       { key: "card", label: "Card" },
       { key: "frame", label: "Frame" },
+      { key: "item", label: "Item" },
     ],
   },
 ];
