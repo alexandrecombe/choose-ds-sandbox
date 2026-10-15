@@ -1,38 +1,8 @@
 {
   "components": [
     {
-      "name": "button",
-      "usage": "Déclenche une action (soumettre, ouvrir un dialog, lancer un traitement). Pour une navigation pure sans effet de bord, utiliser un lien ; pour un choix binaire persistant, un Switch.",
-      "status": "stable"
-    },
-    {
-      "name": "badge",
-      "usage": "Étiquette courte et non interactive qui porte un statut ou une catégorie. Pour une action, utiliser Button ; pour un message système, Alert banner.",
-      "status": "stable"
-    },
-    {
       "name": "alert-banner",
       "usage": "Message système persistant, posé dans le flux de la page et toujours visible au retour sur l'écran. S'assemble par composition (Alert / AlertTitle / AlertDescription / AlertAction). Pour un retour éphémère, utiliser un toast ; pour une erreur de validation, le message inline du champ.",
-      "status": "stable"
-    },
-    {
-      "name": "avatar",
-      "usage": "Représente une personne ou un compte, avec un fallback d'initiales obligatoire. Pour un logo de marque, utiliser une image ; pour un statut lisible, un Badge à côté du nom.",
-      "status": "stable"
-    },
-    {
-      "name": "breadcrumb",
-      "usage": "Fil d'Ariane qui situe l'écran courant dans la hiérarchie du produit. Pour un seul niveau au-dessus, un lien de retour suffit ; il ne reflète pas l'historique de navigation.",
-      "status": "stable"
-    },
-    {
-      "name": "card",
-      "usage": "Conteneur d'un objet métier autonome — opération, marque, récapitulatif. Pour une section de page sans identité propre, utiliser une section ; pour un message à l'utilisateur, une Alert banner.",
-      "status": "stable"
-    },
-    {
-      "name": "button-group",
-      "usage": "Bloc continu d'actions de même nature, aux rayons fusionnés. Attend le Button de components/ui, pas choose-ui/button ; pour aligner deux boutons indépendants, un flex suffit.",
       "status": "stable"
     },
     {
@@ -46,18 +16,33 @@
       "status": "stable"
     },
     {
-      "name": "frame",
-      "usage": "Cadre regroupant des panneaux apparentés — réglages, état de services, liste d'enregistrements. Pour un objet métier identifiable, utiliser Card ; pour des sections qui se déplient, un accordéon.",
+      "name": "avatar",
+      "usage": "Représente une personne ou un compte, avec un fallback d'initiales obligatoire. Pour un logo de marque, utiliser une image ; pour un statut lisible, un Badge à côté du nom.",
       "status": "stable"
     },
     {
-      "name": "item",
-      "usage": "Ligne d'une liste d'enregistrements : visuel, intitulé, support et actions. Pour un objet autonome qu'on ouvre, utiliser Card ; pour des données comparables colonne par colonne, une table.",
+      "name": "badge",
+      "usage": "Étiquette courte et non interactive qui porte un statut ou une catégorie. Pour une action, utiliser Button ; pour un message système, Alert banner.",
       "status": "stable"
     },
     {
-      "name": "pagination",
-      "usage": "Découpe une liste longue en pages numérotées, chaque page ayant son URL. Sans URL par page, utiliser un ButtonGroup ; pour une table qui trie et filtre, le pager fait partie de la table.",
+      "name": "breadcrumb",
+      "usage": "Fil d'Ariane qui situe l'écran courant dans la hiérarchie du produit. Pour un seul niveau au-dessus, un lien de retour suffit ; il ne reflète pas l'historique de navigation.",
+      "status": "stable"
+    },
+    {
+      "name": "button",
+      "usage": "Déclenche une action (soumettre, ouvrir un dialog, lancer un traitement). Pour une navigation pure sans effet de bord, utiliser un lien ; pour un choix binaire persistant, un Switch.",
+      "status": "stable"
+    },
+    {
+      "name": "button-group",
+      "usage": "Bloc continu d'actions de même nature, aux rayons fusionnés. Attend le Button de components/ui, pas choose-ui/button ; pour aligner deux boutons indépendants, un flex suffit.",
+      "status": "stable"
+    },
+    {
+      "name": "card",
+      "usage": "Conteneur d'un objet métier autonome — opération, marque, récapitulatif. Pour une section de page sans identité propre, utiliser une section ; pour un message à l'utilisateur, une Alert banner.",
       "status": "stable"
     },
     {
@@ -71,13 +56,48 @@
       "status": "stable"
     },
     {
+      "name": "context-menu",
+      "usage": "Menu contextuel au clic droit, avec sous-menus, checkbox et radios. Pour des actions visibles, utiliser Dropdown Menu.",
+      "status": "stable"
+    },
+    {
+      "name": "dropdown-menu",
+      "usage": "Menu déroulant déclenché par un bouton, avec sous-menus, checkbox et radios. Pour une sélection de valeur, utiliser Select ou Combobox.",
+      "status": "stable"
+    },
+    {
+      "name": "empty",
+      "usage": "État vide quand une liste ou une vue ne contient aucun élément. Pour une erreur technique, utiliser Alert Banner ; pour un chargement, Skeleton.",
+      "status": "stable"
+    },
+    {
       "name": "filters",
       "usage": "Barre de filtres composable, en chips à plat (basic) ou en arbre conditionnel (advanced). Pour un tri, utiliser un menu de tri ; pour 1-2 filtres fixes, un Select.",
       "status": "stable"
     },
     {
+      "name": "frame",
+      "usage": "Cadre regroupant des panneaux apparentés — réglages, état de services, liste d'enregistrements. Pour un objet métier identifiable, utiliser Card ; pour des sections qui se déplient, un accordéon.",
+      "status": "stable"
+    },
+    {
+      "name": "hover-card",
+      "usage": "Carte flottante au survol pour prévisualiser un contenu (profil, lien). Pour des actions, utiliser Dropdown Menu.",
+      "status": "stable"
+    },
+    {
       "name": "input",
       "usage": "Champ de saisie sur une ligne, dont l'état d'erreur se pilote par aria-invalid. Pour une erreur à l'échelle de l'écran, utiliser une Alert banner ; la validation d'un champ reste inline.",
+      "status": "stable"
+    },
+    {
+      "name": "item",
+      "usage": "Ligne d'une liste d'enregistrements : visuel, intitulé, support et actions. Pour un objet autonome qu'on ouvre, utiliser Card ; pour des données comparables colonne par colonne, une table.",
+      "status": "stable"
+    },
+    {
+      "name": "pagination",
+      "usage": "Découpe une liste longue en pages numérotées, chaque page ayant son URL. Sans URL par page, utiliser un ButtonGroup ; pour une table qui trie et filtre, le pager fait partie de la table.",
       "status": "stable"
     },
     {

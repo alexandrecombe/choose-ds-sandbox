@@ -36,6 +36,10 @@ import AlertDialogPage from "./pages/alert-dialog";
 import AttachmentPage from "./pages/attachment";
 import CheckboxPage from "./pages/checkbox";
 import ComboboxPage from "./pages/combobox";
+import ContextMenuPage from "./pages/context-menu";
+import DropdownMenuPage from "./pages/dropdown-menu";
+import EmptyPage from "./pages/empty";
+import HoverCardPage from "./pages/hover-card";
 import FiltersPage from "./pages/filters";
 import SelectPage from "./pages/select";
 import SeparatorPage from "./pages/separator";
@@ -64,6 +68,10 @@ const PAGES: Record<Page, React.FC> = {
   attachment: AttachmentPage,
   checkbox: CheckboxPage,
   combobox: ComboboxPage,
+  "context-menu": ContextMenuPage,
+  "dropdown-menu": DropdownMenuPage,
+  empty: EmptyPage,
+  "hover-card": HoverCardPage,
   filters: FiltersPage,
   select: SelectPage,
   separator: SeparatorPage,

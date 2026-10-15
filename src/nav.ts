@@ -23,6 +23,10 @@ export type Page =
   | "filters"
   | "select"
   | "separator"
+  | "context-menu"
+  | "dropdown-menu"
+  | "empty"
+  | "hover-card"
   | "skeleton";
 
 export interface NavItem {
@@ -59,8 +63,12 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "card", label: "Card" },
       { key: "checkbox", label: "Checkbox" },
       { key: "combobox", label: "Combobox" },
+      { key: "context-menu", label: "Context menu" },
+      { key: "dropdown-menu", label: "Dropdown menu" },
+      { key: "empty", label: "Empty" },
       { key: "filters", label: "Filters" },
       { key: "frame", label: "Frame" },
+      { key: "hover-card", label: "Hover card" },
       { key: "input", label: "Input" },
       { key: "item", label: "Item" },
       { key: "pagination", label: "Pagination" },

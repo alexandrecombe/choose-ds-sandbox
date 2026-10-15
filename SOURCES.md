@@ -64,6 +64,10 @@ ont été retirés.
 | `select/index.tsx` | shadcn/ui | [`select`](https://ui.shadcn.com/docs/components/base/select) (Base UI) | oui — typo seule | 2026-10-15 |
 | `checkbox/index.tsx` | shadcn/ui | [`checkbox`](https://ui.shadcn.com/docs/components/base/checkbox) (Base UI) | non | 2026-10-15 |
 | `combobox/index.tsx` | shadcn/ui | [`combobox`](https://ui.shadcn.com/docs/components/base/combobox) (Base UI) | oui — typo seule | 2026-10-15 |
+| `context-menu/index.tsx` | shadcn/ui | [`context-menu`](https://ui.shadcn.com/docs/components/base/context-menu) (Base UI) | oui — typo seule | 2026-10-15 |
+| `dropdown-menu/index.tsx` | shadcn/ui | [`dropdown-menu`](https://ui.shadcn.com/docs/components/base/dropdown-menu) (Base UI) | oui — typo seule | 2026-10-15 |
+| `empty/index.tsx` | shadcn/ui | [`empty`](https://ui.shadcn.com/docs/components/base/empty) (Base UI) | oui — typo seule | 2026-10-15 |
+| `hover-card/index.tsx` | shadcn/ui | [`hover-card`](https://ui.shadcn.com/docs/components/base/hover-card) (Base UI) | non | 2026-10-15 |
 | `separator/index.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/base/separator) (Base UI) | oui — typo seule | 2026-10-15 |
 | `skeleton/index.tsx` | shadcn/ui | [`skeleton`](https://ui.shadcn.com/docs/components/base/skeleton) (Base UI) | non | 2026-10-15 |
 | `filters/index.tsx` | reui | [`filters`](https://reui.io/components/filters) | oui — typo seule | 2026-10-15 |
@@ -137,7 +141,10 @@ surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 | `textarea.tsx` | shadcn/ui | [`textarea`](https://ui.shadcn.com/docs/components/base/textarea) (Base UI) | non | 2026-10-15 |
 | `separator.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/base/separator) (Base UI) | non | 2026-10-15 |
 | `popover.tsx` | shadcn/ui | [`popover`](https://ui.shadcn.com/docs/components/popover) | non | 2026-10-15 |
-| `dropdown-menu.tsx` | shadcn/ui | [`dropdown-menu`](https://ui.shadcn.com/docs/components/dropdown-menu) | non | 2026-10-15 |
+| `dropdown-menu.tsx` | shadcn/ui | [`dropdown-menu`](https://ui.shadcn.com/docs/components/base/dropdown-menu) (Base UI) | non | 2026-10-15 |
+| `context-menu.tsx` | shadcn/ui | [`context-menu`](https://ui.shadcn.com/docs/components/base/context-menu) (Base UI) | non | 2026-10-15 |
+| `empty.tsx` | shadcn/ui | [`empty`](https://ui.shadcn.com/docs/components/base/empty) (Base UI) | non | 2026-10-15 |
+| `hover-card.tsx` | shadcn/ui | [`hover-card`](https://ui.shadcn.com/docs/components/base/hover-card) (Base UI) | non | 2026-10-15 |
 | `scroll-area.tsx` | shadcn/ui | [`scroll-area`](https://ui.shadcn.com/docs/components/scroll-area) | non | 2026-10-15 |
 | `spinner.tsx` | shadcn/ui | [`spinner`](https://ui.shadcn.com/docs/components/spinner) | non | 2026-10-15 |
 | `sheet.tsx` | shadcn/ui | [`sheet`](https://ui.shadcn.com/docs/components/sheet) | non | 2026-07-31 |

@@ -24,6 +24,10 @@ S'il existe, l'importer et l'utiliser. Ne jamais fabriquer :
 - un div pulsant fait main → utiliser `choose-ui/skeleton`
 - un `<input type="checkbox">` natif → utiliser `choose-ui/checkbox`
 - un `<select>` avec recherche ou un autocomplete → utiliser `choose-ui/combobox`
+- un menu contextuel au clic droit fait main → utiliser `choose-ui/context-menu`
+- un menu déroulant ou un dropdown bricolé → utiliser `choose-ui/dropdown-menu`
+- un placeholder "aucun résultat" fait main → utiliser `choose-ui/empty`
+- un tooltip riche au survol fait main → utiliser `choose-ui/hover-card`
 
 Si un besoin n'est couvert par aucun composant ni aucun variant existant, le signaler
 explicitement dans la réponse au lieu de créer une variante locale.
@@ -52,6 +56,10 @@ quand ne pas l'utiliser, quel variant pour quel cas.
 - `components/choose-ui/skeleton/skeleton.usage.md`
 - `components/choose-ui/checkbox/checkbox.usage.md`
 - `components/choose-ui/combobox/combobox.usage.md`
+- `components/choose-ui/context-menu/context-menu.usage.md`
+- `components/choose-ui/dropdown-menu/dropdown-menu.usage.md`
+- `components/choose-ui/empty/empty.usage.md`
+- `components/choose-ui/hover-card/hover-card.usage.md`
 - `components/choose-ui/filters/filters.usage.md`
 
 Cas de choix fréquent à ne pas rater : feedback utilisateur.
