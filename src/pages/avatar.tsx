@@ -6,6 +6,7 @@ import {
   AvatarGroup,
   AvatarGroupCount,
 } from "@/components/choose-ui/avatar";
+import { DocPage, DocSection, DocSpecimen, DocPractices } from "@/src/doc";
 
 /* Image de démo autonome : aucun appel réseau depuis la sandbox. */
 const demoImage =
@@ -18,186 +19,116 @@ const demoImage =
      </svg>`,
   );
 
-const sizes = [
-  { size: "sm" as const, label: "sm", usage: "Tables denses, listes compactes" },
-  { size: "default" as const, label: "default", usage: "Cas courant" },
-  { size: "lg" as const, label: "lg", usage: "En-têtes, fiches de profil" },
-];
-
-const props: {
-  name: string;
-  type: string;
-  default: string;
-  description: string;
-}[] = [
-  {
-    name: "size",
-    type: '"sm" | "default" | "lg"',
-    default: '"default"',
-    description: "Diamètre de l'avatar (24 / 32 / 40px)",
-  },
-  {
-    name: "children",
-    type: "ReactNode",
-    default: "—",
-    description: "AvatarImage puis AvatarFallback, et AvatarBadge si besoin",
-  },
-  {
-    name: "className",
-    type: "string",
-    default: "—",
-    description: "Classes CSS additionnelles fusionnées via cn()",
-  },
+const tailles = [
+  { size: "sm" as const, usage: "Tables denses" },
+  { size: "default" as const, usage: "Cas courant" },
+  { size: "lg" as const, usage: "En-têtes, profils" },
 ];
 
 export default function AvatarPage() {
   return (
-    <div className="max-w-4xl px-10 py-16">
-      <h1 className="font-display text-3xl font-semibold tracking-tight text-foreground">
-        Avatar
-      </h1>
-      <p className="mt-2 text-base text-muted-foreground">
-        Représente une personne ou un compte. Jamais une marque ni un objet
-        métier.
-      </p>
-
-      {/* ── Composition ──────────────────────────────────────────── */}
-      <section className="mt-12">
-        <h2 className="text-lg font-semibold text-foreground">Composition</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Le fallback est obligatoire : il s'affiche tant que l'image charge, et
-          définitivement si elle échoue.
-        </p>
-        <pre className="mt-4 overflow-x-auto rounded-lg bg-muted p-4 font-mono text-xs text-foreground">
-{`<Avatar size="lg">
+    <DocPage
+      title="Avatar"
+      description="Représente une personne ou un compte. Jamais une marque, un produit ni un objet métier."
+    >
+      <DocSection
+        title="Tailles"
+        description="24, 32 et 40px. `default` couvre le cas courant."
+        code={`<Avatar size="lg">
   <AvatarImage src={user.photo} alt={user.name} />
   <AvatarFallback>AC</AvatarFallback>
 </Avatar>`}
-        </pre>
-      </section>
-
-      {/* ── Tailles ──────────────────────────────────────────────── */}
-      <section className="mt-12">
-        <h2 className="text-lg font-semibold text-foreground">Tailles</h2>
-        <div className="mt-6 space-y-6">
-          {sizes.map((s) => (
-            <div
-              key={s.label}
-              className="flex items-center gap-6 border-b border-border/50 pb-6"
-            >
-              <div className="flex w-40 shrink-0 items-center gap-4">
-                <Avatar size={s.size}>
-                  <AvatarImage src={demoImage} alt="" />
-                  <AvatarFallback>AC</AvatarFallback>
-                </Avatar>
-                <Avatar size={s.size}>
-                  <AvatarFallback>AC</AvatarFallback>
-                </Avatar>
-              </div>
-              <div>
-                <p className="font-mono text-sm font-medium text-foreground">
-                  {s.label}
-                </p>
-                <p className="mt-0.5 text-xs text-muted-foreground">
-                  {s.usage}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Pastille de statut ───────────────────────────────────── */}
-      <section className="mt-12">
-        <h2 className="text-lg font-semibold text-foreground">
-          Pastille de statut
-        </h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">
-            AvatarBadge
-          </code>{" "}
-          marque une présence ou un état binaire. Pour un statut lisible, passer
-          par un Badge à côté du nom.
-        </p>
-        <div className="mt-6 flex items-center gap-6">
-          {sizes.map((s) => (
-            <Avatar key={s.label} size={s.size}>
+      >
+        {tailles.map((t) => (
+          <DocSpecimen key={t.size} label={t.size}>
+            <Avatar size={t.size}>
               <AvatarImage src={demoImage} alt="" />
               <AvatarFallback>AC</AvatarFallback>
-              <AvatarBadge className="bg-(--success)" />
             </Avatar>
-          ))}
-        </div>
-      </section>
+          </DocSpecimen>
+        ))}
+      </DocSection>
 
-      {/* ── Groupe ───────────────────────────────────────────────── */}
-      <section className="mt-12">
-        <h2 className="text-lg font-semibold text-foreground">Groupe</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Avatars empilés, avec un compteur pour le reste. Au-delà de 4 visages,
-          préférer une liste.
-        </p>
-        <div className="mt-6 space-y-6">
-          {sizes.map((s) => (
-            <AvatarGroup key={s.label}>
-              <Avatar size={s.size}>
+      <DocSection
+        title="Fallback"
+        description="Obligatoire, même avec une image : il s'affiche pendant le chargement et reste si l'image échoue. Initiales en majuscules, deux lettres maximum."
+        code={`<Avatar>
+  <AvatarFallback>AC</AvatarFallback>
+</Avatar>`}
+      >
+        {tailles.map((t) => (
+          <DocSpecimen key={t.size} label={t.size}>
+            <Avatar size={t.size}>
+              <AvatarFallback>AC</AvatarFallback>
+            </Avatar>
+          </DocSpecimen>
+        ))}
+      </DocSection>
+
+      <DocSection
+        title="Pastille de statut"
+        description="AvatarBadge marque une présence ou un état binaire. Il n'a pas de couleur par défaut : passer un token sémantique explicite."
+        code={`<Avatar>
+  <AvatarImage src={user.photo} alt={user.name} />
+  <AvatarFallback>AC</AvatarFallback>
+  <AvatarBadge className="bg-[color:var(--success)]" />
+</Avatar>`}
+      >
+        {tailles.map((t) => (
+          <DocSpecimen key={t.size} label={t.size}>
+            <Avatar size={t.size}>
+              <AvatarImage src={demoImage} alt="" />
+              <AvatarFallback>AC</AvatarFallback>
+              <AvatarBadge className="bg-[color:var(--success)]" />
+            </Avatar>
+          </DocSpecimen>
+        ))}
+      </DocSection>
+
+      <DocSection
+        title="Groupe"
+        description="Avatars empilés avec un anneau de séparation, et un compteur pour le reste. Le compteur suit la taille du groupe."
+        layout="stack"
+        code={`<AvatarGroup>
+  <Avatar><AvatarFallback>AC</AvatarFallback></Avatar>
+  <Avatar><AvatarFallback>ML</AvatarFallback></Avatar>
+  <Avatar><AvatarFallback>JD</AvatarFallback></Avatar>
+  <AvatarGroupCount>+3</AvatarGroupCount>
+</AvatarGroup>`}
+      >
+        {tailles.map((t) => (
+          <div key={t.size} className="flex items-center gap-4">
+            <AvatarGroup>
+              <Avatar size={t.size}>
                 <AvatarFallback>AC</AvatarFallback>
               </Avatar>
-              <Avatar size={s.size}>
+              <Avatar size={t.size}>
                 <AvatarImage src={demoImage} alt="" />
                 <AvatarFallback>ML</AvatarFallback>
               </Avatar>
-              <Avatar size={s.size}>
+              <Avatar size={t.size}>
                 <AvatarFallback>JD</AvatarFallback>
               </Avatar>
               <AvatarGroupCount>+3</AvatarGroupCount>
             </AvatarGroup>
-          ))}
-        </div>
-      </section>
+            <span className="font-mono text-xs text-muted-foreground">
+              {t.size}
+            </span>
+          </div>
+        ))}
+      </DocSection>
 
-      {/* ── Props ────────────────────────────────────────────────── */}
-      <section className="mt-16">
-        <h2 className="text-lg font-semibold text-foreground">Props</h2>
-        <div className="mt-6 overflow-x-auto">
-          <table className="w-full text-left text-sm">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="pb-2 pr-4 font-medium text-muted-foreground">
-                  Prop
-                </th>
-                <th className="pb-2 pr-4 font-medium text-muted-foreground">
-                  Type
-                </th>
-                <th className="pb-2 pr-4 font-medium text-muted-foreground">
-                  Défaut
-                </th>
-                <th className="pb-2 font-medium text-muted-foreground">
-                  Description
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {props.map((p) => (
-                <tr key={p.name} className="border-b border-border/50">
-                  <td className="py-2.5 pr-4 font-mono text-xs font-medium text-foreground">
-                    {p.name}
-                  </td>
-                  <td className="py-2.5 pr-4 font-mono text-xs text-muted-foreground">
-                    {p.type}
-                  </td>
-                  <td className="py-2.5 pr-4 font-mono text-xs text-muted-foreground">
-                    {p.default}
-                  </td>
-                  <td className="py-2.5 text-xs text-muted-foreground">
-                    {p.description}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-    </div>
+      <DocPractices
+        items={[
+          "Toujours fournir un AvatarFallback, même quand une image est passée. Sans lui, l'avatar est un trou visuel pendant le chargement et un trou définitif si l'image échoue.",
+          "Si le nom est inconnu, utiliser une icône Lucide `User` plutôt que des initiales inventées.",
+          "L'avatar n'encode pas d'information par sa teinte : pas de couleur de fond attribuée par personne ou par rôle.",
+          "AvatarBadge ne porte qu'une présence ou un état binaire, sans texte. Pour un statut lisible (Actif, En attente), c'est un Badge à côté du nom.",
+          "Pour un logo de marque ou de partenaire, c'est une image — pas un Avatar. Le rond de portrait signifie « une personne ».",
+          "Au-delà de 4 visages, un groupe empilé n'est plus lisible : préférer une liste nommée.",
+          "Jamais de rond d'initiales fabriqué à la main : il n'héritera ni des tailles, ni de l'anneau de groupe, ni des tokens.",
+        ]}
+      />
+    </DocPage>
   );
 }
