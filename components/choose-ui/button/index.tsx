@@ -19,7 +19,7 @@ const variantStyles: Record<ButtonVariant, string> = {
   secondary:
     "border border-border bg-secondary text-secondary-foreground hover:bg-secondary/80",
   ghost:
-    "text-foreground hover:bg-accent hover:text-accent-foreground",
+    "text-tertiary hover:bg-tertiary-accent hover:text-tertiary-accent-foreground",
   destructive:
     "bg-destructive text-destructive-foreground hover:bg-destructive/90",
 };
@@ -29,7 +29,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     <button
       ref={ref}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium font-sans transition-colors",
+        "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold font-sans transition-colors",
         "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/50",
         "disabled:pointer-events-none disabled:opacity-50",
         variantStyles[variant],

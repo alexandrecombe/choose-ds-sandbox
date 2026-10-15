@@ -57,6 +57,11 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-ring: var(--ring);
 
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-foreground: var(--tertiary-foreground);
+  --color-tertiary-accent: var(--tertiary-accent);
+  --color-tertiary-accent-foreground: var(--tertiary-accent-foreground);
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
 

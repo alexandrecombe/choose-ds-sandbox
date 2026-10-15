@@ -68,6 +68,7 @@ export default function ButtonPage() {
           "Pour une navigation pure, sans effet de bord, utiliser un lien — pas un Button. Le Button se réserve aux actions qui changent quelque chose.",
           "`destructive` ne s'expose jamais seul : toute action irréversible passe par un dialog de confirmation.",
           "Pour un choix binaire persistant (on/off), c'est un Switch, pas un bouton qui bascule son propre label.",
+          "`ghost` est le seul variant qui colore son texte sans aplat : il porte la couleur tertiary Choose, avec tertiary-accent en fond au survol.",
           "`ghost` sert les actions répétées en ligne, typiquement dans une table. Dans un formulaire, il se perd.",
           "Une icône par bouton, jamais deux, et seulement si elle ajoute une information que le label ne porte pas.",
           "Le label dit l'action, pas son résultat : « Valider l'opération », pas « Opération validée ».",

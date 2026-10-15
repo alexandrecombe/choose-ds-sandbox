@@ -20,6 +20,14 @@
   --secondary: #F5F5F5;
   --secondary-foreground: #0B1115;
 
+  /* Tertiary — présent dans l'export Figma et affiché par la page Colors,
+     mais absent de ce fichier jusqu'ici : les utilitaires Tailwind ne
+     pouvaient donc pas s'en servir. */
+  --tertiary: #13482B;
+  --tertiary-foreground: #FFFFFF;
+  --tertiary-accent: #EBF0EE;
+  --tertiary-accent-foreground: #13482B;
+
   /* Success (fond clair + bordure + texte/icône) */
   --success: #139B51;
   --success-foreground: #FFFFFF;
@@ -70,6 +78,12 @@
 /* Tokens sémantiques Choose — mode Dark */
 
 .dark {
+  /* Tertiary */
+  --tertiary: #668875;
+  --tertiary-foreground: #0B1115;
+  --tertiary-accent: #0E341F;
+  --tertiary-accent-foreground: #DBE7E0;
+
   /* Progress */
   --progress: #4B60A0;
   --progress-foreground: #FFFFFF;
