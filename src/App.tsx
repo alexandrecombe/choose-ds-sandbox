@@ -18,6 +18,7 @@ import { NavContext } from "./doc/nav-context";
 import { ChooseLogo } from "./choose-logo";
 import { ThemeProvider } from "./theme";
 import { ThemeToggle } from "./theme-toggle";
+import IntroductionPage from "./pages/introduction";
 import ColorsPage from "./pages/colors";
 import TypographyPage from "./pages/typography";
 import IconsPage from "./pages/icons";
@@ -55,6 +56,7 @@ import TooltipPage from "./pages/tooltip";
 // ---------------------------------------------------------------------------
 
 const PAGES: Record<Page, React.FC> = {
+  introduction: IntroductionPage,
   colors: ColorsPage,
   typography: TypographyPage,
   icons: IconsPage,
@@ -93,7 +95,7 @@ const PAGES: Record<Page, React.FC> = {
 // ---------------------------------------------------------------------------
 
 export default function App() {
-  const [page, setPage] = useState<Page>("colors");
+  const [page, setPage] = useState<Page>("introduction");
   const ActivePage = PAGES[page];
 
   return (

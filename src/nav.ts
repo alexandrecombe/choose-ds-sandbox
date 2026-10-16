@@ -2,6 +2,7 @@
    précédent/suivant du gabarit lisent la même source. Ajouter une page ici. */
 
 export type Page =
+  | "introduction"
   | "colors"
   | "typography"
   | "icons"
@@ -48,6 +49,7 @@ export const NAV_SECTIONS: NavSection[] = [
   {
     title: "Fondations",
     items: [
+      { key: "introduction", label: "Introduction" },
       { key: "colors", label: "Colors" },
       { key: "typography", label: "Typography" },
       { key: "icons", label: "Icons" },
