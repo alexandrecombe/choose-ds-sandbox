@@ -114,6 +114,11 @@
       "name": "skeleton",
       "usage": "Placeholder animé qui réserve la place d'un contenu en cours de chargement. Pour un chargement global, un spinner suffit.",
       "status": "stable"
+    },
+    {
+      "name": "tabs",
+      "usage": "Navigation par onglets pour alterner entre des panneaux de contenu parallèles. Pour une navigation entre pages, utiliser un Breadcrumb ou une sidebar.",
+      "status": "stable"
     }
   ]
 }

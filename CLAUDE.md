@@ -28,6 +28,7 @@ S'il existe, l'importer et l'utiliser. Ne jamais fabriquer :
 - un menu déroulant ou un dropdown bricolé → utiliser `choose-ui/dropdown-menu`
 - un placeholder "aucun résultat" fait main → utiliser `choose-ui/empty`
 - un tooltip riche au survol fait main → utiliser `choose-ui/hover-card`
+- des onglets ou un tab bar fait main → utiliser `choose-ui/tabs`
 
 Si un besoin n'est couvert par aucun composant ni aucun variant existant, le signaler
 explicitement dans la réponse au lieu de créer une variante locale.
@@ -54,6 +55,7 @@ quand ne pas l'utiliser, quel variant pour quel cas.
 - `components/choose-ui/select/select.usage.md`
 - `components/choose-ui/separator/separator.usage.md`
 - `components/choose-ui/skeleton/skeleton.usage.md`
+- `components/choose-ui/tabs/tabs.usage.md`
 - `components/choose-ui/checkbox/checkbox.usage.md`
 - `components/choose-ui/combobox/combobox.usage.md`
 - `components/choose-ui/context-menu/context-menu.usage.md`

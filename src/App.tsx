@@ -44,6 +44,7 @@ import FiltersPage from "./pages/filters";
 import SelectPage from "./pages/select";
 import SeparatorPage from "./pages/separator";
 import SkeletonPage from "./pages/skeleton";
+import TabsPage from "./pages/tabs";
 
 // ---------------------------------------------------------------------------
 // Page map
@@ -76,6 +77,7 @@ const PAGES: Record<Page, React.FC> = {
   select: SelectPage,
   separator: SeparatorPage,
   skeleton: SkeletonPage,
+  tabs: TabsPage,
 };
 
 // ---------------------------------------------------------------------------

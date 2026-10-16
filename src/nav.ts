@@ -27,6 +27,7 @@ export type Page =
   | "dropdown-menu"
   | "empty"
   | "hover-card"
+  | "tabs"
   | "skeleton";
 
 export interface NavItem {
@@ -75,6 +76,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "select", label: "Select" },
       { key: "separator", label: "Separator" },
       { key: "skeleton", label: "Skeleton" },
+      { key: "tabs", label: "Tabs" },
     ],
   },
 ];

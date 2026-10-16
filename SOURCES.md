@@ -70,6 +70,7 @@ ont été retirés.
 | `hover-card/index.tsx` | shadcn/ui | [`hover-card`](https://ui.shadcn.com/docs/components/base/hover-card) (Base UI) | non | 2026-10-15 |
 | `separator/index.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/base/separator) (Base UI) | oui — typo seule | 2026-10-15 |
 | `skeleton/index.tsx` | shadcn/ui | [`skeleton`](https://ui.shadcn.com/docs/components/base/skeleton) (Base UI) | non | 2026-10-15 |
+| `tabs/index.tsx` | shadcn/ui | [`tabs`](https://ui.shadcn.com/docs/components/base/tabs) (Base UI) | oui — typo seule | 2026-10-16 |
 | `filters/index.tsx` | reui | [`filters`](https://reui.io/components/filters) | oui — typo seule | 2026-10-15 |
 | `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
 
@@ -150,6 +151,7 @@ surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 | `sheet.tsx` | shadcn/ui | [`sheet`](https://ui.shadcn.com/docs/components/sheet) | non | 2026-07-31 |
 | `sidebar.tsx` | shadcn/ui | [`sidebar`](https://ui.shadcn.com/docs/components/sidebar) | non | 2026-07-31 |
 | `skeleton.tsx` | shadcn/ui | [`skeleton`](https://ui.shadcn.com/docs/components/base/skeleton) (Base UI) | non | 2026-10-15 |
+| `tabs.tsx` | shadcn/ui | [`tabs`](https://ui.shadcn.com/docs/components/base/tabs) (Base UI) | non | 2026-10-16 |
 | `tooltip.tsx` | shadcn/ui | [`tooltip`](https://ui.shadcn.com/docs/components/tooltip) | non | 2026-07-31 |
 | `../hooks/use-mobile.tsx` | shadcn/ui | `use-mobile` — pas de page propre, [livré avec `sidebar`](https://ui.shadcn.com/docs/components/sidebar) | non | 2026-07-31 |
 
