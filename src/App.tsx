@@ -47,6 +47,7 @@ import SeparatorPage from "./pages/separator";
 import SkeletonPage from "./pages/skeleton";
 import SwitchPage from "./pages/switch";
 import TabsPage from "./pages/tabs";
+import TextareaPage from "./pages/textarea";
 import TooltipPage from "./pages/tooltip";
 
 // ---------------------------------------------------------------------------
@@ -83,6 +84,7 @@ const PAGES: Record<Page, React.FC> = {
   skeleton: SkeletonPage,
   switch: SwitchPage,
   tabs: TabsPage,
+  textarea: TextareaPage,
   tooltip: TooltipPage,
 };
 

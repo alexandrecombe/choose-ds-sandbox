@@ -30,6 +30,7 @@ export type Page =
   | "empty"
   | "hover-card"
   | "tooltip"
+  | "textarea"
   | "tabs"
   | "skeleton";
 
@@ -82,6 +83,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "skeleton", label: "Skeleton" },
       { key: "switch", label: "Switch" },
       { key: "tabs", label: "Tabs" },
+      { key: "textarea", label: "Textarea" },
       { key: "tooltip", label: "Tooltip" },
     ],
   },

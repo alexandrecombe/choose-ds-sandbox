@@ -32,6 +32,7 @@ S'il existe, l'importer et l'utiliser. Ne jamais fabriquer :
 - un rond sélectionnable fait main, ou un Select détourné pour 2-5 options → utiliser `choose-ui/radio-group`
 - un interrupteur fait main, ou un Checkbox détourné pour un réglage instantané → utiliser `choose-ui/switch`
 - une bulle au survol faite main, ou un `title=` natif → utiliser `choose-ui/tooltip`
+- un `<textarea>` stylé à la main → utiliser `choose-ui/textarea`
 
 Si un besoin n'est couvert par aucun composant ni aucun variant existant, le signaler
 explicitement dans la réponse au lieu de créer une variante locale.
@@ -60,6 +61,7 @@ quand ne pas l'utiliser, quel variant pour quel cas.
 - `components/choose-ui/separator/separator.usage.md`
 - `components/choose-ui/skeleton/skeleton.usage.md`
 - `components/choose-ui/switch/switch.usage.md`
+- `components/choose-ui/textarea/textarea.usage.md`
 - `components/choose-ui/tooltip/tooltip.usage.md`
 - `components/choose-ui/tabs/tabs.usage.md`
 - `components/choose-ui/checkbox/checkbox.usage.md`

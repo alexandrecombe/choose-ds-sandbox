@@ -126,6 +126,11 @@
       "status": "stable"
     },
     {
+      "name": "textarea",
+      "usage": "Champ de saisie sur plusieurs lignes, dont la hauteur suit le texte. Pour une saisie sur une ligne, utiliser Input ; pour du texte mis en forme, un éditeur riche (absent de la lib).",
+      "status": "stable"
+    },
+    {
       "name": "tooltip",
       "usage": "Étiquette courte au survol qui nomme un élément peu évident, typiquement un bouton à icône seule. Pour un contenu riche ou cliquable, utiliser Hover card ; pour des actions, Dropdown menu.",
       "status": "stable"

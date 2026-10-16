@@ -35,7 +35,7 @@ un champ invalide sans dire pourquoi.
 
 - Pour une erreur de contexte à l'échelle de l'écran → une **Alert banner**. Une erreur de
   validation d'un champ reste inline, à côté du champ.
-- Pour un texte long sur plusieurs lignes → un `textarea` (pas encore dans la lib).
+- Pour un texte long sur plusieurs lignes → `choose-ui/textarea`.
 - Pour un choix dans une liste fermée → un select (pas encore dans la lib).
 
 ## Règles Choose

@@ -74,6 +74,7 @@ ont été retirés.
 | `radio-group/index.tsx` | shadcn/ui | [`radio-group`](https://ui.shadcn.com/docs/components/base/radio-group) (Base UI) | oui — typo seule | 2026-10-16 |
 | `switch/index.tsx` | shadcn/ui | [`switch`](https://ui.shadcn.com/docs/components/base/switch) (Base UI) | non | 2026-10-16 |
 | `tooltip/index.tsx` | shadcn/ui | [`tooltip`](https://ui.shadcn.com/docs/components/base/tooltip) (Base UI) | oui — typo seule | 2026-10-16 |
+| `textarea/index.tsx` | shadcn/ui | [`textarea`](https://ui.shadcn.com/docs/components/base/textarea) (Base UI) | oui — typo seule | 2026-10-16 |
 | `filters/index.tsx` | reui | [`filters`](https://reui.io/components/filters) | oui — typo seule | 2026-10-15 |
 | `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
 
