@@ -119,7 +119,6 @@ export default function TypographyPage() {
           title="Titres"
           description="Tokens composites de la collection Custom/Desktop. Chaque rôle combine famille, taille, graisse, interligne et espacement."
         />
-        <TableHead />
 
         <div>
           {headings.map((h) => {
@@ -130,10 +129,10 @@ export default function TypographyPage() {
             return (
               <div
                 key={h.role}
-                className="grid grid-cols-[1fr_minmax(140px,auto)_minmax(160px,auto)] items-center gap-4 border-b border-border/30 py-4"
+                className="flex flex-wrap items-baseline gap-x-6 gap-y-2 border-b border-border/30 py-5"
               >
                 <p
-                  className="text-foreground truncate"
+                  className="text-foreground w-full"
                   style={{
                     fontFamily: cssFontStack[familyKey],
                     fontSize: `${h.fontSize}px`,
@@ -144,10 +143,10 @@ export default function TypographyPage() {
                 >
                   Choose Design System
                 </p>
-                <span className="rounded bg-muted px-2 py-0.5 font-mono text-xs text-foreground self-start mt-1 w-fit">
+                <span className="rounded bg-muted px-2 py-0.5 font-mono text-xs text-foreground w-fit">
                   {h.role}
                 </span>
-                <span className="text-xs text-muted-foreground leading-relaxed">
+                <span className="text-xs text-muted-foreground">
                   {h.fontFamily} · {h.fontSize}/{h.lineHeight} ·{" "}
                   {fontWeightLabel(h.fontWeight)}
                 </span>
