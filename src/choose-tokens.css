@@ -91,9 +91,12 @@
   /* Typographies — deux familles, et deux seulement.
      La collection Figma expose aussi font-serif (Georgia) et font-mono
      (Geist Mono) : ce sont des valeurs par défaut de Figma, jamais arbitrées
-     pour Choose. Ne pas les réintroduire ici. */
+     pour Choose. Ne pas les réintroduire ici, pas même en repli.
+     Le seul serif du DS est SangBleu Republic ; `serif` en fin de pile est la
+     catégorie générique CSS, pas une police nommée — elle évite de retomber
+     sur une sans si SangBleu ne charge pas. */
   --font-sans: "Maison Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: "SangBleu Republic", Georgia, serif;
+  --font-display: "SangBleu Republic", serif;
 }
 
 /* Tokens sémantiques Choose — mode Dark

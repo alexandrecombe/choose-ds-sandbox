@@ -11,7 +11,7 @@ const textScale = getTextScale();
 const cssFontStack: Record<string, string> = {
   "font-sans":
     '"Maison Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-  "font-heading": '"SangBleu Republic", Georgia, serif',
+  "font-heading": '"SangBleu Republic", serif',
 };
 
 function fontWeightLabel(w: number): string {
