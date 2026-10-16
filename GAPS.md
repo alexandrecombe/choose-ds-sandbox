@@ -25,3 +25,11 @@ texte au champ par `aria-describedby`. Un `Field` (label + champ + message) couv
 **Switch**
 `button.usage.md` renvoie vers un Switch pour un choix binaire persistant (on/off).
 Le composant n'existe pas.
+
+**Radio group**
+Trois fichiers d'usage renvoient vers un groupe de radios sans qu'il existe :
+`select.usage.md` (« Pour 2-3 options → un groupe de radios est plus rapide à scanner »),
+`checkbox.usage.md` (« Pour un choix exclusif → utiliser un radio group ») et
+`catalog.json`. Rencontré sur l'écran de profil (maquette Paper, page « Profil ») pour le
+choix de thème clair / sombre / système : rabattu sur un Select, que sa propre doc
+déconseille pour trois options.
