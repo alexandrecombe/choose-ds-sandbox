@@ -20,6 +20,7 @@ export type Page =
   | "input"
   | "checkbox"
   | "combobox"
+  | "radio-group"
   | "filters"
   | "select"
   | "separator"
@@ -73,6 +74,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "input", label: "Input" },
       { key: "item", label: "Item" },
       { key: "pagination", label: "Pagination" },
+      { key: "radio-group", label: "Radio group" },
       { key: "select", label: "Select" },
       { key: "separator", label: "Separator" },
       { key: "skeleton", label: "Skeleton" },

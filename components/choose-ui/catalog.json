@@ -101,6 +101,11 @@
       "status": "stable"
     },
     {
+      "name": "radio-group",
+      "usage": "Choix exclusif entre deux et cinq options toutes visibles. Au-delà de cinq, utiliser Select ; pour une sélection multiple, des Checkbox.",
+      "status": "stable"
+    },
+    {
       "name": "select",
       "usage": "Menu déroulant de sélection unique. Remplace le select natif pour un rendu cohérent. Pour 2-3 options, un groupe de radios suffit ; pour une recherche avec saisie, un Combobox.",
       "status": "stable"

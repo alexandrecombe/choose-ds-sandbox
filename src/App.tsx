@@ -41,6 +41,7 @@ import DropdownMenuPage from "./pages/dropdown-menu";
 import EmptyPage from "./pages/empty";
 import HoverCardPage from "./pages/hover-card";
 import FiltersPage from "./pages/filters";
+import RadioGroupPage from "./pages/radio-group";
 import SelectPage from "./pages/select";
 import SeparatorPage from "./pages/separator";
 import SkeletonPage from "./pages/skeleton";
@@ -74,6 +75,7 @@ const PAGES: Record<Page, React.FC> = {
   empty: EmptyPage,
   "hover-card": HoverCardPage,
   filters: FiltersPage,
+  "radio-group": RadioGroupPage,
   select: SelectPage,
   separator: SeparatorPage,
   skeleton: SkeletonPage,

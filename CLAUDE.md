@@ -29,6 +29,7 @@ S'il existe, l'importer et l'utiliser. Ne jamais fabriquer :
 - un placeholder "aucun résultat" fait main → utiliser `choose-ui/empty`
 - un tooltip riche au survol fait main → utiliser `choose-ui/hover-card`
 - des onglets ou un tab bar fait main → utiliser `choose-ui/tabs`
+- un rond sélectionnable fait main, ou un Select détourné pour 2-5 options → utiliser `choose-ui/radio-group`
 
 Si un besoin n'est couvert par aucun composant ni aucun variant existant, le signaler
 explicitement dans la réponse au lieu de créer une variante locale.
@@ -52,6 +53,7 @@ quand ne pas l'utiliser, quel variant pour quel cas.
 - `components/choose-ui/input/input.usage.md`
 - `components/choose-ui/item/item.usage.md`
 - `components/choose-ui/pagination/pagination.usage.md`
+- `components/choose-ui/radio-group/radio-group.usage.md`
 - `components/choose-ui/select/select.usage.md`
 - `components/choose-ui/separator/separator.usage.md`
 - `components/choose-ui/skeleton/skeleton.usage.md`
