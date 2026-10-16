@@ -29,6 +29,7 @@ export type Page =
   | "dropdown-menu"
   | "empty"
   | "hover-card"
+  | "tooltip"
   | "tabs"
   | "skeleton";
 
@@ -81,6 +82,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "skeleton", label: "Skeleton" },
       { key: "switch", label: "Switch" },
       { key: "tabs", label: "Tabs" },
+      { key: "tooltip", label: "Tooltip" },
     ],
   },
 ];

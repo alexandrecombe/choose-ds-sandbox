@@ -47,6 +47,7 @@ import SeparatorPage from "./pages/separator";
 import SkeletonPage from "./pages/skeleton";
 import SwitchPage from "./pages/switch";
 import TabsPage from "./pages/tabs";
+import TooltipPage from "./pages/tooltip";
 
 // ---------------------------------------------------------------------------
 // Page map
@@ -82,6 +83,7 @@ const PAGES: Record<Page, React.FC> = {
   skeleton: SkeletonPage,
   switch: SwitchPage,
   tabs: TabsPage,
+  tooltip: TooltipPage,
 };
 
 // ---------------------------------------------------------------------------

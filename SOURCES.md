@@ -73,6 +73,7 @@ ont été retirés.
 | `tabs/index.tsx` | shadcn/ui | [`tabs`](https://ui.shadcn.com/docs/components/base/tabs) (Base UI) | oui — typo seule | 2026-10-16 |
 | `radio-group/index.tsx` | shadcn/ui | [`radio-group`](https://ui.shadcn.com/docs/components/base/radio-group) (Base UI) | oui — typo seule | 2026-10-16 |
 | `switch/index.tsx` | shadcn/ui | [`switch`](https://ui.shadcn.com/docs/components/base/switch) (Base UI) | non | 2026-10-16 |
+| `tooltip/index.tsx` | shadcn/ui | [`tooltip`](https://ui.shadcn.com/docs/components/base/tooltip) (Base UI) | oui — typo seule | 2026-10-16 |
 | `filters/index.tsx` | reui | [`filters`](https://reui.io/components/filters) | oui — typo seule | 2026-10-15 |
 | `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
 
@@ -156,11 +157,20 @@ surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 | `tabs.tsx` | shadcn/ui | [`tabs`](https://ui.shadcn.com/docs/components/base/tabs) (Base UI) | non | 2026-10-16 |
 | `radio-group.tsx` | shadcn/ui | [`radio-group`](https://ui.shadcn.com/docs/components/base/radio-group) (Base UI) | non | 2026-10-16 |
 | `switch.tsx` | shadcn/ui | [`switch`](https://ui.shadcn.com/docs/components/base/switch) (Base UI) | non | 2026-10-16 |
-| `tooltip.tsx` | shadcn/ui | [`tooltip`](https://ui.shadcn.com/docs/components/tooltip) | non | 2026-07-31 |
+| `tooltip.tsx` | shadcn/ui | [`tooltip`](https://ui.shadcn.com/docs/components/tooltip) (Radix) | non | 2026-07-31 |
+| `tooltip-base.tsx` | shadcn/ui | [`tooltip`](https://ui.shadcn.com/docs/components/base/tooltip) (Base UI) | non | 2026-10-16 |
 | `../hooks/use-mobile.tsx` | shadcn/ui | `use-mobile` — pas de page propre, [livré avec `sidebar`](https://ui.shadcn.com/docs/components/sidebar) | non | 2026-07-31 |
 
 `components/ui/button.tsx` (shadcn, radix + cva) et `choose-ui/button/index.tsx` sont deux
 composants distincts qui coexistent. Seul le second est la lib Choose.
+
+`tooltip.tsx` et `tooltip-base.tsx` coexistent de la même façon, et pour une raison précise :
+`tooltip.tsx` est resté en **radix** parce que `sidebar.tsx` s'appuie sur son API
+(`delayDuration`, `asChild`) et sur d'autres primitives radix (dialog, popover, scroll-area).
+Basculer ce seul fichier en Base UI casserait la navigation de la sandbox. `tooltip-base.tsx`
+est la variante Base UI, et c'est elle — et elle seule — qui sert de socle à
+`choose-ui/tooltip`. Les deux APIs ne sont pas interchangeables : `render` d'un côté,
+`asChild` de l'autre.
 
 `avatar.tsx` n'est pas distribué par le registry : `npx shadcn add avatar` sert la version
 **radix**, pas la variante Base UI. Les endpoints `/r/styles/new-york/avatar.json` et
