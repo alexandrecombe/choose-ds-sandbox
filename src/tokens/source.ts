@@ -247,16 +247,27 @@ export function getTypographyTokens(): TypographyToken[] {
   return roles;
 }
 
-/** Returns font family definitions from the Theme collection. */
+/**
+ * Familles de marque Choose, dans l'ordre d'affichage.
+ *
+ * La collection Figma en expose deux autres, `font-serif` (Georgia) et
+ * `font-mono` (Geist Mono) : ce sont des valeurs par défaut de Figma, jamais
+ * arbitrées pour Choose. Georgia ne sert nulle part ; Geist Mono n'habille que
+ * l'outillage de cette sandbox (noms de tokens, blocs de code), pas un
+ * composant. Les exposer ici les ferait passer pour des typos du DS.
+ */
+const BRAND_FONT_KEYS = ["font-heading", "font-sans"] as const;
+
+/** Returns the Choose brand font families from the Theme collection. */
 export function getFontFamilies(): FontFamily[] {
   const font = (themeTypoJson as Record<string, unknown>)["font"] as
     | Record<string, { $value?: string }>
     | undefined;
   if (!font) return [];
 
-  return Object.entries(font)
-    .filter(([, v]) => typeof v.$value === "string")
-    .map(([key, v]) => ({ key, name: v.$value as string }));
+  return BRAND_FONT_KEYS.filter(
+    (key) => typeof font[key]?.$value === "string",
+  ).map((key) => ({ key, name: font[key]!.$value as string }));
 }
 
 /** Returns the text size scale (xs..9xl) from the Theme collection. */

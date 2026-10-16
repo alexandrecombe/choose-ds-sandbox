@@ -12,8 +12,6 @@ const cssFontStack: Record<string, string> = {
   "font-sans":
     '"Maison Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
   "font-heading": '"SangBleu Republic", Georgia, serif',
-  "font-mono": '"Geist Mono", monospace',
-  "font-serif": "Georgia, serif",
 };
 
 function fontWeightLabel(w: number): string {
@@ -80,7 +78,7 @@ export default function TypographyPage() {
       <section className="mt-16">
         <SectionHeader
           title="Familles"
-          description="Quatre familles couvrent l'ensemble des besoins : display, sans, mono et serif."
+          description="Deux familles, et deux seulement : SangBleu Republic pour les titres, Maison Neue pour tout le reste."
         />
 
         <div className="space-y-10">
@@ -89,7 +87,7 @@ export default function TypographyPage() {
             return (
               <div key={f.key} className="border-b border-border/50 pb-8">
                 <div className="flex items-baseline gap-3 mb-4">
-                  <span className="rounded bg-muted px-2 py-0.5 font-mono text-xs font-medium text-foreground">
+                  <span className="rounded bg-muted px-2 py-0.5 text-xs font-medium text-foreground">
                     {f.key}
                   </span>
                   <span className="text-sm text-muted-foreground">{f.name}</span>
@@ -143,7 +141,7 @@ export default function TypographyPage() {
                 >
                   Choose Design System
                 </p>
-                <span className="rounded bg-muted px-2 py-0.5 font-mono text-xs text-foreground w-fit">
+                <span className="rounded bg-muted px-2 py-0.5 text-xs text-foreground w-fit">
                   {h.role}
                 </span>
                 <span className="text-xs text-muted-foreground">
@@ -180,7 +178,7 @@ export default function TypographyPage() {
               >
                 The quick brown fox jumps over the lazy dog
               </p>
-              <span className="rounded bg-muted px-2 py-0.5 font-mono text-xs text-foreground self-start mt-1 w-fit">
+              <span className="rounded bg-muted px-2 py-0.5 text-xs text-foreground self-start mt-1 w-fit">
                 text-{t.size}
               </span>
               <span className="text-xs text-muted-foreground">

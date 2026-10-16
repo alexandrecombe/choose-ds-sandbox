@@ -30,7 +30,7 @@ function Swatch({ token }: { token: ColorToken }) {
           />
         )}
       </div>
-      <span className="font-mono text-xs text-muted-foreground">
+      <span className="text-xs text-muted-foreground">
         {token.cssValue}
       </span>
     </div>
@@ -45,7 +45,7 @@ function TokenRow({ name }: { name: string }) {
   return (
     <div className="grid grid-cols-[200px_1fr_1fr] items-center gap-4 border-b border-border/50 py-3">
       <div>
-        <p className="font-mono text-sm font-medium text-foreground">{name}</p>
+        <p className="text-sm font-medium text-foreground">{name}</p>
         {light.description && (
           <p className="mt-0.5 text-xs text-muted-foreground">
             {light.description}

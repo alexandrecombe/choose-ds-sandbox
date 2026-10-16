@@ -88,10 +88,12 @@
   --radius-lg: 10px;
   --radius-xl: 14px;
 
-  /* Typographies */
+  /* Typographies — deux familles, et deux seulement.
+     La collection Figma expose aussi font-serif (Georgia) et font-mono
+     (Geist Mono) : ce sont des valeurs par défaut de Figma, jamais arbitrées
+     pour Choose. Ne pas les réintroduire ici. */
   --font-sans: "Maison Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-display: "SangBleu Republic", Georgia, serif;
-  --font-mono: "Geist Mono", monospace;
 }
 
 /* Tokens sémantiques Choose — mode Dark

@@ -77,7 +77,7 @@ export default function TabsPage() {
             </div>
           </TabsContent>
           <TabsContent value="code" className="mt-3">
-            <div className="flex h-24 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground font-mono">
+            <div className="flex h-24 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground">
               {'<Component />'}
             </div>
           </TabsContent>

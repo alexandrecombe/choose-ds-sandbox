@@ -8,10 +8,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* `font-sans`, `font-mono` et `rounded-*` existent par défaut en v4 et lisent
+/* `font-sans` et `rounded-*` existent par défaut en v4 et lisent
    `--font-sans` / `--radius-*` : choose-tokens.css en écrase la valeur depuis la
    couche base, sans qu'on ait à les redéclarer ici. `font-display` n'a pas
-   d'équivalent par défaut, d'où l'utilitaire explicite. */
+   d'équivalent par défaut, d'où l'utilitaire explicite.
+   `font-mono` reste un utilitaire Tailwind par défaut mais n'est plus employé :
+   le DS ne porte pas de famille monospace. */
 /* `shimmer` est utilisé par components/ui/attachment.tsx (états uploading et
    processing) mais n'est pas distribué avec le composant : shadcn le déclare
    dans son CSS global, que nous ne reprenons pas. Réimplémenté ici, sur les

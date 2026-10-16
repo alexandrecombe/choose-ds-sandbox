@@ -102,7 +102,7 @@ export default function AttachmentPage() {
                 <AttachmentDescription>820 Ko</AttachmentDescription>
               </AttachmentContent>
             </Attachment>
-            <span className="font-mono text-xs text-muted-foreground">{s}</span>
+            <span className="text-xs text-muted-foreground">{s}</span>
           </div>
         ))}
       </DocSection>

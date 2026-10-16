@@ -92,7 +92,7 @@ export function DocSpecimen({
   return (
     <div className="flex min-w-24 flex-col items-center gap-2">
       {children}
-      <span className="font-mono text-xs text-muted-foreground">{label}</span>
+      <span className="text-xs text-muted-foreground">{label}</span>
     </div>
   );
 }
@@ -106,7 +106,7 @@ export function DocCode({ code }: { code: string }) {
         <ChevronRight className="size-4 transition-transform group-open:rotate-90" />
         Voir le code
       </summary>
-      <pre className="mt-3 overflow-x-auto rounded-lg border border-border bg-muted/40 p-4 font-mono text-xs leading-relaxed text-foreground">
+      <pre className="mt-3 overflow-x-auto rounded-lg border border-border bg-muted/40 p-4 text-xs leading-relaxed text-foreground">
         {code}
       </pre>
     </details>

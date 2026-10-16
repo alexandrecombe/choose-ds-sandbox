@@ -35,7 +35,7 @@ export default function IconsPage() {
 
         <p className="mt-6 text-sm text-muted-foreground">
           {Object.keys(icons).length} icônes disponibles via{" "}
-          <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs text-foreground">
+          <code className="rounded bg-muted px-1.5 py-0.5 text-xs text-foreground">
             lucide-react
           </code>
         </p>
