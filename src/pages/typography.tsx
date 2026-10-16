@@ -8,9 +8,9 @@ const families = getFontFamilies();
 const headings = getTypographyTokens();
 const textScale = getTextScale();
 
-/** Maps Figma font-family keys to CSS font-family stacks used in the app. */
 const cssFontStack: Record<string, string> = {
-  "font-sans": '"Maison Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+  "font-sans":
+    '"Maison Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
   "font-heading": '"SangBleu Republic", Georgia, serif',
   "font-mono": '"Geist Mono", monospace',
   "font-serif": "Georgia, serif",
@@ -31,140 +31,165 @@ function fontWeightLabel(w: number): string {
   return map[w] ?? String(w);
 }
 
+function SectionHeader({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="mb-6">
+      <h2 className="font-display text-xl font-semibold tracking-tight text-foreground">
+        {title}
+      </h2>
+      <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+    </div>
+  );
+}
+
+function TableHead() {
+  return (
+    <div className="grid grid-cols-[1fr_minmax(140px,auto)_minmax(160px,auto)] items-end gap-4 border-b border-border pb-2">
+      <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+        Aperçu
+      </span>
+      <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+        Classe / Token
+      </span>
+      <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+        Détails
+      </span>
+    </div>
+  );
+}
+
 export default function TypographyPage() {
   return (
-    <div className="max-w-4xl px-10 py-16">
+    <div className="max-w-5xl px-10 py-16 font-sans">
+      {/* ── Page header ─────────────────────────────────────────── */}
       <h1 className="font-display text-3xl font-semibold tracking-tight text-foreground">
         Typography
       </h1>
-      <p className="mt-2 text-base text-muted-foreground">
-        Familles typographiques et échelle de tailles du Design System Choose.
-        Les titres utilisent SangBleu Republic, le texte courant Maison Neue.
+      <p className="mt-2 text-base text-muted-foreground max-w-2xl">
+        Règles de composition typographique du Design System Choose. Les titres
+        utilisent SangBleu Republic, le texte courant Maison Neue.
       </p>
 
-      {/* ── Font families ────────────────────────────────────────── */}
-      <section className="mt-12">
-        <h2 className="text-lg font-semibold text-foreground">
-          Familles typographiques
-        </h2>
-        <div className="mt-6 space-y-8">
-          {families.map((f) => (
-            <div key={f.key} className="border-b border-border/50 pb-6">
-              <div className="flex items-baseline gap-3">
-                <span className="font-mono text-sm font-medium text-foreground">
-                  {f.key}
-                </span>
-                <span className="text-sm text-muted-foreground">{f.name}</span>
+      {/* ── Font families ───────────────────────────────────────── */}
+      <section className="mt-16">
+        <SectionHeader
+          title="Familles"
+          description="Quatre familles couvrent l'ensemble des besoins : display, sans, mono et serif."
+        />
+
+        <div className="space-y-10">
+          {families.map((f) => {
+            const stack = cssFontStack[f.key] ?? f.name;
+            return (
+              <div key={f.key} className="border-b border-border/50 pb-8">
+                <div className="flex items-baseline gap-3 mb-4">
+                  <span className="rounded bg-muted px-2 py-0.5 font-mono text-xs font-medium text-foreground">
+                    {f.key}
+                  </span>
+                  <span className="text-sm text-muted-foreground">{f.name}</span>
+                </div>
+                <p
+                  className="text-[40px] leading-[1.2] tracking-tight text-foreground"
+                  style={{ fontFamily: stack }}
+                >
+                  Aa Bb Cc Dd Ee Ff Gg
+                </p>
+                <p
+                  className="mt-3 text-lg text-muted-foreground"
+                  style={{ fontFamily: stack }}
+                >
+                  ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
+                  0123456789
+                </p>
               </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ── Heading roles ───────────────────────────────────────── */}
+      <section className="mt-20">
+        <SectionHeader
+          title="Titres"
+          description="Tokens composites de la collection Custom/Desktop. Chaque rôle combine famille, taille, graisse, interligne et espacement."
+        />
+        <TableHead />
+
+        <div>
+          {headings.map((h) => {
+            const familyKey =
+              h.fontFamily === "SangBleu Republic"
+                ? "font-heading"
+                : "font-sans";
+            return (
+              <div
+                key={h.role}
+                className="grid grid-cols-[1fr_minmax(140px,auto)_minmax(160px,auto)] items-center gap-4 border-b border-border/30 py-4"
+              >
+                <p
+                  className="text-foreground truncate"
+                  style={{
+                    fontFamily: cssFontStack[familyKey],
+                    fontSize: `${h.fontSize}px`,
+                    lineHeight: `${h.lineHeight}px`,
+                    fontWeight: h.fontWeight,
+                    letterSpacing: `${h.letterSpacing}px`,
+                  }}
+                >
+                  Choose Design System
+                </p>
+                <span className="rounded bg-muted px-2 py-0.5 font-mono text-xs text-foreground self-start mt-1 w-fit">
+                  {h.role}
+                </span>
+                <span className="text-xs text-muted-foreground leading-relaxed">
+                  {h.fontFamily} · {h.fontSize}/{h.lineHeight} ·{" "}
+                  {fontWeightLabel(h.fontWeight)}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ── Text scale ──────────────────────────────────────────── */}
+      <section className="mt-20">
+        <SectionHeader
+          title="Texte"
+          description="Rampe de tailles issue de la collection Theme. Le texte courant utilise Maison Neue, weight 400."
+        />
+        <TableHead />
+
+        <div>
+          {textScale.map((t) => (
+            <div
+              key={t.size}
+              className="grid grid-cols-[1fr_minmax(140px,auto)_minmax(160px,auto)] items-center gap-4 border-b border-border/30 py-4"
+            >
               <p
-                className="mt-3 text-3xl text-foreground"
-                style={{ fontFamily: cssFontStack[f.key] ?? f.name }}
+                className="text-foreground truncate"
+                style={{
+                  fontFamily: cssFontStack["font-sans"],
+                  fontSize: `${t.fontSize}px`,
+                  lineHeight: `${t.lineHeight}px`,
+                }}
               >
                 The quick brown fox jumps over the lazy dog
               </p>
-              <p
-                className="mt-1 text-base text-muted-foreground"
-                style={{ fontFamily: cssFontStack[f.key] ?? f.name }}
-              >
-                ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
-                0123456789
-              </p>
+              <span className="rounded bg-muted px-2 py-0.5 font-mono text-xs text-foreground self-start mt-1 w-fit">
+                text-{t.size}
+              </span>
+              <span className="text-xs text-muted-foreground">
+                {t.fontSize}px / {t.lineHeight}px
+              </span>
             </div>
           ))}
         </div>
-      </section>
-
-      {/* ── Heading roles ────────────────────────────────────────── */}
-      <section className="mt-16">
-        <h2 className="text-lg font-semibold text-foreground">
-          Rôles de titres
-        </h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Tokens composites de la collection Custom/Desktop. Chaque rôle
-          combine font-family, taille, weight, line-height et letter-spacing.
-        </p>
-
-        <div className="mt-8 space-y-10">
-          {headings.map((h) => (
-            <div key={h.role} className="border-b border-border/50 pb-6">
-              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                <span className="font-mono text-sm font-medium text-foreground">
-                  {h.role}
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  {h.fontFamily} &middot; {h.fontSize}px / {h.lineHeight}px
-                  &middot; {fontWeightLabel(h.fontWeight)} &middot;
-                  letter-spacing {h.letterSpacing}px
-                </span>
-              </div>
-              <p
-                className="mt-3 text-foreground"
-                style={{
-                  fontFamily:
-                    cssFontStack[
-                      h.fontFamily === "SangBleu Republic"
-                        ? "font-heading"
-                        : "font-sans"
-                    ],
-                  fontSize: `${h.fontSize}px`,
-                  lineHeight: `${h.lineHeight}px`,
-                  fontWeight: h.fontWeight,
-                  letterSpacing: `${h.letterSpacing}px`,
-                }}
-              >
-                Choose Design System
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Text scale ───────────────────────────────────────────── */}
-      <section className="mt-16">
-        <h2 className="text-lg font-semibold text-foreground">
-          Échelle de texte
-        </h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Rampe de tailles issue de la collection Theme. Le texte courant
-          utilise Maison Neue (font-sans) par défaut, weight 400.
-        </p>
-
-        {/* Column headers */}
-        <div className="mt-6 grid grid-cols-[80px_100px_1fr] items-center gap-4 border-b border-border pb-2">
-          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-            Taille
-          </span>
-          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-            Valeur
-          </span>
-          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-            Aperçu
-          </span>
-        </div>
-
-        {textScale.map((t) => (
-          <div
-            key={t.size}
-            className="grid grid-cols-[80px_100px_1fr] items-center gap-4 border-b border-border/50 py-3"
-          >
-            <span className="font-mono text-sm font-medium text-foreground">
-              {t.size}
-            </span>
-            <span className="text-xs text-muted-foreground">
-              {t.fontSize}px / {t.lineHeight}px
-            </span>
-            <p
-              className="truncate text-foreground"
-              style={{
-                fontFamily: cssFontStack["font-sans"],
-                fontSize: `${t.fontSize}px`,
-                lineHeight: `${t.lineHeight}px`,
-              }}
-            >
-              The quick brown fox
-            </p>
-          </div>
-        ))}
       </section>
     </div>
   );
