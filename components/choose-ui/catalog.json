@@ -121,6 +121,11 @@
       "status": "stable"
     },
     {
+      "name": "switch",
+      "usage": "Réglage on/off appliqué immédiatement, sans bouton Enregistrer. Pour un consentement soumis avec un formulaire, utiliser Checkbox ; pour un choix exclusif, un Radio group.",
+      "status": "stable"
+    },
+    {
       "name": "tabs",
       "usage": "Navigation par onglets pour alterner entre des panneaux de contenu parallèles. Pour une navigation entre pages, utiliser un Breadcrumb ou une sidebar.",
       "status": "stable"

@@ -21,7 +21,3 @@ de lien n'existe dans la lib.
 Le champ existe désormais (`choose-ui/input`, dont l'erreur se pilote par `aria-invalid`), mais
 le message lui-même reste à écrire à la main à chaque fois : pas de composant qui relie le
 texte au champ par `aria-describedby`. Un `Field` (label + champ + message) couvrirait les deux.
-
-**Switch**
-`button.usage.md` renvoie vers un Switch pour un choix binaire persistant (on/off).
-Le composant n'existe pas.

@@ -24,6 +24,7 @@ export type Page =
   | "filters"
   | "select"
   | "separator"
+  | "switch"
   | "context-menu"
   | "dropdown-menu"
   | "empty"
@@ -78,6 +79,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "select", label: "Select" },
       { key: "separator", label: "Separator" },
       { key: "skeleton", label: "Skeleton" },
+      { key: "switch", label: "Switch" },
       { key: "tabs", label: "Tabs" },
     ],
   },

@@ -45,6 +45,7 @@ import RadioGroupPage from "./pages/radio-group";
 import SelectPage from "./pages/select";
 import SeparatorPage from "./pages/separator";
 import SkeletonPage from "./pages/skeleton";
+import SwitchPage from "./pages/switch";
 import TabsPage from "./pages/tabs";
 
 // ---------------------------------------------------------------------------
@@ -79,6 +80,7 @@ const PAGES: Record<Page, React.FC> = {
   select: SelectPage,
   separator: SeparatorPage,
   skeleton: SkeletonPage,
+  switch: SwitchPage,
   tabs: TabsPage,
 };
 
