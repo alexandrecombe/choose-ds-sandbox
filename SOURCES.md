@@ -75,6 +75,8 @@ ont été retirés.
 | `switch/index.tsx` | shadcn/ui | [`switch`](https://ui.shadcn.com/docs/components/base/switch) (Base UI) | non | 2026-10-16 |
 | `tooltip/index.tsx` | shadcn/ui | [`tooltip`](https://ui.shadcn.com/docs/components/base/tooltip) (Base UI) | oui — typo seule | 2026-10-16 |
 | `textarea/index.tsx` | shadcn/ui | [`textarea`](https://ui.shadcn.com/docs/components/base/textarea) (Base UI) | oui — typo seule | 2026-10-16 |
+| `calendar/index.tsx` | shadcn/ui | [`calendar`](https://ui.shadcn.com/docs/components/base/calendar) (Base UI) | oui — typo + locale `fr` | 2026-10-16 |
+| `date-picker/index.tsx` | — composition Choose | aucune : shadcn documente une recette, pas un composant | — | 2026-10-16 |
 | `filters/index.tsx` | reui | [`filters`](https://reui.io/components/filters) | oui — typo seule | 2026-10-15 |
 | `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
 
@@ -144,6 +146,7 @@ surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 | `combobox.tsx` | shadcn/ui | [`combobox`](https://ui.shadcn.com/docs/components/base/combobox) (Base UI) | non | 2026-10-15 |
 | `input-group.tsx` | shadcn/ui | [`input-group`](https://ui.shadcn.com/docs/components/base/input-group) (Base UI) | non | 2026-10-15 |
 | `textarea.tsx` | shadcn/ui | [`textarea`](https://ui.shadcn.com/docs/components/base/textarea) (Base UI) | non | 2026-10-15 |
+| `calendar.tsx` | shadcn/ui | [`calendar`](https://ui.shadcn.com/docs/components/base/calendar) (Base UI) | non | 2026-10-16 |
 | `separator.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/base/separator) (Base UI) | non | 2026-10-15 |
 | `popover.tsx` | shadcn/ui | [`popover`](https://ui.shadcn.com/docs/components/popover) | non | 2026-10-15 |
 | `dropdown-menu.tsx` | shadcn/ui | [`dropdown-menu`](https://ui.shadcn.com/docs/components/base/dropdown-menu) (Base UI) | non | 2026-10-15 |
@@ -164,6 +167,18 @@ surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 
 `components/ui/button.tsx` (shadcn, radix + cva) et `choose-ui/button/index.tsx` sont deux
 composants distincts qui coexistent. Seul le second est la lib Choose.
+
+`date-picker` est le premier composant de la lib **sans source amont**. shadcn le documente
+comme une recette — « A date picker is built from Popover and Calendar (there is no DatePicker
+component) » — et ce fichier fige cette recette. Aucune mise à jour upstream ne s'y applique,
+et son `usage.md` est la seule documentation qui existe. Il porte `"kind": "composition"` dans
+`catalog.json` ; les autres entrées, sans ce champ, sont des primitives adossées à un amont.
+
+`calendar.tsx` a été écrit depuis `ui.shadcn.com/r/styles/base-nova/calendar.json` plutôt que
+par la CLI. Deux retouches ont été nécessaires sur la source du registry : le chemin
+`@/registry/base-nova/ui/button` est devenu `@/components/ui/button`, et `IconPlaceholder` —
+l'abstraction de build que la CLI résout selon la bibliothèque d'icônes du projet — a été
+résolue en Lucide, conformément à la règle du DS.
 
 `tooltip.tsx` et `tooltip-base.tsx` coexistent de la même façon, et pour une raison précise :
 `tooltip.tsx` est resté en **radix** parce que `sidebar.tsx` s'appuie sur son API

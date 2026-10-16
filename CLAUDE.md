@@ -33,9 +33,25 @@ S'il existe, l'importer et l'utiliser. Ne jamais fabriquer :
 - un interrupteur fait main, ou un Checkbox détourné pour un réglage instantané → utiliser `choose-ui/switch`
 - une bulle au survol faite main, ou un `title=` natif → utiliser `choose-ui/tooltip`
 - un `<textarea>` stylé à la main → utiliser `choose-ui/textarea`
+- une grille de jours faite main, ou un `<input type="date">` natif → utiliser `choose-ui/calendar`
+- un Popover et un Calendar réassemblés à la main → utiliser `choose-ui/date-picker`
 
 Si un besoin n'est couvert par aucun composant ni aucun variant existant, le signaler
 explicitement dans la réponse au lieu de créer une variante locale.
+
+## Deux natures de composants
+
+`catalog.json` porte un champ `kind` sur chaque entrée :
+
+- `primitive` — adossée à une source amont (shadcn ou reui), tracée dans `SOURCES.md`. Un
+  fichier de la lib correspond à un fichier upstream.
+- `composition` — assemblée à partir de primitives, sans source amont. Aucune mise à jour
+  upstream ne s'y applique, et son `usage.md` est la **seule** documentation qui existe :
+  le lire est d'autant moins facultatif.
+
+Une composition se crée quand l'upstream documente une recette sans livrer de composant, ou
+quand un assemblage revient assez souvent pour mériter une décision commune. Elle vit dans
+`components/choose-ui/` comme les autres et s'importe de la même façon.
 
 ## Lire les règles d'usage avant d'utiliser un composant
 
@@ -50,6 +66,8 @@ quand ne pas l'utiliser, quel variant pour quel cas.
 - `components/choose-ui/breadcrumb/breadcrumb.usage.md`
 - `components/choose-ui/card/card.usage.md`
 - `components/choose-ui/button-group/button-group.usage.md`
+- `components/choose-ui/calendar/calendar.usage.md`
+- `components/choose-ui/date-picker/date-picker.usage.md`
 - `components/choose-ui/alert-dialog/alert-dialog.usage.md`
 - `components/choose-ui/attachment/attachment.usage.md`
 - `components/choose-ui/frame/frame.usage.md`
@@ -104,6 +122,6 @@ variante locale pour contourner.
 
 ## Fichiers de référence
 
-- `components/choose-ui/catalog.json` — inventaire des composants (nom, usage en une phrase, statut).
+- `components/choose-ui/catalog.json` — inventaire des composants (nom, usage en une phrase, statut, nature).
 - `GAPS.md` — besoins identifiés et non couverts.
 - `SOURCES.md` — origine upstream de chaque composant copié.

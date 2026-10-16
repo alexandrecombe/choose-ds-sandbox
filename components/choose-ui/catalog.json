@@ -3,142 +3,182 @@
     {
       "name": "alert-banner",
       "usage": "Message système persistant, posé dans le flux de la page et toujours visible au retour sur l'écran. S'assemble par composition (Alert / AlertTitle / AlertDescription / AlertAction). Pour un retour éphémère, utiliser un toast ; pour une erreur de validation, le message inline du champ.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "alert-dialog",
       "usage": "Interruption bloquante pour une décision irréversible, à deux issues. Pour informer sans décision, utiliser une Alert banner ; pour un formulaire, un dialog ordinaire.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "attachment",
       "usage": "Fichier joint et état de son transfert. Ne téléverse rien : l'état doit être piloté par le code de transfert. Pour une zone de dépôt, ce n'est pas ce composant.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "avatar",
       "usage": "Représente une personne ou un compte, avec un fallback d'initiales obligatoire. Pour un logo de marque, utiliser une image ; pour un statut lisible, un Badge à côté du nom.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "badge",
       "usage": "Étiquette courte et non interactive qui porte un statut ou une catégorie. Pour une action, utiliser Button ; pour un message système, Alert banner.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "breadcrumb",
       "usage": "Fil d'Ariane qui situe l'écran courant dans la hiérarchie du produit. Pour un seul niveau au-dessus, un lien de retour suffit ; il ne reflète pas l'historique de navigation.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "button",
       "usage": "Déclenche une action (soumettre, ouvrir un dialog, lancer un traitement). Pour une navigation pure sans effet de bord, utiliser un lien ; pour un choix binaire persistant, un Switch.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "button-group",
       "usage": "Bloc continu d'actions de même nature, aux rayons fusionnés. Attend le Button de components/ui, pas choose-ui/button ; pour aligner deux boutons indépendants, un flex suffit.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
+    },
+    {
+      "name": "calendar",
+      "usage": "Grille de jours affichée en place, pour une date, plusieurs dates isolées ou un intervalle. En français par défaut. Pour un champ de formulaire, utiliser Date picker.",
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "card",
       "usage": "Conteneur d'un objet métier autonome — opération, marque, récapitulatif. Pour une section de page sans identité propre, utiliser une section ; pour un message à l'utilisateur, une Alert banner.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "checkbox",
       "usage": "Case à cocher pour consentement, opt-in ou sélection multiple. Pour un choix exclusif, utiliser un radio group ; pour un réglage instantané, un Switch.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "combobox",
       "usage": "Champ de saisie avec liste filtrée. Pour une courte liste sans recherche, utiliser Select ; pour un choix binaire, un Checkbox.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "context-menu",
       "usage": "Menu contextuel au clic droit, avec sous-menus, checkbox et radios. Pour des actions visibles, utiliser Dropdown Menu.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
+    },
+    {
+      "name": "date-picker",
+      "usage": "Champ de date : un bouton qui ouvre un calendrier dans un popover. Pour un calendrier affiché à plat, utiliser Calendar ; pour un intervalle, le besoin n'est pas couvert.",
+      "status": "stable",
+      "kind": "composition"
     },
     {
       "name": "dropdown-menu",
       "usage": "Menu déroulant déclenché par un bouton, avec sous-menus, checkbox et radios. Pour une sélection de valeur, utiliser Select ou Combobox.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "empty",
       "usage": "État vide quand une liste ou une vue ne contient aucun élément. Pour une erreur technique, utiliser Alert Banner ; pour un chargement, Skeleton.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "filters",
       "usage": "Barre de filtres composable, en chips à plat (basic) ou en arbre conditionnel (advanced). Pour un tri, utiliser un menu de tri ; pour 1-2 filtres fixes, un Select.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "frame",
       "usage": "Cadre regroupant des panneaux apparentés — réglages, état de services, liste d'enregistrements. Pour un objet métier identifiable, utiliser Card ; pour des sections qui se déplient, un accordéon.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "hover-card",
       "usage": "Carte flottante au survol pour prévisualiser un contenu (profil, lien). Pour des actions, utiliser Dropdown Menu.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "input",
       "usage": "Champ de saisie sur une ligne, dont l'état d'erreur se pilote par aria-invalid. Pour une erreur à l'échelle de l'écran, utiliser une Alert banner ; la validation d'un champ reste inline.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "item",
       "usage": "Ligne d'une liste d'enregistrements : visuel, intitulé, support et actions. Pour un objet autonome qu'on ouvre, utiliser Card ; pour des données comparables colonne par colonne, une table.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "pagination",
       "usage": "Découpe une liste longue en pages numérotées, chaque page ayant son URL. Sans URL par page, utiliser un ButtonGroup ; pour une table qui trie et filtre, le pager fait partie de la table.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "radio-group",
       "usage": "Choix exclusif entre deux et cinq options toutes visibles. Au-delà de cinq, utiliser Select ; pour une sélection multiple, des Checkbox.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "select",
       "usage": "Menu déroulant de sélection unique. Remplace le select natif pour un rendu cohérent. Pour 2-3 options, un groupe de radios suffit ; pour une recherche avec saisie, un Combobox.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "separator",
       "usage": "Trait fin qui sépare deux zones de contenu, horizontalement ou verticalement. Pour encadrer un bloc, utiliser Card ou Frame.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "skeleton",
       "usage": "Placeholder animé qui réserve la place d'un contenu en cours de chargement. Pour un chargement global, un spinner suffit.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "switch",
       "usage": "Réglage on/off appliqué immédiatement, sans bouton Enregistrer. Pour un consentement soumis avec un formulaire, utiliser Checkbox ; pour un choix exclusif, un Radio group.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "textarea",
       "usage": "Champ de saisie sur plusieurs lignes, dont la hauteur suit le texte. Pour une saisie sur une ligne, utiliser Input ; pour du texte mis en forme, un éditeur riche (absent de la lib).",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "tooltip",
       "usage": "Étiquette courte au survol qui nomme un élément peu évident, typiquement un bouton à icône seule. Pour un contenu riche ou cliquable, utiliser Hover card ; pour des actions, Dropdown menu.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "tabs",
       "usage": "Navigation par onglets pour alterner entre des panneaux de contenu parallèles. Pour une navigation entre pages, utiliser un Breadcrumb ou une sidebar.",
-      "status": "stable"
+      "status": "stable",
+      "kind": "primitive"
     }
   ]
 }

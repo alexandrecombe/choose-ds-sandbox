@@ -13,6 +13,8 @@ export type Page =
   | "breadcrumb"
   | "card"
   | "button-group"
+  | "calendar"
+  | "date-picker"
   | "alert-dialog"
   | "attachment"
   | "frame"
@@ -67,6 +69,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "breadcrumb", label: "Breadcrumb" },
       { key: "button", label: "Button" },
       { key: "button-group", label: "Button group" },
+      { key: "calendar", label: "Calendar" },
       { key: "card", label: "Card" },
       { key: "checkbox", label: "Checkbox" },
       { key: "combobox", label: "Combobox" },
@@ -88,6 +91,14 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "textarea", label: "Textarea" },
       { key: "tooltip", label: "Tooltip" },
     ],
+  },
+  {
+    /* Compositions : assemblées à partir des primitives ci-dessus, sans source
+       amont. Aucune mise à jour upstream ne s'y applique, et leur usage.md est
+       la seule documentation qui existe. Marquées `"kind": "composition"` dans
+       catalog.json. Garder par ordre alphabétique de libellé. */
+    title: "Compositions",
+    items: [{ key: "date-picker", label: "Date picker" }],
   },
 ];
 
