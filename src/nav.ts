@@ -3,6 +3,7 @@
 
 export type Page =
   | "introduction"
+  | "aspect-ratio"
   | "colors"
   | "typography"
   | "icons"
@@ -62,6 +63,7 @@ export const NAV_SECTIONS: NavSection[] = [
     title: "Composants",
     items: [
       { key: "alert-banner", label: "Alert banner" },
+      { key: "aspect-ratio", label: "Aspect ratio" },
       { key: "alert-dialog", label: "Alert dialog" },
       { key: "attachment", label: "Attachment" },
       { key: "avatar", label: "Avatar" },

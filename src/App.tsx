@@ -25,6 +25,7 @@ import IconsPage from "./pages/icons";
 import ButtonPage from "./pages/button";
 import BadgePage from "./pages/badge";
 import AlertBannerPage from "./pages/alert-banner";
+import AspectRatioPage from "./pages/aspect-ratio";
 import AvatarPage from "./pages/avatar";
 import BreadcrumbDocPage from "./pages/breadcrumb";
 import CardPage from "./pages/card";
@@ -65,6 +66,7 @@ const PAGES: Record<Page, React.FC> = {
   button: ButtonPage,
   badge: BadgePage,
   "alert-banner": AlertBannerPage,
+  "aspect-ratio": AspectRatioPage,
   avatar: AvatarPage,
   breadcrumb: BreadcrumbDocPage,
   card: CardPage,

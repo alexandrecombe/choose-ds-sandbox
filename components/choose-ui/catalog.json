@@ -13,6 +13,12 @@
       "kind": "primitive"
     },
     {
+      "name": "aspect-ratio",
+      "usage": "Réserve une boîte à une proportion donnée pour une image ou une vidéo. À prendre quand la proportion vient des données ; si elle est connue à l'écriture, une classe aspect-* suffit.",
+      "status": "stable",
+      "kind": "primitive"
+    },
+    {
       "name": "attachment",
       "usage": "Fichier joint et état de son transfert. Ne téléverse rien : l'état doit être piloté par le code de transfert. Pour une zone de dépôt, ce n'est pas ce composant.",
       "status": "stable",

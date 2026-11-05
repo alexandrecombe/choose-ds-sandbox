@@ -76,6 +76,7 @@ ont été retirés.
 | `tooltip/index.tsx` | shadcn/ui | [`tooltip`](https://ui.shadcn.com/docs/components/base/tooltip) (Base UI) | oui — typo seule | 2026-10-16 |
 | `textarea/index.tsx` | shadcn/ui | [`textarea`](https://ui.shadcn.com/docs/components/base/textarea) (Base UI) | oui — typo seule | 2026-10-16 |
 | `calendar/index.tsx` | shadcn/ui | [`calendar`](https://ui.shadcn.com/docs/components/base/calendar) (Base UI) | oui — typo + locale `fr` | 2026-10-16 |
+| `aspect-ratio/index.tsx` | shadcn/ui | [`aspect-ratio`](https://ui.shadcn.com/docs/components/base/aspect-ratio) (Base UI) | non | 2026-11-05 |
 | `date-selector/index.tsx` | reui | [`date-selector`](https://reui.io/components/date-selector) | oui — typo + i18n fr + défauts | 2026-11-05 |
 | `filters/index.tsx` | reui | [`filters`](https://reui.io/components/filters) | oui — typo seule | 2026-10-15 |
 | `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
@@ -148,6 +149,7 @@ surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 | `input-group.tsx` | shadcn/ui | [`input-group`](https://ui.shadcn.com/docs/components/base/input-group) (Base UI) | non | 2026-10-15 |
 | `textarea.tsx` | shadcn/ui | [`textarea`](https://ui.shadcn.com/docs/components/base/textarea) (Base UI) | non | 2026-10-15 |
 | `calendar.tsx` | shadcn/ui | [`calendar`](https://ui.shadcn.com/docs/components/base/calendar) (Base UI) | non | 2026-10-16 |
+| `aspect-ratio.tsx` | shadcn/ui | [`aspect-ratio`](https://ui.shadcn.com/docs/components/base/aspect-ratio) (Base UI) | non | 2026-11-05 |
 | `separator.tsx` | shadcn/ui | [`separator`](https://ui.shadcn.com/docs/components/base/separator) (Base UI) | non | 2026-10-15 |
 | `popover.tsx` | shadcn/ui | [`popover`](https://ui.shadcn.com/docs/components/popover) | non | 2026-10-15 |
 | `dropdown-menu.tsx` | shadcn/ui | [`dropdown-menu`](https://ui.shadcn.com/docs/components/base/dropdown-menu) (Base UI) | non | 2026-10-15 |

@@ -62,6 +62,7 @@ quand ne pas l'utiliser, quel variant pour quel cas.
 - `components/choose-ui/button/button.usage.md`
 - `components/choose-ui/badge/badge.usage.md`
 - `components/choose-ui/alert-banner/alert-banner.usage.md`
+- `components/choose-ui/aspect-ratio/aspect-ratio.usage.md`
 - `components/choose-ui/avatar/avatar.usage.md`
 - `components/choose-ui/breadcrumb/breadcrumb.usage.md`
 - `components/choose-ui/card/card.usage.md`
