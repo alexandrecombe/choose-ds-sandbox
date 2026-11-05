@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { CalendarIcon } from "lucide-react";
 import {
   DateSelector,
+  formatDateValue,
   type DateSelectorValue,
 } from "@/components/choose-ui/date-selector";
+import { Button } from "@/components/choose-ui/button";
+import { Separator } from "@/components/choose-ui/separator";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { DocPage, DocSection, DocPractices } from "@/src/doc";
 
 function Valeur({ value }: { value?: DateSelectorValue }) {
@@ -15,6 +24,63 @@ function Valeur({ value }: { value?: DateSelectorValue }) {
     <pre className="overflow-x-auto rounded-lg border border-border bg-muted/40 p-3 text-xs leading-relaxed text-foreground">
       {JSON.stringify(value, null, 2)}
     </pre>
+  );
+}
+
+/* Forme popover : le sélecteur édite un brouillon, « Annuler » le jette,
+   « Appliquer » seul le valide. C'est ce que reui appelle « committed on
+   Apply », et la vraie différence avec la forme à plat. */
+function FiltrePopover() {
+  const [value, setValue] = useState<DateSelectorValue | undefined>();
+  const [brouillon, setBrouillon] = useState<DateSelectorValue | undefined>();
+  const [ouvert, setOuvert] = useState(false);
+
+  useEffect(() => {
+    if (ouvert) setBrouillon(value);
+  }, [ouvert, value]);
+
+  return (
+    <Popover open={ouvert} onOpenChange={setOuvert}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="secondary"
+          prefix={<CalendarIcon />}
+          className="w-72 justify-start font-normal"
+        >
+          {value ? formatDateValue(value) : "Choisir une période"}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-auto p-0" align="start">
+        <div className="p-3">
+          <DateSelector
+            value={brouillon}
+            onChange={setBrouillon}
+            label="Période"
+            inputHint="Essayez : 2026, T4, 05/10/2026"
+          />
+        </div>
+        <Separator />
+        <div className="flex justify-end gap-2 p-3">
+          <Button
+            variant="secondary"
+            onClick={() => {
+              setBrouillon(value);
+              setOuvert(false);
+            }}
+          >
+            Annuler
+          </Button>
+          <Button
+            onClick={() => {
+              setValue(brouillon);
+              setOuvert(false);
+            }}
+          >
+            Appliquer
+          </Button>
+        </div>
+      </PopoverContent>
+    </Popover>
   );
 }
 
@@ -44,6 +110,32 @@ export default function DateSelectorPage() {
           />
           <Valeur value={complet} />
         </div>
+      </DocSection>
+
+      {/* ---- Popover ---- */}
+      <DocSection
+        title="Derrière un popover"
+        description="La forme à privilégier dans une barre de filtres : à plat, le sélecteur mange la page. Le calendrier édite un brouillon — « Annuler » le jette, « Appliquer » seul le valide, ce qui évite de relancer une requête à chaque clic."
+        code={`const [value, setValue] = useState<DateSelectorValue>()
+const [brouillon, setBrouillon] = useState<DateSelectorValue>()
+const [ouvert, setOuvert] = useState(false)
+
+useEffect(() => { if (ouvert) setBrouillon(value) }, [ouvert, value])
+
+<Popover open={ouvert} onOpenChange={setOuvert}>
+  <PopoverTrigger asChild>
+    <Button variant="secondary" prefix={<CalendarIcon />}>
+      {value ? formatDateValue(value) : "Choisir une période"}
+    </Button>
+  </PopoverTrigger>
+  <PopoverContent className="w-auto p-0" align="start">
+    <DateSelector value={brouillon} onChange={setBrouillon} />
+    <Separator />
+    {/* Annuler : setBrouillon(value) — Appliquer : setValue(brouillon) */}
+  </PopoverContent>
+</Popover>`}
+      >
+        <FiltrePopover />
       </DocSection>
 
       {/* ---- Restreint ---- */}

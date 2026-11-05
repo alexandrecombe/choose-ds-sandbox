@@ -47,6 +47,26 @@ des préférences :
   correctif, l'année suivante devient inatteignable dès 2026. `yearRange` seul n'y change
   rien — c'est bien `maxYear` qu'il faut déplacer.
 
+## Le poser derrière un popover
+
+À plat, le sélecteur occupe la largeur de deux calendriers — il mange la page. Dans une barre
+de filtres, le poser derrière un bouton, et **valider sur Appliquer** :
+
+```tsx
+const [value, setValue] = useState<DateSelectorValue>();
+const [brouillon, setBrouillon] = useState<DateSelectorValue>();
+
+useEffect(() => { if (ouvert) setBrouillon(value) }, [ouvert, value]);
+// Annuler : setBrouillon(value) — Appliquer : setValue(brouillon)
+```
+
+Le calendrier édite un **brouillon**, pas la valeur. Sans ce détour, chaque clic dans le
+calendrier change la valeur et relance la requête derrière : l'utilisateur qui navigue de
+novembre à mars en déclenche quatre. C'est la raison d'être de cette forme, pas l'esthétique.
+
+`formatDateValue(value)` rend le libellé du bouton — « T4 2026 », « 12/11/2026 ». La version
+exportée ici est pré-liée au français ; celle de l'upstream retombe sur l'anglais.
+
 ## Réglages utiles
 
 - `allowRange={false}` — retire l'opérateur « entre » et verrouille la sélection sur une date

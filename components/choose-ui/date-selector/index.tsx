@@ -14,6 +14,7 @@
  */
 import {
   DateSelector as DateSelectorBase,
+  formatDateValue as formatDateValueBase,
   type DateSelectorI18nConfig,
   type DateSelectorProps,
   type DateSelectorValue,
@@ -105,8 +106,24 @@ function DateSelector({
   );
 }
 
+/**
+ * Rend une valeur sous forme de texte — « T4 2026 », « entre le 3 et le 9 ».
+ *
+ * L'upstream retombe sur l'anglais et le format `MM/dd/yyyy` quand on ne lui
+ * passe rien : un appel qui oublie ses deux derniers arguments repasse donc
+ * silencieusement en anglais. Cette version pré-lie les valeurs françaises.
+ */
+function formatDateValue(
+  value: DateSelectorValue,
+  i18n: DateSelectorI18nConfig = I18N_FR,
+  dayDateFormat = "dd/MM/yyyy",
+): string {
+  return formatDateValueBase(value, i18n, dayDateFormat);
+}
+
 export {
   DateSelector,
+  formatDateValue,
   I18N_FR,
   type DateSelectorProps,
   type DateSelectorValue,
