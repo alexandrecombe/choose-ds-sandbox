@@ -50,7 +50,7 @@
     },
     {
       "name": "calendar",
-      "usage": "Grille de jours affichée en place, pour une date, plusieurs dates isolées ou un intervalle. En français par défaut. Pour un champ de formulaire, utiliser Date picker.",
+      "usage": "Grille de jours affichée en place, pour une date, plusieurs dates isolées ou un intervalle. En français par défaut. Pour filtrer sur une période avec des opérateurs, utiliser Date selector.",
       "status": "stable",
       "kind": "primitive"
     },
@@ -79,14 +79,8 @@
       "kind": "primitive"
     },
     {
-      "name": "date-picker",
-      "usage": "Champ de date d'un formulaire : un bouton qui ouvre un calendrier dans un popover, et rend une Date. Pour filtrer sur une période avec des opérateurs, utiliser Date selector.",
-      "status": "stable",
-      "kind": "composition"
-    },
-    {
       "name": "date-selector",
-      "usage": "Filtre de date d'un rapport ou d'une liste : une période — jour, mois, trimestre, semestre, année — et un opérateur. Pour saisir une date dans un formulaire, utiliser Date picker.",
+      "usage": "Filtre de date d'un rapport ou d'une liste : une période — jour, mois, trimestre, semestre, année — et un opérateur. Pour un calendrier affiché à plat, utiliser Calendar.",
       "status": "stable",
       "kind": "primitive"
     },

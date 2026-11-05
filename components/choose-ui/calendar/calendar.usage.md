@@ -31,8 +31,9 @@ sans raison produit explicite.
 
 ## Quand ne pas l'utiliser
 
-- Pour un champ de date dans un formulaire → **Date picker**, qui ouvre cette grille dans un
-  popover sous un bouton. Un calendrier posé à plat dans un formulaire mange la page.
+- Pour un champ de date dans un formulaire → aucun composant ne le couvre aujourd'hui. Un
+  calendrier posé à plat dans un formulaire mange la page ; le besoin est noté dans
+  `GAPS.md`.
 - Pour filtrer sur une période (mois, trimestre, année) avec des opérateurs *avant* / *après* /
   *entre* → **Date selector**.
 - Pour une date de naissance ou toute date lointaine → un champ de saisie est plus rapide que
@@ -57,4 +58,4 @@ quelques mois, passer en `dropdown` — sinon l'utilisateur clique la flèche vi
 
 Ne jamais fabriquer une grille de jours à la main, ni poser un `<input type="date">` natif —
 son rendu et sa langue dépendent du navigateur et échappent au DS. Importer
-`choose-ui/calendar`, ou `choose-ui/date-picker` si le calendrier doit vivre dans un champ.
+`choose-ui/calendar`.

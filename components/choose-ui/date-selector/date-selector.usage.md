@@ -7,18 +7,16 @@ Construit sur le `date-selector` de reui.
 
 ## Ce n'est pas un champ de date
 
-C'est la confusion à éviter, et elle est facile à faire puisque les deux ouvrent un
-calendrier. La frontière tient en une phrase : **le Date picker saisit une date, le Date
-selector formule une condition.**
-
-|  | Date picker | Date selector |
-|---|---|---|
-| Rôle | champ d'un formulaire | filtre d'une liste ou d'un rapport |
-| Valeur | une `Date` | un `DateSelectorValue` |
-| Exemple | « Date de livraison » | « commandes du trimestre dernier » |
+C'est la confusion à éviter, et elle est facile à faire puisqu'il ouvre un calendrier. Ce
+composant **formule une condition**, il ne saisit pas une date : il rend un
+`DateSelectorValue`, pas une `Date`. « Commandes du trimestre dernier », pas « date de
+livraison ».
 
 reui le dit de son côté : son `whenNotToUse` renvoie vers un simple calendrier dès qu'il
 s'agit d'« un jour, sans onglets de période ni opérateurs ».
+
+Le besoin d'un vrai champ de date dans un formulaire n'est pas couvert par la lib ; il est
+noté dans `GAPS.md`.
 
 ## La valeur n'est pas une Date
 
@@ -60,8 +58,9 @@ des préférences :
 
 ## Quand ne pas l'utiliser
 
-- Pour saisir une date dans un formulaire → **Date picker**.
 - Pour un calendrier affiché à plat → **Calendar**.
+- Pour saisir une date dans un champ de formulaire → rien dans la lib ne le couvre ; voir
+  `GAPS.md` plutôt que de détourner ce composant.
 - Pour une condition de date posée à côté d'autres conditions dans une même barre de requête
   → **Filters**, qui gère déjà les dates.
 
@@ -73,5 +72,5 @@ des préférences :
 
 ## Règle agent
 
-Ne jamais fabriquer un filtre de période à la main, ni détourner le Date picker pour
-exprimer un intervalle. Importer `choose-ui/date-selector`.
+Ne jamais fabriquer un filtre de période à la main. Importer `choose-ui/date-selector`.
+Et ne pas le détourner en champ de formulaire : sa valeur n'est pas une date.

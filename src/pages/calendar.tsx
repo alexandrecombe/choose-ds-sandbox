@@ -96,7 +96,7 @@ export default function CalendarPage() {
           "Interdire les jours impossibles via disabled plutôt que de les refuser à la validation.",
           "Passer captionLayout en dropdown dès qu'on vise une date à plusieurs mois.",
           "Gérer le cas undefined : sans required, un second clic désélectionne le jour.",
-          "Pour un champ de formulaire, utiliser Date picker — un calendrier à plat mange la page.",
+          "Pour un champ de formulaire, aucun composant ne couvre le besoin : un calendrier à plat mange la page.",
         ]}
       />
     </DocPage>

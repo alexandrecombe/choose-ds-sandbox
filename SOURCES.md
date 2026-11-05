@@ -76,7 +76,6 @@ ont été retirés.
 | `tooltip/index.tsx` | shadcn/ui | [`tooltip`](https://ui.shadcn.com/docs/components/base/tooltip) (Base UI) | oui — typo seule | 2026-10-16 |
 | `textarea/index.tsx` | shadcn/ui | [`textarea`](https://ui.shadcn.com/docs/components/base/textarea) (Base UI) | oui — typo seule | 2026-10-16 |
 | `calendar/index.tsx` | shadcn/ui | [`calendar`](https://ui.shadcn.com/docs/components/base/calendar) (Base UI) | oui — typo + locale `fr` | 2026-10-16 |
-| `date-picker/index.tsx` | — composition Choose | aucune : shadcn documente une recette, pas un composant | — | 2026-10-16 |
 | `date-selector/index.tsx` | reui | [`date-selector`](https://reui.io/components/date-selector) | oui — typo + i18n fr + défauts | 2026-11-05 |
 | `filters/index.tsx` | reui | [`filters`](https://reui.io/components/filters) | oui — typo seule | 2026-10-15 |
 | `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
@@ -170,11 +169,10 @@ surcouche `choose-ui/avatar`. Style `new-york`, non restylées.
 `components/ui/button.tsx` (shadcn, radix + cva) et `choose-ui/button/index.tsx` sont deux
 composants distincts qui coexistent. Seul le second est la lib Choose.
 
-`date-picker` est le premier composant de la lib **sans source amont**. shadcn le documente
-comme une recette — « A date picker is built from Popover and Calendar (there is no DatePicker
-component) » — et ce fichier fige cette recette. Aucune mise à jour upstream ne s'y applique,
-et son `usage.md` est la seule documentation qui existe. Il porte `"kind": "composition"` dans
-`catalog.json` ; les autres entrées, sans ce champ, sont des primitives adossées à un amont.
+Chaque entrée de `catalog.json` porte un champ `kind`. Toutes valent aujourd'hui
+`primitive` : un fichier de la lib pour un fichier amont, tracé dans ce tableau. La valeur
+`composition` existe pour les composants assemblés à partir de primitives et sans amont —
+le Date picker en fut le seul représentant, retiré depuis. Rien ne la porte actuellement.
 
 `date-selector.tsx` vient du registry reui (`reui.io/r/date-selector.json`), lui aussi sans
 passer par la CLI. Il a demandé la même résolution d'`IconPlaceholder` vers Lucide que le

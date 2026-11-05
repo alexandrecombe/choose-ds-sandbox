@@ -14,7 +14,6 @@ export type Page =
   | "card"
   | "button-group"
   | "calendar"
-  | "date-picker"
   | "date-selector"
   | "alert-dialog"
   | "attachment"
@@ -94,14 +93,10 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "tooltip", label: "Tooltip" },
     ],
   },
-  {
-    /* Compositions : assemblées à partir des primitives ci-dessus, sans source
-       amont. Aucune mise à jour upstream ne s'y applique, et leur usage.md est
-       la seule documentation qui existe. Marquées `"kind": "composition"` dans
-       catalog.json. Garder par ordre alphabétique de libellé. */
-    title: "Compositions",
-    items: [{ key: "date-picker", label: "Date picker" }],
-  },
+  /* Une section « Compositions » vivait ici, pour les composants assemblés à
+     partir des primitives et sans source amont (marqués `"kind": "composition"`
+     dans catalog.json). Elle a été retirée avec le Date picker, son seul
+     membre. La rétablir dès qu'une composition réapparaît. */
 ];
 
 /* Ordre à plat, pour la navigation précédent/suivant. */

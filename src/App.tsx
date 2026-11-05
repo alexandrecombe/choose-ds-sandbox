@@ -34,7 +34,6 @@ import ItemPage from "./pages/item";
 import PaginationPage from "./pages/pagination";
 import ButtonGroupPage from "./pages/button-group";
 import CalendarPage from "./pages/calendar";
-import DatePickerPage from "./pages/date-picker";
 import DateSelectorPage from "./pages/date-selector";
 import AlertDialogPage from "./pages/alert-dialog";
 import AttachmentPage from "./pages/attachment";
@@ -75,7 +74,6 @@ const PAGES: Record<Page, React.FC> = {
   pagination: PaginationPage,
   "button-group": ButtonGroupPage,
   calendar: CalendarPage,
-  "date-picker": DatePickerPage,
   "date-selector": DateSelectorPage,
   "alert-dialog": AlertDialogPage,
   attachment: AttachmentPage,

@@ -26,7 +26,7 @@ export default function DateSelectorPage() {
   return (
     <DocPage
       title="Date selector"
-      description="Filtre de date d'un rapport ou d'une liste : on choisit une période — jour, mois, trimestre, semestre, année — et un opérateur. Ce n'est pas un champ de formulaire : pour ça, voir Date picker."
+      description="Filtre de date d'un rapport ou d'une liste : on choisit une période — jour, mois, trimestre, semestre, année — et un opérateur. Il formule une condition, il ne saisit pas une date."
     >
       {/* ---- Complet ---- */}
       <DocSection
@@ -91,7 +91,7 @@ export default function DateSelectorPage() {
       {/* ---- Bonnes pratiques ---- */}
       <DocPractices
         items={[
-          "Ne pas confondre avec Date picker : celui-ci formule une condition, l'autre saisit une date.",
+          "Ne pas le détourner en champ de formulaire : sa valeur est une condition, pas une date.",
           "Ne jamais traiter la valeur comme une Date — sur une période mois ou trimestre, startDate n'est pas renseigné.",
           "Passer un setter stable à onChange : il se déclenche au montage et à chaque changement d'identité de la fonction.",
           "Restreindre periodTypes aux périodes qui ont du sens pour le filtre.",
