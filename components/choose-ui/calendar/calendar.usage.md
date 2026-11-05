@@ -34,7 +34,7 @@ sans raison produit explicite.
 - Pour un champ de date dans un formulaire → **Date picker**, qui ouvre cette grille dans un
   popover sous un bouton. Un calendrier posé à plat dans un formulaire mange la page.
 - Pour filtrer sur une période (mois, trimestre, année) avec des opérateurs *avant* / *après* /
-  *entre* → ce n'est pas ce composant ; le besoin est noté dans `GAPS.md`.
+  *entre* → **Date selector**.
 - Pour une date de naissance ou toute date lointaine → un champ de saisie est plus rapide que
   de naviguer des dizaines de mois.
 

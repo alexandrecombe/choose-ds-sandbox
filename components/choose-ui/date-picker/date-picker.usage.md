@@ -45,10 +45,11 @@ relie par `aria-describedby`. Ne jamais colorer la bordure du bouton à la main.
 - Pour un calendrier affiché à plat, visible en permanence → **Calendar**.
 - Pour une date de naissance → un champ de saisie. Naviguer trente ans de calendrier est plus
   lent que taper huit chiffres.
-- Pour un intervalle de dates → ce composant ne gère que `mode="single"`. Le besoin d'un
-  sélecteur d'intervalle n'est pas couvert ; le signaler dans `GAPS.md` plutôt que d'ajouter
-  un variant local.
-- Pour filtrer un tableau sur une période avec des opérateurs → voir **Filters**.
+- Pour un intervalle, ou pour filtrer sur une période avec des opérateurs *avant* / *après* /
+  *entre* → **Date selector**. Ce composant ne gère que `mode="single"` et rend une `Date`,
+  pas une condition.
+- Pour une condition de date posée à côté d'autres conditions dans une même barre de requête
+  → **Filters**.
 
 ## Règles Choose
 

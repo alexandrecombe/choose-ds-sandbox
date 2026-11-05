@@ -15,6 +15,7 @@ export type Page =
   | "button-group"
   | "calendar"
   | "date-picker"
+  | "date-selector"
   | "alert-dialog"
   | "attachment"
   | "frame"
@@ -74,6 +75,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "checkbox", label: "Checkbox" },
       { key: "combobox", label: "Combobox" },
       { key: "context-menu", label: "Context menu" },
+      { key: "date-selector", label: "Date selector" },
       { key: "dropdown-menu", label: "Dropdown menu" },
       { key: "empty", label: "Empty" },
       { key: "filters", label: "Filters" },

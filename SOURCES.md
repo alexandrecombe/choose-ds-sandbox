@@ -77,6 +77,7 @@ ont été retirés.
 | `textarea/index.tsx` | shadcn/ui | [`textarea`](https://ui.shadcn.com/docs/components/base/textarea) (Base UI) | oui — typo seule | 2026-10-16 |
 | `calendar/index.tsx` | shadcn/ui | [`calendar`](https://ui.shadcn.com/docs/components/base/calendar) (Base UI) | oui — typo + locale `fr` | 2026-10-16 |
 | `date-picker/index.tsx` | — composition Choose | aucune : shadcn documente une recette, pas un composant | — | 2026-10-16 |
+| `date-selector/index.tsx` | reui | [`date-selector`](https://reui.io/components/date-selector) | oui — typo + i18n fr + défauts | 2026-11-05 |
 | `filters/index.tsx` | reui | [`filters`](https://reui.io/components/filters) | oui — typo seule | 2026-10-15 |
 | `alert-banner/index.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | oui | 2026-10-15 |
 
@@ -112,6 +113,7 @@ Socle technique de la surcouche Choose, à ne pas consommer directement dans un 
 | `filters/*.tsx` | reui | [`filters`](https://reui.io/components/filters) | non | 2026-10-15 |
 | `cascader/*.tsx` | reui | [`filters`](https://reui.io/components/filters) (dépendance) | non | 2026-10-15 |
 | `alert.tsx` | reui | [`alert`](https://reui.io/docs/components/base/alert) | non — un écart assumé | 2026-10-15 |
+| `date-selector.tsx` | reui | [`date-selector`](https://reui.io/components/date-selector) | non | 2026-11-05 |
 
 Un seul écart : la colonne de l'icône vaut `1.25rem` au lieu du `calc(var(--spacing)*3)` upstream
 (12px). La surcouche Choose force des icônes de 20px là où reui en attend de 16px ; au format
@@ -173,6 +175,25 @@ comme une recette — « A date picker is built from Popover and Calendar (there
 component) » — et ce fichier fige cette recette. Aucune mise à jour upstream ne s'y applique,
 et son `usage.md` est la seule documentation qui existe. Il porte `"kind": "composition"` dans
 `catalog.json` ; les autres entrées, sans ce champ, sont des primitives adossées à un amont.
+
+`date-selector.tsx` vient du registry reui (`reui.io/r/date-selector.json`), lui aussi sans
+passer par la CLI. Il a demandé la même résolution d'`IconPlaceholder` vers Lucide que le
+calendar, plus **un écart assumé** : la source vise react-day-picker v9, le projet est en
+v10, où `formatMonthCaption` a été renommé `formatCaption`. Sans ce renommage le formateur
+est silencieusement ignoré et les en-têtes de mois retombent en anglais — ce que le typage
+signalait, et que le rendu confirmait. `formatWeekdayName` a reçu au passage un repli `""`,
+v10 n'acceptant plus `string | undefined`.
+
+Downgrader react-day-picker n'était pas une option : `calendar.tsx` s'appuie sur
+`getDefaultClassNames`, absent de la v9.
+
+Restent **deux erreurs de typage strict**, laissées telles quelles comme pour `cascader` :
+un `||` que TS ne resserre pas et un index de regex garanti par son match. Celles-là sont
+bien sans effet au rendu.
+
+Sa surcouche Choose en corrige en revanche quatre **défauts** : l'i18n anglaise, la semaine
+au dimanche, le format `MM/dd/yyyy`, et surtout `maxYear` figé à 2026 — sans correctif,
+l'année suivante devenait inatteignable dès 2026.
 
 `calendar.tsx` a été écrit depuis `ui.shadcn.com/r/styles/base-nova/calendar.json` plutôt que
 par la CLI. Deux retouches ont été nécessaires sur la source du registry : le chemin

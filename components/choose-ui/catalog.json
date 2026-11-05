@@ -80,9 +80,15 @@
     },
     {
       "name": "date-picker",
-      "usage": "Champ de date : un bouton qui ouvre un calendrier dans un popover. Pour un calendrier affiché à plat, utiliser Calendar ; pour un intervalle, le besoin n'est pas couvert.",
+      "usage": "Champ de date d'un formulaire : un bouton qui ouvre un calendrier dans un popover, et rend une Date. Pour filtrer sur une période avec des opérateurs, utiliser Date selector.",
       "status": "stable",
       "kind": "composition"
+    },
+    {
+      "name": "date-selector",
+      "usage": "Filtre de date d'un rapport ou d'une liste : une période — jour, mois, trimestre, semestre, année — et un opérateur. Pour saisir une date dans un formulaire, utiliser Date picker.",
+      "status": "stable",
+      "kind": "primitive"
     },
     {
       "name": "dropdown-menu",

@@ -35,6 +35,7 @@ S'il existe, l'importer et l'utiliser. Ne jamais fabriquer :
 - un `<textarea>` stylé à la main → utiliser `choose-ui/textarea`
 - une grille de jours faite main, ou un `<input type="date">` natif → utiliser `choose-ui/calendar`
 - un Popover et un Calendar réassemblés à la main → utiliser `choose-ui/date-picker`
+- un filtre de période fait main, ou un Date picker détourné pour exprimer un intervalle → utiliser `choose-ui/date-selector`
 
 Si un besoin n'est couvert par aucun composant ni aucun variant existant, le signaler
 explicitement dans la réponse au lieu de créer une variante locale.
@@ -68,6 +69,7 @@ quand ne pas l'utiliser, quel variant pour quel cas.
 - `components/choose-ui/button-group/button-group.usage.md`
 - `components/choose-ui/calendar/calendar.usage.md`
 - `components/choose-ui/date-picker/date-picker.usage.md`
+- `components/choose-ui/date-selector/date-selector.usage.md`
 - `components/choose-ui/alert-dialog/alert-dialog.usage.md`
 - `components/choose-ui/attachment/attachment.usage.md`
 - `components/choose-ui/frame/frame.usage.md`
